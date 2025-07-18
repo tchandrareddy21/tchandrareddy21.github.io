@@ -76,13 +76,13 @@ const Portfolio = () => {
   const handleDownloadResume = () => {
     // Create a dummy PDF download (in real implementation, this would download an actual PDF)
     const link = document.createElement('a');
-    link.href = '#'; // Replace with actual PDF URL
-    link.download = 'John_Doe_Resume.pdf';
-    // link.click(); // Uncomment when you have an actual PDF
+    link.href = 'https://www.dropbox.com/scl/fi/rn141shmvchg875ac6sl9/TiyyaguraChandraReddy-Resume.pdf?rlkey=awtr6cttz30j1aeh78y4jqkro&st=gclfdu3g&dl=0'; // Replace with actual PDF URL
+    link.download = 'TiyyaguraChandraReddy_Resume.pdf';
+    link.click(); // Uncomment when you have an actual PDF
     
     toast({
       title: "Resume Download",
-      description: "Resume download would start here. Scrolling to contact section...",
+      description: "Resume download started. Scrolling to contact section...",
     });
     
     // Scroll to contact section
