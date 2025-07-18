@@ -238,7 +238,19 @@ const Portfolio = () => {
         <div className="absolute inset-0 gradient-hero opacity-50"></div>
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex-1 text-center lg:text-left animate-fade-in-up">
+            <div className="flex-1 flex justify-center lg:justify-end animate-scale-in order-1 lg:order-2">
+              <div className="relative">
+                <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
+                  <img 
+                    src={profilePhoto} 
+                    alt="John Doe" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -inset-4 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
+              </div>
+            </div>
+            <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
                 <span className="gradient-primary bg-clip-text text-transparent">
                   Hello, I'm
@@ -276,18 +288,6 @@ const Portfolio = () => {
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </Button>
-              </div>
-            </div>
-            <div className="flex-1 flex justify-center lg:justify-end animate-scale-in">
-              <div className="relative">
-                <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
-                  <img 
-                    src={profilePhoto} 
-                    alt="John Doe" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -inset-4 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
               </div>
             </div>
           </div>
