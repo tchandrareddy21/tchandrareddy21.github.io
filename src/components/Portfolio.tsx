@@ -76,7 +76,7 @@ const Portfolio = () => {
   const handleDownloadResume = () => {
     // Create a dummy PDF download (in real implementation, this would download an actual PDF)
     const link = document.createElement('a');
-    link.href = 'https://www.dropbox.com/scl/fi/rn141shmvchg875ac6sl9/TiyyaguraChandraReddy-Resume.pdf?rlkey=awtr6cttz30j1aeh78y4jqkro&st=gclfdu3g&dl=0'; // Replace with actual PDF URL
+    link.href = 'https://drive.google.com/uc?export=download&id=1q9JbicDhMbN-DPhyNBpPJXvpYn1rByCO'; // Replace with actual PDF URL
     link.download = 'TiyyaguraChandraReddy_Resume.pdf';
     link.click(); // Uncomment when you have an actual PDF
     
