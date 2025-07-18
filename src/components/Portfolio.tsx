@@ -37,7 +37,7 @@ const Portfolio = () => {
   const [isTyping, setIsTyping] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const typingText = "Full-Stack Developer & Tech Enthusiast";
+  const typingText = "Data Scientist & ML Engineer";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,26 +100,41 @@ const Portfolio = () => {
   };
 
   const skills = {
-    "Frontend": [
-      { name: "React", level: 95 },
-      { name: "TypeScript", level: 90 },
-      { name: "Next.js", level: 85 },
-      { name: "Tailwind CSS", level: 92 },
-      { name: "Vue.js", level: 80 }
+    "Programming & Data": [
+      { name: "Python", level: 95 },
+      { name: "Pandas", level: 90 },
+      { name: "NumPy", level: 88 },
+      { name: "Matplotlib", level: 85 },
+      { name: "Seaborn", level: 82 }
     ],
-    "Backend": [
-      { name: "Node.js", level: 88 },
-      { name: "Python", level: 85 },
-      { name: "Express.js", level: 90 },
-      { name: "PostgreSQL", level: 82 },
+    "Machine Learning": [
+      { name: "Scikit-learn", level: 90 },
+      { name: "XGBoost", level: 85 },
+      { name: "Random Forest", level: 88 },
+      { name: "SVM", level: 80 },
+      { name: "K-Means", level: 82 },
+      { name: "PCA", level: 78 }
+    ],
+    "AI & Deep Learning": [
+      { name: "BERT/GPT", level: 85 },
+      { name: "Langchain", level: 88 },
+      { name: "RAG", level: 82 },
+      { name: "CNN", level: 80 },
+      { name: "Transfer Learning", level: 75 }
+    ],
+    "MLOps & Cloud": [
+      { name: "AWS", level: 90 },
+      { name: "Docker", level: 85 },
+      { name: "MLflow", level: 80 },
+      { name: "SageMaker", level: 85 },
+      { name: "GitHub Actions", level: 78 }
+    ],
+    "APIs & Deployment": [
+      { name: "Flask", level: 88 },
+      { name: "FastAPI", level: 85 },
+      { name: "Streamlit", level: 82 },
+      { name: "MySQL", level: 80 },
       { name: "MongoDB", level: 78 }
-    ],
-    "Tools & Others": [
-      { name: "Git", level: 92 },
-      { name: "Docker", level: 80 },
-      { name: "AWS", level: 75 },
-      { name: "GraphQL", level: 82 },
-      { name: "Jest", level: 85 }
     ]
   };
 
@@ -208,7 +223,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              John Doe
+              Tiyyagura Chandra Reddy
             </div>
             <div className="hidden md:flex items-center space-x-8">
               {[
@@ -243,7 +258,7 @@ const Portfolio = () => {
                 <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
                   <img 
                     src={profilePhoto} 
-                    alt="John Doe" 
+                    alt="Tiyyagura Chandra Reddy" 
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -256,7 +271,7 @@ const Portfolio = () => {
                   Hello, I'm
                 </span>
                 <br />
-                <span className="text-foreground">John Doe</span>
+                <span className="text-foreground">Tiyyagura Chandra Reddy</span>
               </h1>
               <div className="text-xl lg:text-2xl mb-8 h-8">
                 {isTyping && (
@@ -266,9 +281,7 @@ const Portfolio = () => {
                 )}
               </div>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-                Passionate full-stack developer with 5+ years of experience creating 
-                innovative web solutions. I love turning ideas into reality through 
-                clean, efficient code and stunning user experiences.
+                Data Scientist / ML Engineer with 2 years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button 
@@ -308,21 +321,21 @@ const Portfolio = () => {
                   <h3 className="text-2xl font-semibold">Professional Summary</h3>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  I am a dedicated full-stack developer with a passion for creating exceptional 
-                  digital experiences. With over 5 years in the industry, I have honed my skills 
-                  in modern web technologies and have a proven track record of delivering 
-                  high-quality solutions that drive business growth.
+                  I am a passionate Data Scientist / ML Engineer with 2 years of experience as a Software Engineer 
+                  and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
+                  I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
+                  measurable business impact.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  My expertise spans across frontend frameworks like React and Vue.js, backend 
-                  technologies including Node.js and Python, and cloud platforms such as AWS. 
-                  I believe in writing clean, maintainable code and following best practices 
-                  to ensure scalable and robust applications.
+                  My expertise spans across the entire machine learning pipeline - from data preprocessing and 
+                  feature engineering to model development, deployment, and monitoring. I have hands-on experience 
+                  with supervised and unsupervised learning algorithms, natural language processing, and cutting-edge 
+                  generative AI technologies including transformers, RAG systems, and AI agents.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, contributing 
-                  to open-source projects, or sharing knowledge through technical blog posts 
-                  and community meetups.
+                  Currently leading a team of 4 and collaborating with cross-functional stakeholders to ensure 
+                  timely and high-quality project delivery. I'm passionate about leveraging AI and machine learning 
+                  to solve real-world problems and drive innovation in data-driven decision making.
                 </p>
               </CardContent>
             </Card>
@@ -336,14 +349,16 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
             Skills & Expertise
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, skillList]) => (
               <Card key={category} className="skill-card">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3">
-                    {category === 'Frontend' && <Globe className="h-6 w-6 text-primary" />}
-                    {category === 'Backend' && <Server className="h-6 w-6 text-accent" />}
-                    {category === 'Tools & Others' && <Code className="h-6 w-6 text-cyan-glow" />}
+                    {category === 'Programming & Data' && <Code className="h-6 w-6 text-primary" />}
+                    {category === 'Machine Learning' && <Database className="h-6 w-6 text-accent" />}
+                    {category === 'AI & Deep Learning' && <Globe className="h-6 w-6 text-cyan-glow" />}
+                    {category === 'MLOps & Cloud' && <Server className="h-6 w-6 text-primary" />}
+                    {category === 'APIs & Deployment' && <Globe className="h-6 w-6 text-accent" />}
                     {category}
                   </CardTitle>
                 </CardHeader>
