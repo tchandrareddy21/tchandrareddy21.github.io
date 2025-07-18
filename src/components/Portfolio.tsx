@@ -653,11 +653,8 @@ const Portfolio = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-muted-foreground text-sm">
-              © 2024 John Doe. All rights reserved.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Built with React & Tailwind CSS
+            <p className="text-muted-foreground text-sm justify-center">
+              © 2024 Tiyyagura Chandra Reddy. All rights reserved.
             </p>
           </div>
         </div>
