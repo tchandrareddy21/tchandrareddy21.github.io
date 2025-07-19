@@ -299,6 +299,8 @@ const Portfolio = () => {
                   </a>
                   <a
                     href="mailto:tchandrareddy21@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                   >
                     <Mail className="w-6 h-6" />
@@ -316,7 +318,7 @@ const Portfolio = () => {
               </h1>
               <div className="text-xl lg:text-2xl mb-8 h-8">
                 {isTyping && (
-                  <span className="animate-typing overflow-hidden whitespace-nowrap border-r-2 border-primary">
+                  <span className="animate-typing overflow-hidden whitespace-nowrap">
                     {typingText}
                   </span>
                 )}
@@ -404,20 +406,11 @@ const Portfolio = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
+                  <div className="flex flex-wrap gap-2">
                     {skillList.map((skill) => (
-                      <div key={skill.name}>
-                        <div className="flex justify-between mb-2">
-                          <span className="text-sm font-medium">{skill.name}</span>
-                          <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <div 
-                            className="gradient-primary h-2 rounded-full transition-all duration-1000"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
+                      <Badge key={skill.name} variant="secondary" className="px-3 py-1">
+                        {skill.name}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
