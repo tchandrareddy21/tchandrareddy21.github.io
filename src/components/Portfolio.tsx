@@ -651,10 +651,36 @@ const Portfolio = () => {
       {/* Footer */}
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-muted-foreground text-sm justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-muted-foreground text-sm">
               © 2024 Tiyyagura Chandra Reddy. All rights reserved.
             </p>
+            <div className="flex gap-4">
+              <a
+                href="https://github.com/tchandrareddy21"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tchandrareddy21/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="mailto:tchandrareddy21@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
