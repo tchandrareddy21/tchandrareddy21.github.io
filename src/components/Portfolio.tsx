@@ -93,6 +93,19 @@ const Portfolio = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const emailData = {
+      to: "tchandrareddy21@gmail.com",
+      firstName: formData.get('firstName'),
+      lastName: formData.get('lastName'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+    
+    // In a real implementation, you would send this data to your email service
+    console.log('Email data:', emailData);
+    
     toast({
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon!",
@@ -140,58 +153,62 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment integration, and admin dashboard.",
+      title: "APS Failure Classification",
+      description: "Engineered predictive analytics using a robust binary classification model focused on essential components of the Air Pressure System, reducing diagnostic time by approximately 25% through enhanced issue identification capabilities.",
       image: project1,
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example"
+      technologies: ["Machine Learning", "FastAPI", "Docker", "MongoDB", "AWS(EC2, ECR, S3)"],
+      liveUrl: "#",
+      githubUrl: "#"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      title: "LLM-Based Document Q&A with RAG",
+      description: "Developed an LLM-powered document Q&A system using Retrieval-Augmented Generation (RAG), integrating Groq for querying, OpenAI embeddings for vectorization, and FAISS for fast similarity search.",
       image: project2,
-      technologies: ["Next.js", "Socket.io", "MongoDB", "TypeScript", "Framer Motion"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example"
+      technologies: ["LangChain", "Groq", "OpenAI", "FAISS", "Streamlit"],
+      liveUrl: "#",
+      githubUrl: "#"
     },
     {
-      title: "Analytics Dashboard",
-      description: "A comprehensive analytics dashboard with interactive charts, real-time data visualization, and customizable reporting features.",
+      title: "Logs Classification",
+      description: "Developed a hybrid log classification system integrating Regex, Sentence Transformers with Logistic Regression, and Large Language Models (LLMs) to efficiently handle logs of varying complexity.",
       image: project3,
-      technologies: ["Vue.js", "D3.js", "Python", "FastAPI", "Redis"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example"
+      technologies: ["FastAPI", "Streamlit", "Machine Learning", "RegEx", "GROQ"],
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Text2Query Chat",
+      description: "Developed a Text-to-SQL chatbot using LangChain, GROQ API, and Streamlit, enabling seamless natural language database queries with 95% accuracy.",
+      image: project1,
+      technologies: ["Langchain", "GROQ", "Streamlit", "MySQL", "SQLite"],
+      liveUrl: "#",
+      githubUrl: "#"
     }
   ];
 
   const experiences = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      description: "Led development of scalable web applications serving 100k+ users. Implemented CI/CD pipelines and mentored junior developers."
-    },
-    {
-      title: "Frontend Developer",
-      company: "StartupXYZ",
-      period: "2020 - 2022",
-      description: "Developed responsive web applications using React and TypeScript. Collaborated with design team to implement pixel-perfect UIs."
-    },
-    {
-      title: "Junior Developer",
-      company: "DevAgency Inc",
-      period: "2019 - 2020",
-      description: "Built and maintained client websites using modern JavaScript frameworks. Gained experience in full-stack development."
+      title: "Software Engineer (Full-Time)",
+      company: "HCLTech",
+      period: "Nov 2022 - Present",
+      location: "Bengaluru",
+      description: [
+        "Designed and implemented AEM notification cards to encourage users of non-genuine Adobe applications to transition to legitimate software, enhancing compliance and licensing adherence.",
+        "Developed AEM-based promotional discount notifications, increasing conversion rates by 40% and driving revenue growth through effective user engagement strategies.",
+        "Conducted A/B testing on AEM notifications, determining the 7-day grace period as the most effective for maximizing user transition and retention.",
+        "Built Proofs of Concept (POCs) and web pages using Milo, streamlining migration processes and ensuring seamless project alignment.",
+        "Skills: AEM, MILO, A/B Testing, Figma, Jira, AJO, UWP"
+      ]
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Technology",
-      period: "2015 - 2019",
-      description: "Graduated Magna Cum Laude. Specialized in Software Engineering and Database Systems."
+      degree: "Bachelor of Technology - Computer Science and Engineering",
+      institution: "LBRCE",
+      period: "Jun 2018 - May 2022",
+      gpa: "8.95",
+      description: "Graduated with 8.95 CGPA. Specialized in Computer Science and Engineering with strong foundation in algorithms, data structures, and software development."
     }
   ];
 
@@ -263,6 +280,30 @@ const Portfolio = () => {
                   />
                 </div>
                 <div className="absolute -inset-4 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
+                <div className="mt-6 flex justify-center gap-4">
+                  <a
+                    href="https://github.com/tchandrareddy21"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  >
+                    <Github className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/tchandrareddy21/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="mailto:tchandrareddy21@gmail.com"
+                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  >
+                    <Mail className="w-6 h-6" />
+                  </a>
+                </div>
               </div>
             </div>
             <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
@@ -447,17 +488,31 @@ const Portfolio = () => {
                           <Briefcase className="h-6 w-6 text-primary" />
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
-                        <div className="flex items-center gap-4 mb-3 text-muted-foreground">
-                          <span className="font-medium text-primary">{exp.company}</span>
-                          <span className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4" />
-                            {exp.period}
-                          </span>
-                        </div>
-                        <p className="text-muted-foreground">{exp.description}</p>
-                      </div>
+                       <div className="flex-1">
+                         <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
+                         <div className="flex items-center gap-4 mb-3 text-muted-foreground">
+                           <span className="font-medium text-primary">{exp.company}</span>
+                           <span className="flex items-center gap-1">
+                             <Calendar className="h-4 w-4" />
+                             {exp.period}
+                           </span>
+                           {exp.location && (
+                             <span className="flex items-center gap-1">
+                               <MapPin className="h-4 w-4" />
+                               {exp.location}
+                             </span>
+                           )}
+                         </div>
+                         {Array.isArray(exp.description) ? (
+                           <div className="space-y-2">
+                             {exp.description.map((item, idx) => (
+                               <p key={idx} className="text-muted-foreground">• {item}</p>
+                             ))}
+                           </div>
+                         ) : (
+                           <p className="text-muted-foreground">{exp.description}</p>
+                         )}
+                       </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -483,17 +538,20 @@ const Portfolio = () => {
                         <GraduationCap className="h-6 w-6 text-accent" />
                       </div>
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
-                      <div className="flex items-center gap-4 mb-3 text-muted-foreground">
-                        <span className="font-medium text-accent">{edu.institution}</span>
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-4 w-4" />
-                          {edu.period}
-                        </span>
-                      </div>
-                      <p className="text-muted-foreground">{edu.description}</p>
-                    </div>
+                     <div className="flex-1">
+                       <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
+                       <div className="flex items-center gap-4 mb-3 text-muted-foreground">
+                         <span className="font-medium text-accent">{edu.institution}</span>
+                         <span className="flex items-center gap-1">
+                           <Calendar className="h-4 w-4" />
+                           {edu.period}
+                         </span>
+                         {edu.gpa && (
+                           <span className="font-medium text-primary">CGPA: {edu.gpa}</span>
+                         )}
+                       </div>
+                       <p className="text-muted-foreground">{edu.description}</p>
+                     </div>
                   </div>
                 </CardContent>
               </Card>
@@ -542,109 +600,57 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Info */}
-              <div className="space-y-8">
-                <div>
-                  <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
-                  <p className="text-muted-foreground mb-8">
-                    I'm always open to discussing new opportunities, interesting projects, 
-                    or just having a friendly chat about technology and development.
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">john.doe@example.com</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                      <Phone className="h-6 w-6 text-accent" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Phone</p>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-cyan-glow/10 flex items-center justify-center">
-                      <MapPin className="h-6 w-6 text-cyan-glow" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Location</p>
-                      <p className="text-muted-foreground">San Francisco, CA</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
-                  <div className="flex gap-4">
-                    <Button size="icon" variant="outline" className="hover-glow">
-                      <Github className="h-5 w-5" />
-                    </Button>
-                    <Button size="icon" variant="outline" className="hover-glow">
-                      <Linkedin className="h-5 w-5" />
-                    </Button>
-                    <Button size="icon" variant="outline" className="hover-glow">
-                      <Mail className="h-5 w-5" />
-                    </Button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Form */}
-              <Card className="project-card">
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and I'll get back to you as soon as possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="text-sm font-medium mb-2 block">First Name</label>
-                        <Input placeholder="Your first name" required />
-                      </div>
-                      <div>
-                        <label className="text-sm font-medium mb-2 block">Last Name</label>
-                        <Input placeholder="Your last name" required />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Email</label>
-                      <Input type="email" placeholder="your.email@example.com" required />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Subject</label>
-                      <Input placeholder="What's this about?" required />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Message</label>
-                      <Textarea 
-                        placeholder="Tell me about your project or question..." 
-                        rows={6}
-                        required 
-                      />
-                    </div>
-                    <Button type="submit" className="w-full gradient-primary hover:opacity-90">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-muted-foreground">
+                I'm always open to discussing new opportunities, interesting projects, 
+                or just having a friendly chat about technology and development.
+              </p>
             </div>
+            
+            {/* Contact Form - Centered */}
+            <Card className="project-card">
+              <CardHeader>
+                <CardTitle>Send a Message</CardTitle>
+                <CardDescription>
+                  Fill out the form below and I'll get back to you as soon as possible.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">First Name</label>
+                      <Input name="firstName" placeholder="Your first name" required />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Last Name</label>
+                      <Input name="lastName" placeholder="Your last name" required />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Email</label>
+                    <Input name="email" type="email" placeholder="your.email@example.com" required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Subject</label>
+                    <Input name="subject" placeholder="What's this about?" required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Message</label>
+                    <Textarea 
+                      name="message"
+                      placeholder="Tell me about your project or question..." 
+                      rows={6}
+                      required 
+                    />
+                  </div>
+                  <Button type="submit" className="w-full gradient-primary hover:opacity-90">
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
