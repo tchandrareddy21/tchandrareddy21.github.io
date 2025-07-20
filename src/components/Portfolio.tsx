@@ -518,7 +518,7 @@ const Portfolio = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge className="bg-primary/90 text-white">
+                    <Badge className="bg-primary text-white border-0 font-medium">
                       <Star className="w-3 h-3 mr-1" />
                       Featured
                     </Badge>
@@ -535,7 +535,7 @@ const Portfolio = () => {
                     <h4 className="text-sm font-semibold text-primary">Key Features</h4>
                     <div className="flex flex-wrap gap-1">
                       {project.keyFeatures?.map((feature, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs border-primary/30 text-primary">
+                        <Badge key={idx} variant="outline" className="text-xs border-accent/50 text-accent bg-accent/5">
                           {feature}
                         </Badge>
                       ))}
@@ -558,17 +558,17 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Technologies */}
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold">Technologies</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs bg-primary/10 text-primary border border-primary/20">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+                   {/* Technologies */}
+                   <div className="space-y-2">
+                     <h4 className="text-sm font-semibold">Technologies</h4>
+                     <div className="flex flex-wrap gap-1">
+                       {project.technologies.map((tech) => (
+                         <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
+                           {tech}
+                         </Badge>
+                       ))}
+                     </div>
+                   </div>
 
                   {/* Action Buttons */}
                   <div className="flex gap-2 pt-2">
@@ -689,7 +689,7 @@ const Portfolio = () => {
                         </h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.skills.map((skill, skillIdx) => (
-                            <Badge key={skillIdx} className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 hover:border-primary/40 transition-colors">
+                            <Badge key={skillIdx} className="bg-primary text-white border-0 hover:bg-primary/80 transition-colors font-medium">
                               {skill}
                             </Badge>
                           ))}
@@ -786,7 +786,7 @@ const Portfolio = () => {
                             <Award className="h-6 w-6 text-primary" />
                           </div>
                         </div>
-                        <Badge className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/30">
+                        <Badge className="bg-primary text-white border-0 font-medium px-3 py-1">
                           Verified
                         </Badge>
                       </div>
