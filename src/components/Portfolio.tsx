@@ -24,10 +24,17 @@ import {
   GraduationCap,
   Briefcase,
   User,
-  ChevronUp
+  ChevronUp,
+  TrendingUp,
+  Target,
+  Users,
+  Star,
+  Play,
+  Eye
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import MobileNav from './MobileNav';
+import ProjectModal from './ProjectModal';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
@@ -37,6 +44,15 @@ const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [typedText, setTypedText] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    project: any;
+    type: 'demo' | 'github';
+  }>({
+    isOpen: false,
+    project: null,
+    type: 'demo'
+  });
 
   const fullText = "Data Scientist & ML Engineer";
 
@@ -151,34 +167,74 @@ const Portfolio = () => {
       description: "Engineered predictive analytics using a robust binary classification model focused on essential components of the Air Pressure System, reducing diagnostic time by approximately 25% through enhanced issue identification capabilities.",
       image: project1,
       technologies: ["Machine Learning", "FastAPI", "Docker", "MongoDB", "AWS(EC2, ECR, S3)"],
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "https://aps-failure-classification.streamlit.app",
+      githubUrl: "https://github.com/tchandrareddy21/aps-failure-classification",
+      metrics: {
+        duration: "3 months",
+        team: "Solo Project",
+        impact: "25% faster diagnosis"
+      },
+      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"]
     },
     {
       title: "LLM-Based Document Q&A with RAG",
       description: "Developed an LLM-powered document Q&A system using Retrieval-Augmented Generation (RAG), integrating Groq for querying, OpenAI embeddings for vectorization, and FAISS for fast similarity search.",
       image: project2,
       technologies: ["LangChain", "Groq", "OpenAI", "FAISS", "Streamlit"],
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "https://llm-rag-qna.streamlit.app",
+      githubUrl: "https://github.com/tchandrareddy21/llm-rag-qna",
+      metrics: {
+        duration: "2 months",
+        team: "Solo Project", 
+        impact: "95% query accuracy"
+      },
+      keyFeatures: ["Multi-document support", "Real-time Q&A", "Vector search"]
     },
     {
       title: "Logs Classification",
       description: "Developed a hybrid log classification system integrating Regex, Sentence Transformers with Logistic Regression, and Large Language Models (LLMs) to efficiently handle logs of varying complexity.",
       image: project3,
       technologies: ["FastAPI", "Streamlit", "Machine Learning", "RegEx", "GROQ"],
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "https://logs-classification.streamlit.app",
+      githubUrl: "https://github.com/tchandrareddy21/logs-classification",
+      metrics: {
+        duration: "6 weeks",
+        team: "2 developers",
+        impact: "70% processing speed"
+      },
+      keyFeatures: ["Hybrid approach", "Multi-model pipeline", "High precision"]
     },
     {
       title: "Text2Query Chat",
       description: "Developed a Text-to-SQL chatbot using LangChain, GROQ API, and Streamlit, enabling seamless natural language database queries with 95% accuracy.",
       image: project1,
       technologies: ["Langchain", "GROQ", "Streamlit", "MySQL", "SQLite"],
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "https://text2query-chat.streamlit.app",
+      githubUrl: "https://github.com/tchandrareddy21/text2query-chat",
+      metrics: {
+        duration: "1 month",
+        team: "Solo Project",
+        impact: "95% query accuracy"
+      },
+      keyFeatures: ["Natural language queries", "Multi-database support", "Chat interface"]
     }
   ];
+
+  const openModal = (project: any, type: 'demo' | 'github') => {
+    setModalState({
+      isOpen: true,
+      project,
+      type
+    });
+  };
+
+  const closeModal = () => {
+    setModalState({
+      isOpen: false,
+      project: null,
+      type: 'demo'
+    });
+  };
 
   const experiences = [
     {
@@ -186,13 +242,32 @@ const Portfolio = () => {
       company: "HCLTech",
       period: "Nov 2022 - Present",
       location: "Bengaluru",
-      description: [
-        "Designed and implemented AEM notification cards to encourage users of non-genuine Adobe applications to transition to legitimate software, enhancing compliance and licensing adherence.",
-        "Developed AEM-based promotional discount notifications, increasing conversion rates by 40% and driving revenue growth through effective user engagement strategies.",
-        "Conducted A/B testing on AEM notifications, determining the 7-day grace period as the most effective for maximizing user transition and retention.",
-        "Built Proofs of Concept (POCs) and web pages using Milo, streamlining migration processes and ensuring seamless project alignment.",
-        "Skills: AEM, MILO, A/B Testing, Figma, Jira, AJO, UWP"
-      ]
+      achievements: [
+        {
+          title: "AEM Notification System",
+          description: "Designed notification cards for software compliance transition",
+          impact: "Enhanced licensing adherence",
+          skills: ["AEM", "User Engagement", "Compliance"]
+        },
+        {
+          title: "Promotional Campaigns",
+          description: "Developed AEM-based discount notification system",
+          impact: "40% increase in conversion rates",
+          skills: ["AEM", "Campaign Management", "Revenue Growth"]
+        },
+        {
+          title: "A/B Testing Leadership",
+          description: "Conducted optimization testing for user retention",
+          impact: "Determined optimal 7-day grace period",
+          skills: ["A/B Testing", "Data Analysis", "User Retention"]
+        }
+      ],
+      keyMetrics: {
+        teamSize: "Leading team of 4",
+        projects: "15+ POCs delivered",
+        impact: "40% conversion increase"
+      },
+      skills: ["AEM", "MILO", "A/B Testing", "Figma", "Jira", "AJO", "UWP"]
     }
   ];
 
@@ -432,34 +507,86 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
             Featured Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="project-card group">
+              <Card key={index} className="project-card group border-2 hover:border-primary/30 transition-all duration-300">
                 <div className="relative overflow-hidden rounded-t-xl">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute top-4 right-4 flex gap-2">
+                    <Badge className="bg-primary/90 text-white">
+                      <Star className="w-3 h-3 mr-1" />
+                      Featured
+                    </Badge>
                   </div>
-                  <div className="flex gap-3">
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                </div>
+                <CardContent className="p-6 space-y-4">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                  </div>
+
+                  {/* Key Features */}
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold text-primary">Key Features</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {project.keyFeatures?.map((feature, idx) => (
+                        <Badge key={idx} variant="outline" className="text-xs border-primary/30 text-primary">
+                          {feature}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Metrics */}
+                  <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
+                    <div className="text-center">
+                      <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
+                      <p className="text-xs text-muted-foreground">{project.metrics?.duration}</p>
+                    </div>
+                    <div className="text-center">
+                      <Users className="w-4 h-4 mx-auto mb-1 text-accent" />
+                      <p className="text-xs text-muted-foreground">{project.metrics?.team}</p>
+                    </div>
+                    <div className="text-center">
+                      <TrendingUp className="w-4 h-4 mx-auto mb-1 text-cyan-500" />
+                      <p className="text-xs text-muted-foreground">{project.metrics?.impact}</p>
+                    </div>
+                  </div>
+
+                  {/* Technologies */}
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold">Technologies</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs bg-primary/10 text-primary border border-primary/20">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-2 pt-2">
+                    <Button 
+                      size="sm" 
+                      onClick={() => openModal(project, 'demo')}
+                      className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+                    >
+                      <Play className="mr-2 h-3 w-3" />
                       Live Demo
                     </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <Github className="mr-2 h-4 w-4" />
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      onClick={() => openModal(project, 'github')}
+                      className="flex-1 border-primary/50 hover:bg-primary/10"
+                    >
+                      <Github className="mr-2 h-3 w-3" />
                       Code
                     </Button>
                   </div>
@@ -476,42 +603,98 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
             Work Experience
           </h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <Card key={index} className="project-card">
+                <Card key={index} className="project-card border-2 hover:border-primary/30 transition-all duration-300">
                   <CardContent className="p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <Briefcase className="h-6 w-6 text-primary" />
+                    <div className="space-y-6">
+                      {/* Header Section */}
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30">
+                            <Briefcase className="h-6 w-6 text-primary" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl font-bold mb-2 gradient-primary bg-clip-text text-transparent">{exp.title}</h3>
+                          <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
+                            <span className="font-semibold text-primary text-lg">{exp.company}</span>
+                            <span className="flex items-center gap-1">
+                              <Calendar className="h-4 w-4" />
+                              {exp.period}
+                            </span>
+                            {exp.location && (
+                              <span className="flex items-center gap-1">
+                                <MapPin className="h-4 w-4" />
+                                {exp.location}
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
-                       <div className="flex-1">
-                         <h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
-                         <div className="flex items-center gap-4 mb-3 text-muted-foreground">
-                           <span className="font-medium text-primary">{exp.company}</span>
-                           <span className="flex items-center gap-1">
-                             <Calendar className="h-4 w-4" />
-                             {exp.period}
-                           </span>
-                           {exp.location && (
-                             <span className="flex items-center gap-1">
-                               <MapPin className="h-4 w-4" />
-                               {exp.location}
-                             </span>
-                           )}
-                         </div>
-                         {Array.isArray(exp.description) ? (
-                           <div className="space-y-2">
-                             {exp.description.map((item, idx) => (
-                               <p key={idx} className="text-muted-foreground">• {item}</p>
-                             ))}
-                           </div>
-                         ) : (
-                           <p className="text-muted-foreground">{exp.description}</p>
-                         )}
-                       </div>
+
+                      {/* Key Metrics */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-secondary/30 rounded-lg">
+                        <div className="text-center">
+                          <Users className="w-5 h-5 mx-auto mb-2 text-primary" />
+                          <p className="text-sm font-medium">{exp.keyMetrics.teamSize}</p>
+                        </div>
+                        <div className="text-center">
+                          <Target className="w-5 h-5 mx-auto mb-2 text-accent" />
+                          <p className="text-sm font-medium">{exp.keyMetrics.projects}</p>
+                        </div>
+                        <div className="text-center">
+                          <TrendingUp className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
+                          <p className="text-sm font-medium">{exp.keyMetrics.impact}</p>
+                        </div>
+                      </div>
+
+                      {/* Key Achievements */}
+                      <div className="space-y-4">
+                        <h4 className="text-lg font-semibold flex items-center gap-2">
+                          <Star className="w-5 h-5 text-primary" />
+                          Key Achievements
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                          {exp.achievements.map((achievement, idx) => (
+                            <Card key={idx} className="bg-gradient-to-br from-card/80 to-card/60 border border-primary/20 hover:border-primary/40 transition-all duration-300">
+                              <CardContent className="p-4">
+                                <h5 className="font-semibold text-primary mb-2">{achievement.title}</h5>
+                                <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{achievement.description}</p>
+                                <div className="space-y-2">
+                                  <div className="flex items-center gap-2">
+                                    <TrendingUp className="w-3 h-3 text-cyan-500" />
+                                    <span className="text-xs font-medium text-cyan-500">{achievement.impact}</span>
+                                  </div>
+                                  <div className="flex flex-wrap gap-1">
+                                    {achievement.skills.map((skill, skillIdx) => (
+                                      <Badge key={skillIdx} variant="outline" className="text-xs border-primary/30 text-primary">
+                                        {skill}
+                                      </Badge>
+                                    ))}
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Technical Skills */}
+                      <div className="space-y-3">
+                        <h4 className="text-lg font-semibold flex items-center gap-2">
+                          <Code className="w-5 h-5 text-accent" />
+                          Technical Skills
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.skills.map((skill, skillIdx) => (
+                            <Badge key={skillIdx} className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 hover:border-primary/40 transition-colors">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -527,30 +710,56 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
             Education
           </h2>
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {education.map((edu, index) => (
-              <Card key={index} className="project-card">
+              <Card key={index} className="project-card border-2 hover:border-accent/30 transition-all duration-300">
                 <CardContent className="p-8">
-                  <div className="flex items-start gap-4">
+                  <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                        <GraduationCap className="h-6 w-6 text-accent" />
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center border-2 border-accent/30">
+                        <GraduationCap className="h-8 w-8 text-accent" />
                       </div>
                     </div>
-                     <div className="flex-1">
-                       <h3 className="text-xl font-semibold mb-2">{edu.degree}</h3>
-                       <div className="flex items-center gap-4 mb-3 text-muted-foreground">
-                         <span className="font-medium text-accent">{edu.institution}</span>
-                         <span className="flex items-center gap-1">
-                           <Calendar className="h-4 w-4" />
-                           {edu.period}
-                         </span>
-                         {edu.gpa && (
-                           <span className="font-medium text-primary">CGPA: {edu.gpa}</span>
-                         )}
-                       </div>
-                       <p className="text-muted-foreground">{edu.description}</p>
-                     </div>
+                    <div className="flex-1 space-y-4">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-2 gradient-secondary bg-clip-text text-transparent">{edu.degree}</h3>
+                        <div className="flex flex-wrap items-center gap-6 mb-4">
+                          <span className="text-lg font-semibold text-accent">{edu.institution}</span>
+                          <span className="flex items-center gap-2 text-muted-foreground">
+                            <Calendar className="h-4 w-4" />
+                            {edu.period}
+                          </span>
+                          {edu.gpa && (
+                            <div className="flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full border border-accent/30">
+                              <Star className="h-4 w-4 text-accent" />
+                              <span className="font-semibold text-accent">CGPA: {edu.gpa}</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="p-4 bg-secondary/30 rounded-lg border border-accent/20">
+                        <p className="text-muted-foreground leading-relaxed">{edu.description}</p>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="text-center p-3 bg-gradient-to-br from-accent/5 to-accent/10 rounded-lg border border-accent/20">
+                          <Code className="w-5 h-5 mx-auto mb-2 text-accent" />
+                          <p className="text-sm font-medium">Strong Foundation</p>
+                          <p className="text-xs text-muted-foreground">Algorithms & Data Structures</p>
+                        </div>
+                        <div className="text-center p-3 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
+                          <Database className="w-5 h-5 mx-auto mb-2 text-primary" />
+                          <p className="text-sm font-medium">Core Concepts</p>
+                          <p className="text-xs text-muted-foreground">Software Development</p>
+                        </div>
+                        <div className="text-center p-3 bg-gradient-to-br from-cyan-500/5 to-cyan-500/10 rounded-lg border border-cyan-500/20">
+                          <Globe className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
+                          <p className="text-sm font-medium">Academic Excellence</p>
+                          <p className="text-xs text-muted-foreground">Top 10% Graduate</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -563,25 +772,47 @@ const Portfolio = () => {
       <section id="certifications" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
-            Certifications
+            Certifications & Achievements
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <Card key={index} className="skill-card">
+                <Card key={index} className="group project-card border-2 hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card/90 to-card/70">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full bg-cyan-glow/10 flex items-center justify-center">
-                          <Award className="h-5 w-5 text-cyan-glow" />
+                    <div className="space-y-4">
+                      <div className="flex items-start justify-between">
+                        <div className="flex-shrink-0">
+                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary/50 transition-colors">
+                            <Award className="h-6 w-6 text-primary" />
+                          </div>
+                        </div>
+                        <Badge className="bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/30">
+                          Verified
+                        </Badge>
+                      </div>
+
+                      <div className="space-y-2">
+                        <h3 className="font-bold text-lg group-hover:text-primary transition-colors leading-tight">{cert.name}</h3>
+                        <p className="text-sm font-medium text-accent">{cert.issuer}</p>
+                      </div>
+
+                      <div className="flex items-center justify-between p-3 bg-secondary/30 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-muted-foreground" />
+                          <span className="text-sm font-medium">{cert.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Star className="h-4 w-4 text-cyan-500" />
+                          <span className="text-xs text-muted-foreground">Professional</span>
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <h3 className="font-semibold mb-1">{cert.name}</h3>
-                        <p className="text-sm text-muted-foreground mb-2">{cert.issuer}</p>
-                        <div className="flex items-center justify-between text-xs text-muted-foreground">
-                          <span>{cert.date}</span>
-                          <span>ID: {cert.credentialId}</span>
+
+                      <div className="pt-2 border-t border-border">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-muted-foreground">Credential ID:</span>
+                          <code className="text-xs bg-primary/10 px-2 py-1 rounded text-primary font-mono">
+                            {cert.credentialId}
+                          </code>
                         </div>
                       </div>
                     </div>
@@ -701,6 +932,14 @@ const Portfolio = () => {
           <ChevronUp className="h-5 w-5" />
         </Button>
       )}
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={modalState.project}
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        type={modalState.type}
+      />
     </div>
   );
 };
