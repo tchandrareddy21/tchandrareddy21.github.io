@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -34,10 +35,24 @@ import project3 from '@/assets/project-3.jpg';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [isTyping, setIsTyping] = useState(true);
+  const [typedText, setTypedText] = useState('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const typingText = "Data Scientist & ML Engineer";
+  const fullText = "Data Scientist & ML Engineer";
+
+  useEffect(() => {
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullText.length) {
+        setTypedText(fullText.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -114,40 +129,19 @@ const Portfolio = () => {
 
   const skills = {
     "Programming & Data": [
-      { name: "Python", level: 95 },
-      { name: "Pandas", level: 90 },
-      { name: "NumPy", level: 88 },
-      { name: "Matplotlib", level: 85 },
-      { name: "Seaborn", level: 82 }
+      "Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"
     ],
     "Machine Learning": [
-      { name: "Scikit-learn", level: 90 },
-      { name: "XGBoost", level: 85 },
-      { name: "Random Forest", level: 88 },
-      { name: "SVM", level: 80 },
-      { name: "K-Means", level: 82 },
-      { name: "PCA", level: 78 }
+      "Scikit-learn", "XGBoost", "Random Forest", "SVM", "K-Means", "PCA"
     ],
     "AI & Deep Learning": [
-      { name: "BERT/GPT", level: 85 },
-      { name: "Langchain", level: 88 },
-      { name: "RAG", level: 82 },
-      { name: "CNN", level: 80 },
-      { name: "Transfer Learning", level: 75 }
+      "BERT/GPT", "Langchain", "RAG", "CNN", "Transfer Learning"
     ],
     "MLOps & Cloud": [
-      { name: "AWS", level: 90 },
-      { name: "Docker", level: 85 },
-      { name: "MLflow", level: 80 },
-      { name: "SageMaker", level: 85 },
-      { name: "GitHub Actions", level: 78 }
+      "AWS", "Docker", "MLflow", "SageMaker", "GitHub Actions"
     ],
     "APIs & Deployment": [
-      { name: "Flask", level: 88 },
-      { name: "FastAPI", level: 85 },
-      { name: "Streamlit", level: 82 },
-      { name: "MySQL", level: 80 },
-      { name: "MongoDB", level: 78 }
+      "Flask", "FastAPI", "Streamlit", "MySQL", "MongoDB"
     ]
   };
 
@@ -280,32 +274,6 @@ const Portfolio = () => {
                   />
                 </div>
                 <div className="absolute -inset-4 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
-                <div className="mt-6 flex justify-center gap-4">
-                  <a
-                    href="https://github.com/tchandrareddy21"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
-                  >
-                    <Github className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/tchandrareddy21/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
-                  >
-                    <Linkedin className="w-6 h-6" />
-                  </a>
-                  <a
-                    href="mailto:tchandrareddy21@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
-                  >
-                    <Mail className="w-6 h-6" />
-                  </a>
-                </div>
               </div>
             </div>
             <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
@@ -317,16 +285,15 @@ const Portfolio = () => {
                 <span className="text-foreground">Tiyyagura Chandra Reddy</span>
               </h1>
               <div className="text-xl lg:text-2xl mb-8 h-8">
-                {isTyping && (
-                  <span className="animate-typing overflow-hidden whitespace-nowrap">
-                    {typingText}
-                  </span>
-                )}
+                <span className="text-primary font-medium">
+                  {typedText}
+                  <span className="animate-pulse">|</span>
+                </span>
               </div>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
                 Data Scientist / ML Engineer with 2 years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
                 <Button 
                   onClick={handleDownloadResume}
                   size="lg" 
@@ -344,6 +311,32 @@ const Portfolio = () => {
                   <Mail className="mr-2 h-5 w-5" />
                   Get In Touch
                 </Button>
+              </div>
+              <div className="flex justify-center lg:justify-start gap-4">
+                <a
+                  href="https://github.com/tchandrareddy21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                >
+                  <Github className="w-6 h-6" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/tchandrareddy21/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a
+                  href="mailto:tchandrareddy21@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                >
+                  <Mail className="w-6 h-6" />
+                </a>
               </div>
             </div>
           </div>
@@ -394,26 +387,39 @@ const Portfolio = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, skillList]) => (
-              <Card key={category} className="skill-card">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
+              <Card key={category} className="group relative overflow-hidden border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="flex items-center gap-3 text-xl">
                     {category === 'Programming & Data' && <Code className="h-6 w-6 text-primary" />}
                     {category === 'Machine Learning' && <Database className="h-6 w-6 text-accent" />}
                     {category === 'AI & Deep Learning' && <Globe className="h-6 w-6 text-cyan-glow" />}
                     {category === 'MLOps & Cloud' && <Server className="h-6 w-6 text-primary" />}
                     {category === 'APIs & Deployment' && <Globe className="h-6 w-6 text-accent" />}
-                    {category}
+                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                      {category}
+                    </span>
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                <CardContent className="relative z-10">
+                  <div className="grid grid-cols-1 gap-3">
                     {skillList.map((skill) => (
-                      <Badge key={skill.name} variant="secondary" className="px-3 py-1">
-                        {skill.name}
-                      </Badge>
+                      <div
+                        key={skill}
+                        className="group/skill relative p-3 rounded-lg bg-secondary/50 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 transition-all duration-300 border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-medium text-foreground group-hover/skill:text-primary transition-colors duration-300">
+                            {skill}
+                          </span>
+                          <div className="w-2 h-2 rounded-full bg-primary opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      </div>
                     ))}
                   </div>
                 </CardContent>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Card>
             ))}
           </div>
