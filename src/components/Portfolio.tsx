@@ -169,12 +169,12 @@ const Portfolio = () => {
       technologies: ["Machine Learning", "FastAPI", "Docker", "MongoDB", "AWS(EC2, ECR, S3)"],
       liveUrl: "https://aps-failure-classification.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/aps-failure-classification",
+      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"],
       metrics: {
         duration: "3 months",
         team: "Solo Project",
         impact: "25% faster diagnosis"
-      },
-      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"]
+      }
     },
     {
       title: "LLM-Based Document Q&A with RAG",
