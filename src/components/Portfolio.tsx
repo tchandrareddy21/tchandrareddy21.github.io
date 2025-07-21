@@ -47,11 +47,11 @@ const Portfolio = () => {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     project: any;
-    type: 'demo' | 'github';
+    type: 'learn-more' | 'github';
   }>({
     isOpen: false,
     project: null,
-    type: 'demo'
+    type: 'learn-more'
   });
 
   const fullText = "Data Scientist & ML Engineer";
@@ -220,7 +220,7 @@ const Portfolio = () => {
     }
   ];
 
-  const openModal = (project: any, type: 'demo' | 'github') => {
+  const openModal = (project: any, type: 'learn-more' | 'github') => {
     setModalState({
       isOpen: true,
       project,
@@ -232,7 +232,7 @@ const Portfolio = () => {
     setModalState({
       isOpen: false,
       project: null,
-      type: 'demo'
+      type: 'learn-more'
     });
   };
 
@@ -572,14 +572,14 @@ const Portfolio = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-2 pt-2">
-                    <Button 
-                      size="sm" 
-                      onClick={() => openModal(project, 'demo')}
-                      className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-                    >
-                      <Play className="mr-2 h-3 w-3" />
-                      Live Demo
-                    </Button>
+                     <Button 
+                       size="sm" 
+                       onClick={() => openModal(project, 'learn-more')}
+                       className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
+                     >
+                       <Eye className="mr-2 h-3 w-3" />
+                       Learn More
+                     </Button>
                     <Button 
                       size="sm" 
                       variant="outline" 
