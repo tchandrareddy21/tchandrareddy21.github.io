@@ -525,12 +525,17 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <CardContent className="p-6 space-y-4">
+                  {/* 1. Project Title */}
                   <div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                  </div>
+
+                  {/* 2. Description */}
+                  <div>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
                   </div>
 
-                  {/* Key Features */}
+                  {/* 3. Key Features */}
                   <div className="space-y-2">
                     <h4 className="text-sm font-semibold text-primary">Key Features</h4>
                     <div className="flex flex-wrap gap-1">
@@ -542,7 +547,19 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Metrics */}
+                  {/* 4. Technologies */}
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-semibold">Technologies</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 5. Duration, Solo Project, Insight */}
                   <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
                     <div className="text-center">
                       <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
@@ -558,36 +575,24 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                   {/* Technologies */}
-                   <div className="space-y-2">
-                     <h4 className="text-sm font-semibold">Technologies</h4>
-                     <div className="flex flex-wrap gap-1">
-                       {project.technologies.map((tech) => (
-                         <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
-                           {tech}
-                         </Badge>
-                       ))}
-                     </div>
-                   </div>
-
-                  {/* Action Buttons */}
+                  {/* 6. CTAs */}
                   <div className="flex gap-2 pt-2">
-                     <Button 
-                       size="sm" 
-                       onClick={() => openModal(project, 'learn-more')}
-                       className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-                     >
-                       <Eye className="mr-2 h-3 w-3" />
-                       Learn More
-                     </Button>
                     <Button 
                       size="sm" 
-                      variant="outline" 
-                      onClick={() => openModal(project, 'github')}
-                      className="flex-1 border-primary/50 hover:bg-primary/10"
+                      onClick={() => openModal(project, 'learn-more')}
+                      className="flex-1"
                     >
-                      <Github className="mr-2 h-3 w-3" />
-                      Code
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      Learn More
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                      className="flex-1"
+                    >
+                      <Github className="w-4 h-4 mr-1" />
+                      GitHub
                     </Button>
                   </div>
                 </CardContent>
