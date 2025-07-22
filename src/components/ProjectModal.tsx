@@ -10,20 +10,17 @@ interface ProjectModalProps {
     description: string;
     image: string;
     technologies: string[];
+    liveUrl: string;
     githubUrl: string;
     metrics?: {
       duration: string;
       team: string;
       impact: string;
     };
-    keyFeatures?: string[];
-    fullDescription?: string;
-    techStack?: string[];
-    observations?: string[];
   };
   isOpen: boolean;
   onClose: () => void;
-  type: 'learn-more' | 'github';
+  type: 'demo' | 'github';
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, type }) => {
@@ -48,7 +45,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, t
         <CardContent className="p-6">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-              {type === 'learn-more' ? 'Project Details' : 'GitHub Repository'}
+              {type === 'demo' ? 'Live Demo' : 'GitHub Repository'}
             </h3>
             <Button
               variant="ghost"
@@ -60,96 +57,91 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose, t
             </Button>
           </div>
 
-          <div className="space-y-6">
-            <div className="relative">
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="w-full h-64 object-cover rounded-lg"
-              />
-            </div>
+          <div className="mb-6">
+            <img 
+              src={project.image} 
+              alt={project.title}
+              className="w-full h-48 object-cover rounded-lg shadow-lg"
+            />
+          </div>
 
+          <div className="space-y-4">
             <div>
-              <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-              <p className="text-muted-foreground mb-4">
-                {type === 'learn-more' ? project.fullDescription || project.description : project.description}
-              </p>
+              <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
+              <p className="text-muted-foreground">{project.description}</p>
             </div>
 
             {project.metrics && (
-              <div className="grid grid-cols-3 gap-4 p-4 bg-muted/50 rounded-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{project.metrics.duration}</div>
-                  <div className="text-sm text-muted-foreground">Duration</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-2 p-3 bg-secondary/30 rounded-lg">
+                  <Calendar className="h-4 w-4 text-primary" />
+                  <div>
+                    <p className="text-xs text-muted-foreground">Duration</p>
+                    <p className="font-medium">{project.metrics.duration}</p>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{project.metrics.team}</div>
-                  <div className="text-sm text-muted-foreground">Team Size</div>
+                <div className="flex items-center gap-2 p-3 bg-secondary/30 rounded-lg">
+                  <Users className="h-4 w-4 text-accent" />
+                  <div>
+                    <p className="text-xs text-muted-foreground">Team Size</p>
+                    <p className="font-medium">{project.metrics.team}</p>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{project.metrics.impact}</div>
-                  <div className="text-sm text-muted-foreground">Impact</div>
-                </div>
-              </div>
-            )}
-
-            {type === 'learn-more' && project.keyFeatures && (
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Key Features</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {project.keyFeatures.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
+                <div className="flex items-center gap-2 p-3 bg-secondary/30 rounded-lg">
+                  <Star className="h-4 w-4 text-yellow-500" />
+                  <div>
+                    <p className="text-xs text-muted-foreground">Impact</p>
+                    <p className="font-medium">{project.metrics.impact}</p>
+                  </div>
                 </div>
               </div>
             )}
 
             <div>
-              <h4 className="text-lg font-semibold mb-3">
-                {type === 'learn-more' ? 'Technology Stack' : 'Technologies Used'}
-              </h4>
+              <h5 className="font-semibold mb-2">Technologies Used</h5>
               <div className="flex flex-wrap gap-2">
-                {(type === 'learn-more' ? project.techStack || project.technologies : project.technologies).map((tech) => (
-                  <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary">
+                {project.technologies.map((tech) => (
+                  <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary border border-primary/20">
                     {tech}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            {type === 'learn-more' && project.observations && (
-              <div>
-                <h4 className="text-lg font-semibold mb-3">Key Observations</h4>
-                <ul className="space-y-2">
-                  {project.observations.map((observation, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">{observation}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div className="flex gap-3 pt-4">
-              <Button 
-                onClick={() => openInNewTab(project.githubUrl)}
-                variant="outline"
-                className="flex-1"
-              >
-                <Github className="w-4 h-4 mr-2" />
-                View on GitHub
-              </Button>
-              <Button 
-                onClick={() => openInNewTab(project.githubUrl)}
-                className="flex-1"
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Open in New Tab
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              {type === 'demo' ? (
+                <>
+                  <Button 
+                    onClick={() => openInNewTab(project.liveUrl)}
+                    className="gradient-primary hover:opacity-90"
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Open Live Demo
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    onClick={onClose}
+                  >
+                    Close
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button 
+                    onClick={() => openInNewTab(project.githubUrl)}
+                    className="bg-background text-foreground border border-border hover:bg-secondary"
+                  >
+                    <Github className="mr-2 h-4 w-4" />
+                    Open in New Tab
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    onClick={onClose}
+                  >
+                    Close
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </CardContent>

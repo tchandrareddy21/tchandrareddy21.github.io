@@ -47,11 +47,11 @@ const Portfolio = () => {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     project: any;
-    type: 'learn-more' | 'github';
+    type: 'demo' | 'github';
   }>({
     isOpen: false,
     project: null,
-    type: 'learn-more'
+    type: 'demo'
   });
 
   const fullText = "Data Scientist & ML Engineer";
@@ -113,8 +113,13 @@ const Portfolio = () => {
     
     toast({
       title: "Resume Download",
-      description: "Resume download started successfully!",
+      description: "Resume download started. Scrolling to contact section...",
     });
+    
+    // Scroll to contact section
+    setTimeout(() => {
+      scrollToSection('contact');
+    }, 500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -164,12 +169,12 @@ const Portfolio = () => {
       technologies: ["Machine Learning", "FastAPI", "Docker", "MongoDB", "AWS(EC2, ECR, S3)"],
       liveUrl: "https://aps-failure-classification.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/aps-failure-classification",
-      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"],
       metrics: {
         duration: "3 months",
         team: "Solo Project",
         impact: "25% faster diagnosis"
-      }
+      },
+      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"]
     },
     {
       title: "LLM-Based Document Q&A with RAG",
@@ -215,7 +220,7 @@ const Portfolio = () => {
     }
   ];
 
-  const openModal = (project: any, type: 'learn-more' | 'github') => {
+  const openModal = (project: any, type: 'demo' | 'github') => {
     setModalState({
       isOpen: true,
       project,
@@ -227,7 +232,7 @@ const Portfolio = () => {
     setModalState({
       isOpen: false,
       project: null,
-      type: 'learn-more'
+      type: 'demo'
     });
   };
 
@@ -297,17 +302,8 @@ const Portfolio = () => {
     }
   ];
 
-  // Remove mock stats since they're not real
-
   return (
-    <div className="min-h-screen bg-background text-foreground animated-background">
-      {/* Floating Background Orbs */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-primary rounded-full opacity-20 glow-purple animate-floating-orbs"></div>
-        <div className="absolute top-40 right-40 w-24 h-24 bg-gradient-accent rounded-full opacity-30 glow-pink animate-floating-orbs" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-40 left-40 w-28 h-28 bg-gradient-secondary rounded-full opacity-25 glow-blue animate-floating-orbs" style={{animationDelay: '4s'}}></div>
-        <div className="absolute bottom-20 right-20 w-20 h-20 bg-gradient-primary rounded-full opacity-20 glow-green animate-floating-orbs" style={{animationDelay: '6s'}}></div>
-      </div>
+    <div className="min-h-screen bg-background text-foreground">
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
@@ -322,8 +318,7 @@ const Portfolio = () => {
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
                 { id: 'experience', label: 'Experience' },
-                { id: 'education', label: 'Education' },
-                { id: 'certifications', label: 'Certifications' }
+                { id: 'contact', label: 'Contact' }
               ].map((item) => (
                 <button
                   key={item.id}
@@ -382,27 +377,22 @@ const Portfolio = () => {
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </Button>
-                <a 
-                  href="mailto:tchandrareddy21@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => scrollToSection('contact')}
+                  className="border-primary/50 hover:bg-primary/10"
                 >
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    className="border-primary/50 hover:bg-primary/10"
-                  >
-                    <Mail className="mr-2 h-5 w-5" />
-                    Get In Touch
-                  </Button>
-                </a>
+                  <Mail className="mr-2 h-5 w-5" />
+                  Get In Touch
+                </Button>
               </div>
               <div className="flex justify-center lg:justify-start gap-4">
                 <a
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
                   <Github className="w-6 h-6" />
                 </a>
@@ -410,8 +400,7 @@ const Portfolio = () => {
                   href="https://www.linkedin.com/in/tchandrareddy21/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
-                  style={{animationDelay: '0.5s'}}
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
@@ -419,8 +408,7 @@ const Portfolio = () => {
                   href="mailto:tchandrareddy21@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
-                  style={{animationDelay: '1s'}}
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
                   <Mail className="w-6 h-6" />
                 </a>
@@ -537,17 +525,12 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <CardContent className="p-6 space-y-4">
-                  {/* 1. Project Title */}
                   <div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                  </div>
-
-                  {/* 2. Description */}
-                  <div>
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
                   </div>
 
-                  {/* 3. Key Features */}
+                  {/* Key Features */}
                   <div className="space-y-2">
                     <h4 className="text-sm font-semibold text-primary">Key Features</h4>
                     <div className="flex flex-wrap gap-1">
@@ -559,19 +542,7 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* 4. Technologies */}
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold">Technologies</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* 5. Duration, Solo Project, Insight */}
+                  {/* Metrics */}
                   <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
                     <div className="text-center">
                       <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
@@ -587,24 +558,36 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* 6. CTAs */}
+                   {/* Technologies */}
+                   <div className="space-y-2">
+                     <h4 className="text-sm font-semibold">Technologies</h4>
+                     <div className="flex flex-wrap gap-1">
+                       {project.technologies.map((tech) => (
+                         <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
+                           {tech}
+                         </Badge>
+                       ))}
+                     </div>
+                   </div>
+
+                  {/* Action Buttons */}
                   <div className="flex gap-2 pt-2">
                     <Button 
                       size="sm" 
-                      onClick={() => openModal(project, 'learn-more')}
-                      className="flex-1"
+                      onClick={() => openModal(project, 'demo')}
+                      className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
                     >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      Learn More
+                      <Play className="mr-2 h-3 w-3" />
+                      Live Demo
                     </Button>
                     <Button 
                       size="sm" 
-                      variant="outline"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                      className="flex-1"
+                      variant="outline" 
+                      onClick={() => openModal(project, 'github')}
+                      className="flex-1 border-primary/50 hover:bg-primary/10"
                     >
-                      <Github className="w-4 h-4 mr-1" />
-                      GitHub
+                      <Github className="mr-2 h-3 w-3" />
+                      Code
                     </Button>
                   </div>
                 </CardContent>
@@ -841,13 +824,71 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Footer with Page Stats */}
-      <footer className="py-12 bg-gradient-to-r from-secondary/50 to-accent/20 border-t border-border">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
-          {/* Removed analytics section */}
+          <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
+            Get In Touch
+          </h2>
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-muted-foreground">
+                I'm always open to discussing new opportunities, interesting projects, 
+                or just having a friendly chat about technology and development.
+              </p>
+            </div>
+            
+            {/* Contact Form - Centered */}
+            <Card className="project-card">
+              <CardHeader>
+                <CardTitle>Send a Message</CardTitle>
+                <CardDescription>
+                  Fill out the form below and I'll get back to you as soon as possible.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">First Name</label>
+                      <Input name="firstName" placeholder="Your first name" required />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">Last Name</label>
+                      <Input name="lastName" placeholder="Your last name" required />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Email</label>
+                    <Input name="email" type="email" placeholder="your.email@example.com" required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Subject</label>
+                    <Input name="subject" placeholder="What's this about?" required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">Message</label>
+                    <Textarea 
+                      name="message"
+                      placeholder="Tell me about your project or question..." 
+                      rows={6}
+                      required 
+                    />
+                  </div>
+                  <Button type="submit" className="w-full gradient-primary hover:opacity-90">
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
 
-          {/* Footer Content */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border/50">
+      {/* Footer */}
+      <footer className="py-8 border-t border-border">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">
               © 2024 Tiyyagura Chandra Reddy. All rights reserved.
             </p>
