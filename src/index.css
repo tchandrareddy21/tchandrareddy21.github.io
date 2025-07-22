@@ -8,56 +8,58 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark mode only - Professional blue theme */
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
+    /* Dark mode only - Vibrant neon theme */
+    --background: 210 30% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 217 33% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 217 33% 12%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 20% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 84% 5%;
+    --primary: 280 100% 70%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 217 33% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217 33% 18%;
+    --muted: 210 20% 18%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 212 95% 68%;
-    --accent-foreground: 222 84% 5%;
+    --accent: 340 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217 33% 18%;
-    --input: 217 33% 18%;
-    --ring: 217 91% 60%;
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
+    --ring: 280 100% 70%;
 
     --radius: 0.75rem;
 
-    /* Dark theme specific colors */
-    --blue-primary: 217 91% 60%;
-    --blue-accent: 212 95% 68%;
-    --blue-light: 204 96% 72%;
-    --gray-blue: 199 89% 48%;
-    --navy-blue: 222 84% 5%;
+    /* Vibrant theme specific colors */
+    --electric-purple: 280 100% 70%;
+    --neon-pink: 340 100% 60%;
+    --cyber-blue: 195 100% 50%;
+    --lime-green: 90 100% 50%;
+    --orange-glow: 30 100% 60%;
 
-    /* Gradients for dark theme */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(212 95% 68%));
-    --gradient-secondary: linear-gradient(135deg, hsl(204 96% 72%), hsl(199 89% 48%));
-    --gradient-accent: linear-gradient(135deg, hsl(212 95% 68%), hsl(204 96% 72%));
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(212 95% 68% / 0.1), hsl(204 96% 72% / 0.1));
+    /* Vibrant gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(340 100% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(195 100% 50%), hsl(280 100% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(340 100% 60%), hsl(30 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(340 100% 60% / 0.1), hsl(195 100% 50% / 0.1));
+    --gradient-background: linear-gradient(45deg, hsl(280 100% 70% / 0.05), hsl(340 100% 60% / 0.05), hsl(195 100% 50% / 0.05), hsl(90 100% 50% / 0.05));
 
-    /* Dark theme glows and shadows */
-    --glow-primary: 0 0 30px hsl(217 91% 60% / 0.3);
-    --glow-accent: 0 0 30px hsl(212 95% 68% / 0.3);
-    --glow-light: 0 0 30px hsl(204 96% 72% / 0.3);
-    --shadow-card: 0 10px 30px -10px hsl(217 91% 60% / 0.2);
-    --shadow-hover: 0 20px 50px -10px hsl(217 91% 60% / 0.3);
+    /* Vibrant glows and shadows */
+    --glow-purple: 0 0 30px hsl(280 100% 70% / 0.5);
+    --glow-pink: 0 0 30px hsl(340 100% 60% / 0.5);
+    --glow-blue: 0 0 30px hsl(195 100% 50% / 0.5);
+    --glow-green: 0 0 30px hsl(90 100% 50% / 0.5);
+    --shadow-card: 0 10px 30px -10px hsl(280 100% 70% / 0.3);
+    --shadow-hover: 0 20px 50px -10px hsl(340 100% 60% / 0.4);
 
     /* Animation durations */
     --transition-fast: 0.2s;
@@ -114,12 +116,22 @@ All colors MUST be HSL.
     box-shadow: var(--glow-purple);
   }
 
-  .glow-cyan {
-    box-shadow: var(--glow-cyan);
-  }
-
   .glow-pink {
     box-shadow: var(--glow-pink);
+  }
+
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+
+  .glow-green {
+    box-shadow: var(--glow-green);
+  }
+
+  .animated-background {
+    background: var(--gradient-background);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
   }
 
   .shadow-card {
@@ -152,7 +164,21 @@ All colors MUST be HSL.
 
   @keyframes pulse-glow {
     0%, 100% { box-shadow: var(--glow-purple); }
-    50% { box-shadow: var(--glow-cyan); }
+    25% { box-shadow: var(--glow-pink); }
+    50% { box-shadow: var(--glow-blue); }
+    75% { box-shadow: var(--glow-green); }
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes floating-orbs {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    33% { transform: translateY(-20px) translateX(10px); }
+    66% { transform: translateY(10px) translateX(-10px); }
   }
 
   @keyframes fade-in-up {
@@ -226,6 +252,14 @@ All colors MUST be HSL.
   .hover-glow:hover {
     box-shadow: var(--glow-purple);
     transform: scale(1.05);
+  }
+
+  .animate-floating-orbs {
+    animation: floating-orbs 6s ease-in-out infinite;
+  }
+
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
   }
 
   .skill-card {
