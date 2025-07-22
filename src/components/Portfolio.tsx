@@ -297,14 +297,7 @@ const Portfolio = () => {
     }
   ];
 
-  // Mock page stats
-  const pageStats = {
-    uniqueViewers: Math.floor(Math.random() * 5000) + 10000,
-    totalViews: Math.floor(Math.random() * 20000) + 50000,
-    avgLatency: Math.floor(Math.random() * 50) + 150,
-    uptime: 99.9,
-    lastUpdated: new Date().toLocaleDateString()
-  };
+  // Remove mock stats since they're not real
 
   return (
     <div className="min-h-screen bg-background text-foreground animated-background">
@@ -409,7 +402,7 @@ const Portfolio = () => {
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
                 >
                   <Github className="w-6 h-6" />
                 </a>
@@ -417,7 +410,8 @@ const Portfolio = () => {
                   href="https://www.linkedin.com/in/tchandrareddy21/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  style={{animationDelay: '0.5s'}}
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
@@ -425,7 +419,8 @@ const Portfolio = () => {
                   href="mailto:tchandrareddy21@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  style={{animationDelay: '1s'}}
                 >
                   <Mail className="w-6 h-6" />
                 </a>
@@ -849,63 +844,7 @@ const Portfolio = () => {
       {/* Footer with Page Stats */}
       <footer className="py-12 bg-gradient-to-r from-secondary/50 to-accent/20 border-t border-border">
         <div className="container mx-auto px-6">
-          {/* Page Analytics */}
-          <div className="mb-8">
-            <h3 className="text-xl font-semibold text-center mb-6 gradient-primary bg-clip-text text-transparent">
-              Portfolio Analytics
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              <Card className="bg-card/80 border border-primary/20 hover:border-primary/40 transition-all duration-300">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Eye className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="text-2xl font-bold text-primary">{pageStats.uniqueViewers.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">Unique Viewers</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-card/80 border border-accent/20 hover:border-accent/40 transition-all duration-300">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <TrendingUp className="w-5 h-5 text-accent" />
-                  </div>
-                  <div className="text-2xl font-bold text-accent">{pageStats.totalViews.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">Total Views</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-card/80 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Server className="w-5 h-5 text-cyan-500" />
-                  </div>
-                  <div className="text-2xl font-bold text-cyan-500">{pageStats.avgLatency}ms</div>
-                  <div className="text-xs text-muted-foreground">Avg Latency</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-card/80 border border-green-500/20 hover:border-green-500/40 transition-all duration-300">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Target className="w-5 h-5 text-green-500" />
-                  </div>
-                  <div className="text-2xl font-bold text-green-500">{pageStats.uptime}%</div>
-                  <div className="text-xs text-muted-foreground">Uptime</div>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-card/80 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
-                <CardContent className="p-4 text-center">
-                  <div className="flex items-center justify-center mb-2">
-                    <Calendar className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <div className="text-2xl font-bold text-orange-500">{pageStats.lastUpdated}</div>
-                  <div className="text-xs text-muted-foreground">Last Updated</div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
+          {/* Removed analytics section */}
 
           {/* Footer Content */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border/50">

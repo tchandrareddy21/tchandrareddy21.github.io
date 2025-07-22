@@ -39,27 +39,27 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Vibrant theme specific colors */
-    --electric-purple: 280 100% 70%;
-    --neon-pink: 340 100% 60%;
-    --cyber-blue: 195 100% 50%;
-    --lime-green: 90 100% 50%;
-    --orange-glow: 30 100% 60%;
+    /* Better vibrant colors for readability */
+    --electric-blue: 210 100% 55%;
+    --emerald-green: 150 100% 45%;
+    --violet-purple: 260 100% 65%;
+    --coral-orange: 15 100% 60%;
+    --teal-cyan: 180 100% 40%;
 
-    /* Vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(340 100% 60%));
-    --gradient-secondary: linear-gradient(135deg, hsl(195 100% 50%), hsl(280 100% 70%));
-    --gradient-accent: linear-gradient(135deg, hsl(340 100% 60%), hsl(30 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(340 100% 60% / 0.1), hsl(195 100% 50% / 0.1));
-    --gradient-background: linear-gradient(45deg, hsl(280 100% 70% / 0.05), hsl(340 100% 60% / 0.05), hsl(195 100% 50% / 0.05), hsl(90 100% 50% / 0.05));
+    /* Improved gradients with better contrast */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 55%), hsl(260 100% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 40%));
+    --gradient-accent: linear-gradient(135deg, hsl(260 100% 65%), hsl(15 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 55% / 0.08), hsl(260 100% 65% / 0.08), hsl(150 100% 45% / 0.08));
+    --gradient-background: linear-gradient(45deg, hsl(210 100% 55% / 0.03), hsl(260 100% 65% / 0.03), hsl(150 100% 45% / 0.03), hsl(180 100% 40% / 0.03));
 
-    /* Vibrant glows and shadows */
-    --glow-purple: 0 0 30px hsl(280 100% 70% / 0.5);
-    --glow-pink: 0 0 30px hsl(340 100% 60% / 0.5);
-    --glow-blue: 0 0 30px hsl(195 100% 50% / 0.5);
-    --glow-green: 0 0 30px hsl(90 100% 50% / 0.5);
-    --shadow-card: 0 10px 30px -10px hsl(280 100% 70% / 0.3);
-    --shadow-hover: 0 20px 50px -10px hsl(340 100% 60% / 0.4);
+    /* Softer glows for better readability */
+    --glow-blue: 0 0 25px hsl(210 100% 55% / 0.4);
+    --glow-purple: 0 0 25px hsl(260 100% 65% / 0.4);
+    --glow-green: 0 0 25px hsl(150 100% 45% / 0.4);
+    --glow-orange: 0 0 25px hsl(15 100% 60% / 0.4);
+    --shadow-card: 0 10px 30px -10px hsl(210 100% 55% / 0.2);
+    --shadow-hover: 0 20px 50px -10px hsl(260 100% 65% / 0.3);
 
     /* Animation durations */
     --transition-fast: 0.2s;
