@@ -72,7 +72,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'certifications', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'certifications'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -113,13 +113,8 @@ const Portfolio = () => {
     
     toast({
       title: "Resume Download",
-      description: "Resume download started. Scrolling to contact section...",
+      description: "Resume download started successfully!",
     });
-    
-    // Scroll to contact section
-    setTimeout(() => {
-      scrollToSection('contact');
-    }, 500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -317,8 +312,7 @@ const Portfolio = () => {
                 { id: 'about', label: 'About' },
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
-                { id: 'experience', label: 'Experience' },
-                { id: 'contact', label: 'Contact' }
+                { id: 'experience', label: 'Experience' }
               ].map((item) => (
                 <button
                   key={item.id}
@@ -380,7 +374,7 @@ const Portfolio = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => window.open('mailto:tchandrareddy21@gmail.com', '_blank')}
                   className="border-primary/50 hover:bg-primary/10"
                 >
                   <Mail className="mr-2 h-5 w-5" />
@@ -824,66 +818,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
-            Get In Touch
-          </h2>
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-8">
-              <p className="text-muted-foreground">
-                I'm always open to discussing new opportunities, interesting projects, 
-                or just having a friendly chat about technology and development.
-              </p>
-            </div>
-            
-            {/* Contact Form - Centered */}
-            <Card className="project-card">
-              <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and I'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">First Name</label>
-                      <Input name="firstName" placeholder="Your first name" required />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium mb-2 block">Last Name</label>
-                      <Input name="lastName" placeholder="Your last name" required />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Email</label>
-                    <Input name="email" type="email" placeholder="your.email@example.com" required />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Subject</label>
-                    <Input name="subject" placeholder="What's this about?" required />
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium mb-2 block">Message</label>
-                    <Textarea 
-                      name="message"
-                      placeholder="Tell me about your project or question..." 
-                      rows={6}
-                      required 
-                    />
-                  </div>
-                  <Button type="submit" className="w-full gradient-primary hover:opacity-90">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-8 border-t border-border">
