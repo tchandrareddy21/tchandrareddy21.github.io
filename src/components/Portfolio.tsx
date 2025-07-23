@@ -300,7 +300,8 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-white/20"
+           style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-primary">
@@ -329,7 +330,7 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-purple-900/10 to-cyan-900/10">
         <div className="absolute inset-0 gradient-hero opacity-50"></div>
         <div className="container mx-auto px-6 py-20 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -450,7 +451,8 @@ const Portfolio = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, skillList]) => (
-              <Card key={category} className="group relative overflow-hidden border-2 border-transparent hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card/80 to-card/60 backdrop-blur-sm">
+              <Card key={category} className="group relative overflow-hidden border-2 border-white/20 hover:border-primary/50 transition-all duration-300 bg-card/60 backdrop-blur-xl"
+                   style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <CardHeader className="relative z-10">
                   <CardTitle className="flex items-center gap-3 text-xl">
@@ -513,9 +515,19 @@ const Portfolio = () => {
                   </div>
                 </div>
                 <CardContent className="p-6 space-y-4">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                    </div>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      onClick={() => openModal(project, 'github')}
+                      className="border-primary/50 hover:bg-primary/10 shrink-0"
+                    >
+                      <Github className="h-3 w-3" />
+                    </Button>
                   </div>
 
                   {/* Key Features */}
@@ -558,18 +570,6 @@ const Portfolio = () => {
                      </div>
                    </div>
 
-                   {/* Action Buttons */}
-                   <div className="flex justify-center pt-2">
-                     <Button 
-                       size="sm" 
-                       variant="outline" 
-                       onClick={() => openModal(project, 'github')}
-                       className="border-primary/50 hover:bg-primary/10"
-                     >
-                       <Github className="mr-2 h-3 w-3" />
-                       View Code
-                     </Button>
-                   </div>
                 </CardContent>
               </Card>
             ))}
