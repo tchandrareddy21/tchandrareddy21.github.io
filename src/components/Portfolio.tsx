@@ -771,61 +771,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Certifications Section */}
-      <section id="certifications" className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
-            Certifications & Achievements
-          </h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="group project-card border-2 hover:border-primary/30 transition-all duration-300 bg-gradient-to-br from-card/90 to-card/70">
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      <div className="flex items-start justify-between">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary/50 transition-colors">
-                            <Award className="h-6 w-6 text-primary" />
-                          </div>
-                        </div>
-                        <Badge className="bg-primary text-white border-0 font-medium px-3 py-1">
-                          Verified
-                        </Badge>
-                      </div>
-
-                      <div className="space-y-2">
-                        <h3 className="font-bold text-lg group-hover:text-primary transition-colors leading-tight">{cert.name}</h3>
-                        <p className="text-sm font-medium text-accent">{cert.issuer}</p>
-                      </div>
-
-                      <div className="flex items-center justify-between p-3 bg-secondary/30 rounded-lg">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-muted-foreground" />
-                          <span className="text-sm font-medium">{cert.date}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Star className="h-4 w-4 text-cyan-500" />
-                          <span className="text-xs text-muted-foreground">Professional</span>
-                        </div>
-                      </div>
-
-                      <div className="pt-2 border-t border-border">
-                        <div className="flex items-center justify-between">
-                          <span className="text-xs text-muted-foreground">Credential ID:</span>
-                          <code className="text-xs bg-primary/10 px-2 py-1 rounded text-primary font-mono">
-                            {cert.credentialId}
-                          </code>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
 
       {/* Footer */}
