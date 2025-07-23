@@ -47,7 +47,7 @@ const Portfolio = () => {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     project: any;
-    type: 'demo' | 'github';
+    type: 'demo' | 'github' | 'learnMore';
   }>({
     isOpen: false,
     project: null,
@@ -172,9 +172,32 @@ const Portfolio = () => {
       keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"]
     },
     {
+      title: "Financial Product Complaint Analysis",
+      description: "Built a machine learning system to classify and predict customer complaints for financial products, enabling quick identification of problematic complaints and helping companies take proactive action to resolve customer issues.",
+      image: project2,
+      technologies: ["Python", "Machine Learning", "Docker", "CircleCI", "Apache Airflow"],
+      githubUrl: "https://github.com/tchandrareddy21/financial-product-complaint",
+      metrics: {
+        duration: "4 months",
+        team: "Solo Project",
+        impact: "Automated complaint triage"
+      },
+      keyFeatures: ["ML-based complaint classification", "Automated pipeline", "CI/CD integration"],
+      hasLearnMore: true,
+      learnMoreContent: {
+        problemStatement: "Complaints can give us insights into problems people are experiencing in the marketplace and help us to understand the reason and do necessary modification in existing financial product if required.",
+        solutionProposed: "By understanding existing complaints registered against financial products we can create an ML model that can help us to identify newly registered complaints whether they are problematic or not and accordingly company can take quick action to resolve the issue, and satisfy the customer's need. The problem is to identify registered complaint will be disputed by customer or not.",
+        dataSource: "Consumer Financial Protection Bureau (CFPB) consumer complaints database",
+        techStack: ["Python", "Machine Learning", "Docker", "CircleCI", "Apache Airflow", "Data Processing"],
+        mlApproach: "Multi-class classification to categorize complaints and predict dispute likelihood",
+        deployment: "Containerized solution with automated CI/CD pipeline using CircleCI",
+        impact: "Enables companies to automatically triage complaints and prioritize resolution efforts"
+      }
+    },
+    {
       title: "LLM-Based Document Q&A with RAG",
       description: "Developed an LLM-powered document Q&A system using Retrieval-Augmented Generation (RAG), integrating Groq for querying, OpenAI embeddings for vectorization, and FAISS for fast similarity search.",
-      image: project2,
+      image: project3,
       technologies: ["LangChain", "Groq", "OpenAI", "FAISS", "Streamlit"],
       liveUrl: "https://llm-rag-qna.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/llm-rag-qna",
@@ -188,7 +211,7 @@ const Portfolio = () => {
     {
       title: "Logs Classification",
       description: "Developed a hybrid log classification system integrating Regex, Sentence Transformers with Logistic Regression, and Large Language Models (LLMs) to efficiently handle logs of varying complexity.",
-      image: project3,
+      image: project1,
       technologies: ["FastAPI", "Streamlit", "Machine Learning", "RegEx", "GROQ"],
       liveUrl: "https://logs-classification.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/logs-classification",
@@ -215,7 +238,7 @@ const Portfolio = () => {
     }
   ];
 
-  const openModal = (project: any, type: 'demo' | 'github') => {
+  const openModal = (project: any, type: 'demo' | 'github' | 'learnMore') => {
     setModalState({
       isOpen: true,
       project,
