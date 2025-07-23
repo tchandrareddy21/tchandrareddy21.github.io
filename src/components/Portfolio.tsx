@@ -362,7 +362,7 @@ const Portfolio = () => {
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
                 Data Scientist / ML Engineer with 2 years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+              <div className="flex justify-center lg:justify-start mb-6">
                 <Button 
                   onClick={handleDownloadResume}
                   size="lg" 
@@ -371,22 +371,14 @@ const Portfolio = () => {
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  onClick={() => window.open('mailto:tchandrareddy21@gmail.com', '_blank')}
-                  className="border-primary/50 hover:bg-primary/10"
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Get In Touch
-                </Button>
               </div>
               <div className="flex justify-center lg:justify-start gap-4">
                 <a
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  style={{ animationDelay: '0s' }}
                 >
                   <Github className="w-6 h-6" />
                 </a>
@@ -394,7 +386,8 @@ const Portfolio = () => {
                   href="https://www.linkedin.com/in/tchandrareddy21/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  style={{ animationDelay: '0.5s' }}
                 >
                   <Linkedin className="w-6 h-6" />
                 </a>
@@ -402,7 +395,8 @@ const Portfolio = () => {
                   href="mailto:tchandrareddy21@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  style={{ animationDelay: '1s' }}
                 >
                   <Mail className="w-6 h-6" />
                 </a>
@@ -564,26 +558,18 @@ const Portfolio = () => {
                      </div>
                    </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2 pt-2">
-                    <Button 
-                      size="sm" 
-                      onClick={() => openModal(project, 'demo')}
-                      className="flex-1 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70"
-                    >
-                      <Play className="mr-2 h-3 w-3" />
-                      Live Demo
-                    </Button>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      onClick={() => openModal(project, 'github')}
-                      className="flex-1 border-primary/50 hover:bg-primary/10"
-                    >
-                      <Github className="mr-2 h-3 w-3" />
-                      Code
-                    </Button>
-                  </div>
+                   {/* Action Buttons */}
+                   <div className="flex justify-center pt-2">
+                     <Button 
+                       size="sm" 
+                       variant="outline" 
+                       onClick={() => openModal(project, 'github')}
+                       className="border-primary/50 hover:bg-primary/10"
+                     >
+                       <Github className="mr-2 h-3 w-3" />
+                       View Code
+                     </Button>
+                   </div>
                 </CardContent>
               </Card>
             ))}

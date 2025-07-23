@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark portfolio theme with vibrant colors */
+    /* Dark portfolio theme with improved contrast */
     --background: 222 20% 8%;
     --foreground: 210 40% 98%;
 
@@ -18,24 +18,24 @@ All colors MUST be HSL.
     --popover: 222 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 267 90% 65%;
+    --primary: 267 90% 70%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 222 20% 18%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 222 20% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 178 70% 50%;
+    --accent: 178 70% 55%;
     --accent-foreground: 222 20% 8%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 222 20% 20%;
+    --border: 222 20% 25%;
     --input: 222 20% 15%;
-    --ring: 267 90% 65%;
+    --ring: 267 90% 70%;
 
     --radius: 0.75rem;
 
