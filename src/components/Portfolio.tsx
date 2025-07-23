@@ -303,7 +303,7 @@ const Portfolio = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
+            <div className="text-2xl font-bold text-primary">
               Tiyyagura Chandra Reddy
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -347,7 +347,7 @@ const Portfolio = () => {
             </div>
             <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-                <span className="gradient-primary bg-clip-text text-transparent">
+                <span className="text-primary">
                   Hello, I'm
                 </span>
                 <br />
@@ -409,7 +409,7 @@ const Portfolio = () => {
       {/* About Section */}
       <section id="about" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             About Me
           </h2>
           <div className="max-w-4xl mx-auto">
@@ -445,7 +445,7 @@ const Portfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Skills & Expertise
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -492,7 +492,7 @@ const Portfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Featured Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -580,7 +580,7 @@ const Portfolio = () => {
       {/* Experience Section */}
       <section id="experience" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Work Experience
           </h2>
           <div className="max-w-6xl mx-auto">
@@ -597,7 +597,7 @@ const Portfolio = () => {
                           </div>
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-2 gradient-primary bg-clip-text text-transparent">{exp.title}</h3>
+                          <h3 className="text-2xl font-bold mb-2 text-primary">{exp.title}</h3>
                           <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
                             <span className="font-semibold text-primary text-lg">{exp.company}</span>
                             <span className="flex items-center gap-1">
@@ -687,7 +687,7 @@ const Portfolio = () => {
       {/* Education Section */}
       <section id="education" className="py-20 bg-secondary/30">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Education
           </h2>
           <div className="max-w-5xl mx-auto">
@@ -702,7 +702,7 @@ const Portfolio = () => {
                     </div>
                     <div className="flex-1 space-y-4">
                       <div>
-                        <h3 className="text-2xl font-bold mb-2 gradient-secondary bg-clip-text text-transparent">{edu.degree}</h3>
+                        <h3 className="text-2xl font-bold mb-2 text-accent">{edu.degree}</h3>
                         <div className="flex flex-wrap items-center gap-6 mb-4">
                           <span className="text-lg font-semibold text-accent">{edu.institution}</span>
                           <span className="flex items-center gap-2 text-muted-foreground">
@@ -751,7 +751,7 @@ const Portfolio = () => {
       {/* Certifications Section */}
       <section id="certifications" className="py-20">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Certifications & Achievements
           </h2>
           <div className="max-w-6xl mx-auto">
