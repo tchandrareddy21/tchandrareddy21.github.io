@@ -357,8 +357,8 @@ const Portfolio = () => {
         <div className="absolute inset-0 gradient-hero opacity-50"></div>
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Desktop Profile Image - Left Side */}
-            <div className="hidden lg:flex flex-1 justify-end animate-scale-in">
+            {/* Desktop Profile Image - Right Side */}
+            <div className="hidden lg:flex flex-1 justify-end animate-scale-in order-2">
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
                   <img 
@@ -372,7 +372,7 @@ const Portfolio = () => {
             </div>
             
             {/* Text Content */}
-            <div className="flex-1 text-center lg:text-left animate-fade-in-up">
+            <div className="flex-1 text-center lg:text-left animate-fade-in-up order-1">
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
                 <span className="text-primary">
                   Hello, I'm
@@ -402,7 +402,7 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-                Data Scientist / ML Engineer with 2 years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
+                Data Scientist / ML Engineer with 2+ years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
               <div className="flex justify-center lg:justify-start gap-4 mb-6">
                 <a
@@ -462,7 +462,7 @@ const Portfolio = () => {
                   <h3 className="text-2xl font-semibold">Professional Summary</h3>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  I am a passionate Data Scientist / ML Engineer with 2 years of experience as a Software Engineer 
+                  I am a passionate Data Scientist / ML Engineer with 2+ years of experience as a Software Engineer 
                   and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
                   I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
                   measurable business impact.
