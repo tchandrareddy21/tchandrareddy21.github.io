@@ -355,7 +355,7 @@ const Portfolio = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-purple-900/10 to-cyan-900/10">
         <div className="absolute inset-0 gradient-hero opacity-50"></div>
-        <div className="container mx-auto px-6 py-20 relative z-10">
+        <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex-1 flex justify-center lg:justify-end animate-scale-in order-1 lg:order-2">
               <div className="relative">
@@ -537,59 +537,59 @@ const Portfolio = () => {
                     </Badge>
                   </div>
                 </div>
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
-                    </div>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      onClick={() => openModal(project, 'github')}
-                      className="border-primary/50 hover:bg-primary/10 shrink-0"
-                    >
-                      <Github className="h-3 w-3" />
-                    </Button>
-                  </div>
+                 <CardContent className="p-6 space-y-4">
+                   <div className="flex items-start justify-between gap-4">
+                     <div className="flex-1">
+                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+                       <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
+                     </div>
+                     <a
+                       href={project.githubUrl}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="p-2 border border-primary/50 hover:bg-primary/10 rounded-md transition-colors shrink-0"
+                     >
+                       <Github className="h-3 w-3 text-primary" />
+                     </a>
+                   </div>
 
-                  {/* Key Features */}
-                  <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-primary">Key Features</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.keyFeatures?.map((feature, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs border-accent/50 text-accent bg-accent/5">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
-                    <div className="text-center">
-                      <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
-                      <p className="text-xs text-muted-foreground">{project.metrics?.duration}</p>
-                    </div>
-                    <div className="text-center">
-                      <Users className="w-4 h-4 mx-auto mb-1 text-accent" />
-                      <p className="text-xs text-muted-foreground">{project.metrics?.team}</p>
-                    </div>
-                    <div className="text-center">
-                      <TrendingUp className="w-4 h-4 mx-auto mb-1 text-cyan-500" />
-                      <p className="text-xs text-muted-foreground">{project.metrics?.impact}</p>
-                    </div>
-                  </div>
-
-                   {/* Technologies */}
+                   {/* Key Features */}
                    <div className="space-y-2">
-                     <h4 className="text-sm font-semibold">Technologies</h4>
+                     <h4 className="text-sm font-semibold text-primary">Key Features</h4>
                      <div className="flex flex-wrap gap-1">
-                       {project.technologies.map((tech) => (
-                         <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
-                           {tech}
+                       {project.keyFeatures?.map((feature, idx) => (
+                         <Badge key={idx} variant="outline" className="text-xs border-accent/50 text-accent bg-accent/5">
+                           {feature}
                          </Badge>
                        ))}
+                     </div>
+                   </div>
+
+                    {/* Technologies */}
+                    <div className="space-y-2">
+                      <h4 className="text-sm font-semibold">Technologies</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.map((tech) => (
+                          <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                   {/* Metrics */}
+                   <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
+                     <div className="text-center">
+                       <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
+                       <p className="text-xs text-muted-foreground">{project.metrics?.duration}</p>
+                     </div>
+                     <div className="text-center">
+                       <Users className="w-4 h-4 mx-auto mb-1 text-accent" />
+                       <p className="text-xs text-muted-foreground">{project.metrics?.team}</p>
+                     </div>
+                     <div className="text-center">
+                       <TrendingUp className="w-4 h-4 mx-auto mb-1 text-cyan-500" />
+                       <p className="text-xs text-muted-foreground">{project.metrics?.impact}</p>
                      </div>
                    </div>
 
@@ -614,15 +614,15 @@ const Portfolio = () => {
                     <div className="space-y-6">
                       {/* Header Section */}
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center border-2 border-primary/30">
-                            <Briefcase className="h-6 w-6 text-primary" />
-                          </div>
-                        </div>
+                         <div className="flex-shrink-0">
+                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-500/10 flex items-center justify-center border-2 border-cyan-500/30">
+                             <Briefcase className="h-6 w-6 text-cyan-500" />
+                           </div>
+                         </div>
                         <div className="flex-1">
-                          <h3 className="text-2xl font-bold mb-2 text-primary">{exp.title}</h3>
-                          <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
-                            <span className="font-semibold text-primary text-lg">{exp.company}</span>
+                           <h3 className="text-2xl font-bold mb-2 text-cyan-500">{exp.title}</h3>
+                           <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
+                             <span className="font-semibold text-cyan-500 text-lg">{exp.company}</span>
                             <span className="flex items-center gap-1">
                               <Calendar className="h-4 w-4" />
                               {exp.period}
@@ -637,67 +637,67 @@ const Portfolio = () => {
                         </div>
                       </div>
 
-                      {/* Key Metrics */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-secondary/30 rounded-lg">
-                        <div className="text-center">
-                          <Users className="w-5 h-5 mx-auto mb-2 text-primary" />
-                          <p className="text-sm font-medium">{exp.keyMetrics.teamSize}</p>
-                        </div>
-                        <div className="text-center">
-                          <Target className="w-5 h-5 mx-auto mb-2 text-accent" />
-                          <p className="text-sm font-medium">{exp.keyMetrics.projects}</p>
-                        </div>
-                        <div className="text-center">
-                          <TrendingUp className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
-                          <p className="text-sm font-medium">{exp.keyMetrics.impact}</p>
-                        </div>
-                      </div>
+                       {/* Key Metrics */}
+                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-accent/20 rounded-lg">
+                         <div className="text-center">
+                           <Users className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
+                           <p className="text-sm font-medium">{exp.keyMetrics.teamSize}</p>
+                         </div>
+                         <div className="text-center">
+                           <Target className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
+                           <p className="text-sm font-medium">{exp.keyMetrics.projects}</p>
+                         </div>
+                         <div className="text-center">
+                           <TrendingUp className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
+                           <p className="text-sm font-medium">{exp.keyMetrics.impact}</p>
+                         </div>
+                       </div>
 
-                      {/* Key Achievements */}
-                      <div className="space-y-4">
-                        <h4 className="text-lg font-semibold flex items-center gap-2">
-                          <Star className="w-5 h-5 text-primary" />
-                          Key Achievements
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {exp.achievements.map((achievement, idx) => (
-                            <Card key={idx} className="bg-gradient-to-br from-card/80 to-card/60 border border-primary/20 hover:border-primary/40 transition-all duration-300">
-                              <CardContent className="p-4">
-                                <h5 className="font-semibold text-primary mb-2">{achievement.title}</h5>
-                                <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{achievement.description}</p>
-                                <div className="space-y-2">
-                                  <div className="flex items-center gap-2">
-                                    <TrendingUp className="w-3 h-3 text-cyan-500" />
-                                    <span className="text-xs font-medium text-cyan-500">{achievement.impact}</span>
-                                  </div>
-                                  <div className="flex flex-wrap gap-1">
-                                    {achievement.skills.map((skill, skillIdx) => (
-                                      <Badge key={skillIdx} variant="outline" className="text-xs border-primary/30 text-primary">
-                                        {skill}
-                                      </Badge>
-                                    ))}
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          ))}
-                        </div>
-                      </div>
+                       {/* Key Achievements */}
+                       <div className="space-y-4">
+                         <h4 className="text-lg font-semibold flex items-center gap-2">
+                           <Star className="w-5 h-5 text-cyan-500" />
+                           Key Achievements
+                         </h4>
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                           {exp.achievements.map((achievement, idx) => (
+                             <Card key={idx} className="bg-gradient-to-br from-card/80 to-card/60 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
+                               <CardContent className="p-4">
+                                 <h5 className="font-semibold text-cyan-500 mb-2">{achievement.title}</h5>
+                                 <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{achievement.description}</p>
+                                 <div className="space-y-2">
+                                   <div className="flex items-center gap-2">
+                                     <TrendingUp className="w-3 h-3 text-accent" />
+                                     <span className="text-xs font-medium text-accent">{achievement.impact}</span>
+                                   </div>
+                                   <div className="flex flex-wrap gap-1">
+                                     {achievement.skills.map((skill, skillIdx) => (
+                                       <Badge key={skillIdx} variant="outline" className="text-xs border-cyan-500/30 text-cyan-500">
+                                         {skill}
+                                       </Badge>
+                                     ))}
+                                   </div>
+                                 </div>
+                               </CardContent>
+                             </Card>
+                           ))}
+                         </div>
+                       </div>
 
-                      {/* Technical Skills */}
-                      <div className="space-y-3">
-                        <h4 className="text-lg font-semibold flex items-center gap-2">
-                          <Code className="w-5 h-5 text-accent" />
-                          Technical Skills
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {exp.skills.map((skill, skillIdx) => (
-                            <Badge key={skillIdx} className="bg-primary text-white border-0 hover:bg-primary/80 transition-colors font-medium">
-                              {skill}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
+                       {/* Technical Skills */}
+                       <div className="space-y-3">
+                         <h4 className="text-lg font-semibold flex items-center gap-2">
+                           <Code className="w-5 h-5 text-cyan-500" />
+                           Technical Skills
+                         </h4>
+                         <div className="flex flex-wrap gap-2">
+                           {exp.skills.map((skill, skillIdx) => (
+                             <Badge key={skillIdx} className="bg-cyan-500 text-white border-0 hover:bg-cyan-500/80 transition-colors font-medium">
+                               {skill}
+                             </Badge>
+                           ))}
+                         </div>
+                       </div>
                     </div>
                   </CardContent>
                 </Card>
