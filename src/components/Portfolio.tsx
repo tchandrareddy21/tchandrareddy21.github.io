@@ -357,7 +357,7 @@ const Portfolio = () => {
         <div className="absolute inset-0 gradient-hero opacity-50"></div>
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex-1 flex justify-center lg:justify-end animate-scale-in order-1 lg:order-2">
+            <div className="flex-1 flex justify-center lg:justify-end animate-scale-in order-2 lg:order-2">
               <div className="relative">
                 <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
                   <img 
@@ -369,7 +369,7 @@ const Portfolio = () => {
                 <div className="absolute -inset-4 rounded-full bg-gradient-primary opacity-20 blur-xl"></div>
               </div>
             </div>
-            <div className="flex-1 text-center lg:text-left animate-fade-in-up order-2 lg:order-1">
+            <div className="flex-1 text-center lg:text-left animate-fade-in-up order-1 lg:order-1">
               <h1 className="text-5xl lg:text-7xl font-bold mb-6">
                 <span className="text-primary">
                   Hello, I'm
