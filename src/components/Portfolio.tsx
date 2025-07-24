@@ -386,17 +386,7 @@ const Portfolio = () => {
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
                 Data Scientist / ML Engineer with 2 years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
-              <div className="flex justify-center lg:justify-start mb-6">
-                <Button 
-                  onClick={handleDownloadResume}
-                  size="lg" 
-                  className="gradient-primary hover:opacity-90 transition-opacity"
-                >
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Resume
-                </Button>
-              </div>
-              <div className="flex justify-center lg:justify-start gap-4">
+              <div className="flex justify-center lg:justify-start gap-4 mb-6">
                 <a
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
@@ -424,6 +414,16 @@ const Portfolio = () => {
                 >
                   <Mail className="w-6 h-6" />
                 </a>
+              </div>
+              <div className="flex justify-center lg:justify-start">
+                <Button 
+                  onClick={handleDownloadResume}
+                  size="lg" 
+                  className="gradient-primary hover:opacity-90 transition-opacity"
+                >
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </Button>
               </div>
             </div>
           </div>
@@ -515,7 +515,8 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-secondary/30">
+      <section id="projects" className="py-20" 
+               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Featured Projects
@@ -530,12 +531,6 @@ const Portfolio = () => {
                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  <div className="absolute top-4 right-4 flex gap-2">
-                    <Badge className="bg-primary text-white border-0 font-medium">
-                      <Star className="w-3 h-3 mr-1" />
-                      Featured
-                    </Badge>
-                  </div>
                 </div>
                  <CardContent className="p-6 space-y-4">
                    <div className="flex items-start justify-between gap-4">
@@ -601,7 +596,8 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20">
+      <section id="experience" className="py-20"
+               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Work Experience
@@ -708,7 +704,8 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-secondary/30">
+      <section id="education" className="py-20"
+               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Education
