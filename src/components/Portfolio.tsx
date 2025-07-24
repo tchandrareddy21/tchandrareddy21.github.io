@@ -258,6 +258,7 @@ const Portfolio = () => {
     {
       title: "Software Engineer (Full-Time)",
       company: "HCLTech",
+      client: "Adobe",
       period: "Nov 2022 - Present",
       location: "Bengaluru",
       achievements: [
@@ -633,10 +634,17 @@ const Portfolio = () => {
                              <Briefcase className="h-6 w-6 text-cyan-500" />
                            </div>
                          </div>
-                        <div className="flex-1">
-                           <h3 className="text-2xl font-bold mb-2 text-cyan-500">{exp.title}</h3>
-                           <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
-                             <span className="font-semibold text-cyan-500 text-lg">{exp.company}</span>
+                         <div className="flex-1">
+                            <h3 className="text-2xl font-bold mb-2 text-cyan-500">{exp.title}</h3>
+                            <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
+                              <div className="flex items-center gap-2">
+                                <span className="font-semibold text-cyan-500 text-lg">{exp.company}</span>
+                                {exp.client && (
+                                  <div className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg animate-pulse">
+                                    Client: {exp.client}
+                                  </div>
+                                )}
+                              </div>
                             <span className="flex items-center gap-1">
                               <Calendar className="h-4 w-4" />
                               {exp.period}
