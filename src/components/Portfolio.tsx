@@ -30,7 +30,10 @@ import {
   Users,
   Star,
   Play,
-  Eye
+  Eye,
+  Brain,
+  MessageSquare,
+  Sparkles
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import MobileNav from './MobileNav';
@@ -139,20 +142,29 @@ const Portfolio = () => {
   };
 
   const skills = {
-    "Programming & Data": [
-      "Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"
-    ],
     "Machine Learning": [
-      "Scikit-learn", "XGBoost", "Random Forest", "SVM", "K-Means", "PCA"
+      "Linear Regression", "Logistic Regression", "Decision Trees", "Random Forest", "XGBoost", "SVM", "K-Means", "PCA", "DBSCAN"
     ],
-    "AI & Deep Learning": [
-      "BERT/GPT", "Langchain", "RAG", "CNN", "Transfer Learning"
+    "Deep Learning": [
+      "Artificial Neural Networks (ANN)", "Convolutional Neural Networks (CNN)", "Transfer Learning"
+    ],
+    "Natural Language Processing (NLP)": [
+      "BERT", "GPT", "Transformers", "Tokenization", "Embeddings"
+    ],
+    "Generative AI": [
+      "LangChain", "Retrieval-Augmented Generation (RAG)", "Prompt Engineering", "AI Agents", "Vector Databases"
     ],
     "MLOps & Cloud": [
-      "AWS", "Docker", "MLflow", "SageMaker", "GitHub Actions"
+      "GitHub Actions", "Docker", "AWS SageMaker", "AWS Bedrock", "AWS S3", "AWS EC2", "AWS ECR", "MLflow"
+    ],
+    "Programming & Data Handling": [
+      "Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"
+    ],
+    "Databases": [
+      "MySQL", "MongoDB"
     ],
     "APIs & Deployment": [
-      "Flask", "FastAPI", "Streamlit", "MySQL", "MongoDB"
+      "Flask", "FastAPI", "Streamlit", "Postman", "AWS Elastic Beanstalk", "AWS Lambda"
     ]
   };
 
@@ -498,10 +510,13 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <CardHeader className="relative z-10">
                   <CardTitle className="flex items-center gap-3 text-xl">
-                    {category === 'Programming & Data' && <Code className="h-6 w-6 text-primary" />}
                     {category === 'Machine Learning' && <Database className="h-6 w-6 text-accent" />}
-                    {category === 'AI & Deep Learning' && <Globe className="h-6 w-6 text-cyan-glow" />}
+                    {category === 'Deep Learning' && <Brain className="h-6 w-6 text-primary" />}
+                    {category === 'Natural Language Processing (NLP)' && <MessageSquare className="h-6 w-6 text-cyan-glow" />}
+                    {category === 'Generative AI' && <Sparkles className="h-6 w-6 text-accent" />}
                     {category === 'MLOps & Cloud' && <Server className="h-6 w-6 text-primary" />}
+                    {category === 'Programming & Data Handling' && <Code className="h-6 w-6 text-primary" />}
+                    {category === 'Databases' && <Database className="h-6 w-6 text-accent" />}
                     {category === 'APIs & Deployment' && <Globe className="h-6 w-6 text-accent" />}
                     <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                       {category}
