@@ -42,6 +42,10 @@ import profilePhoto from '@/assets/profile-photo.jpg';
 import project1 from '@/assets/project-1.jpg';
 import project2 from '@/assets/project-2.jpg';
 import project3 from '@/assets/project-3.jpg';
+import APSFailureClassification from '@/assets/aps-failure-classification.jpg';
+import FinancialProductComplaintAnalysis from '@/assets/financial-product-complaint-analysis.jpg';
+import RAG from '@/assets/rag.jpg';
+import LogsClassification from '@/assets/logs-classification.jpg';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
