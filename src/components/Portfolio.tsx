@@ -503,46 +503,38 @@ const Portfolio = () => {
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Skills & Expertise
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto">
             {Object.entries(skills).map(([category, skillList]) => (
-              <Card key={category} className="group relative overflow-hidden border-2 border-white/20 hover:border-primary/50 transition-all duration-300 bg-card/60 backdrop-blur-xl"
-                   style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <CardHeader className="relative z-10">
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    {category === 'Machine Learning' && <Database className="h-6 w-6 text-accent" />}
-                    {category === 'Deep Learning' && <Brain className="h-6 w-6 text-primary" />}
-                    {category === 'Natural Language Processing (NLP)' && <MessageSquare className="h-6 w-6 text-cyan-glow" />}
-                    {category === 'Generative AI' && <Sparkles className="h-6 w-6 text-accent" />}
-                    {category === 'MLOps & Cloud' && <Server className="h-6 w-6 text-primary" />}
-                    {category === 'Programming & Data Handling' && <Code className="h-6 w-6 text-primary" />}
-                    {category === 'Databases' && <Database className="h-6 w-6 text-accent" />}
-                    {category === 'APIs & Deployment' && <Globe className="h-6 w-6 text-accent" />}
-                    <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                      {category}
-                    </span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  <div className="grid grid-cols-1 gap-3">
-                    {skillList.map((skill) => (
-                      <div
-                        key={skill}
-                        className="group/skill relative p-3 rounded-lg bg-secondary/50 hover:bg-gradient-to-r hover:from-primary/10 hover:to-accent/10 transition-all duration-300 border border-border hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20"
-                      >
-                        <div className="flex items-center justify-between">
-                          <span className="font-medium text-foreground group-hover/skill:text-primary transition-colors duration-300">
-                            {skill}
-                          </span>
-                          <div className="w-2 h-2 rounded-full bg-primary opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
-                        </div>
-                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 -z-10"></div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Card>
+              <div key={category} className="mb-12 group">
+                <div className="flex items-center gap-3 mb-6">
+                  {category === 'Machine Learning' && <Database className="h-7 w-7 text-accent" />}
+                  {category === 'Deep Learning' && <Brain className="h-7 w-7 text-primary" />}
+                  {category === 'Natural Language Processing (NLP)' && <MessageSquare className="h-7 w-7 text-cyan-glow" />}
+                  {category === 'Generative AI' && <Sparkles className="h-7 w-7 text-accent" />}
+                  {category === 'MLOps & Cloud' && <Server className="h-7 w-7 text-primary" />}
+                  {category === 'Programming & Data Handling' && <Code className="h-7 w-7 text-primary" />}
+                  {category === 'Databases' && <Database className="h-7 w-7 text-accent" />}
+                  {category === 'APIs & Deployment' && <Globe className="h-7 w-7 text-accent" />}
+                  <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    {category}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {skillList.map((skill) => (
+                    <div
+                      key={skill}
+                      className="group/skill relative px-4 py-2 rounded-full bg-card/60 backdrop-blur-xl border border-white/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                      style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 font-medium text-foreground group-hover/skill:text-primary transition-colors duration-300 text-sm">
+                        {skill}
+                      </span>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
