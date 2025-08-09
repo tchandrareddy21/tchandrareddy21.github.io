@@ -183,7 +183,7 @@ const Portfolio = () => {
     {
       title: "Financial Product Complaint Analysis",
       description: "Built a machine learning system to classify and predict customer complaints for financial products, enabling quick identification of problematic complaints and helping companies take proactive action to resolve customer issues.",
-      image: project2,
+      image: FinancialProductComplaintAnalysis,
       technologies: ["Python", "Machine Learning", "Docker", "CircleCI", "Apache Airflow"],
       githubUrl: "https://github.com/tchandrareddy21/financial-product-complaint",
       metrics: {
@@ -206,7 +206,7 @@ const Portfolio = () => {
     {
       title: "LLM-Based Document Q&A with RAG",
       description: "Developed an LLM-powered document Q&A system using Retrieval-Augmented Generation (RAG), integrating Groq for querying, OpenAI embeddings for vectorization, and FAISS for fast similarity search.",
-      image: project3,
+      image: RAG,
       technologies: ["LangChain", "Groq", "OpenAI", "FAISS", "Streamlit"],
       liveUrl: "https://llm-rag-qna.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/llm-rag-qna",
@@ -220,7 +220,7 @@ const Portfolio = () => {
     {
       title: "Logs Classification",
       description: "Developed a hybrid log classification system integrating Regex, Sentence Transformers with Logistic Regression, and Large Language Models (LLMs) to efficiently handle logs of varying complexity.",
-      image: project1,
+      image: LogsClassification,
       technologies: ["FastAPI", "Streamlit", "Machine Learning", "RegEx", "GROQ"],
       liveUrl: "https://logs-classification.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/logs-classification",
