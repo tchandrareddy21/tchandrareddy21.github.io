@@ -169,7 +169,7 @@ const Portfolio = () => {
     {
       title: "APS Failure Classification",
       description: "Engineered predictive analytics using a robust binary classification model focused on essential components of the Air Pressure System, reducing diagnostic time by approximately 25% through enhanced issue identification capabilities.",
-      image: project1,
+      image: APS Failure Classification,
       technologies: ["Machine Learning", "FastAPI", "Docker", "MongoDB", "AWS(EC2, ECR, S3)"],
       liveUrl: "https://aps-failure-classification.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/aps-failure-classification",
