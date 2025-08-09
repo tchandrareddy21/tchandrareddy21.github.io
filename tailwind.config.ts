@@ -26,11 +26,13 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					container: 'hsl(var(--primary-container))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					foreground: 'hsl(var(--secondary-foreground))',
+					container: 'hsl(var(--secondary-container))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -62,12 +64,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Portfolio specific colors
-				'purple-glow': 'hsl(var(--purple-glow))',
-				'cyan-glow': 'hsl(var(--cyan-glow))',
-				'pink-glow': 'hsl(var(--pink-glow))',
-				'blue-glow': 'hsl(var(--blue-glow))',
-				'green-glow': 'hsl(var(--green-glow))'
+				// Material Design 3.0 Colors
+				'material': {
+					surface: 'hsl(var(--surface))',
+					'surface-variant': 'hsl(var(--surface-variant))',
+					'surface-container-low': 'hsl(var(--surface-container-low))',
+					'surface-container': 'hsl(var(--surface-container))',
+					'surface-container-high': 'hsl(var(--surface-container-high))',
+					'surface-container-highest': 'hsl(var(--surface-container-highest))',
+					'on-surface': 'hsl(var(--on-surface))',
+					'on-surface-variant': 'hsl(var(--on-surface-variant))',
+					'tertiary': 'hsl(var(--tertiary))',
+					'tertiary-container': 'hsl(var(--tertiary-container))',
+					'on-tertiary-container': 'hsl(var(--on-tertiary-container))'
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

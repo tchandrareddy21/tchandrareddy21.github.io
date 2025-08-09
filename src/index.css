@@ -8,68 +8,92 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Dark mode with liquid glass and vibrant colors */
-    --background: 220 15% 6%;
-    --foreground: 210 40% 98%;
+    /* Material Design 3.0 Inspired Dark Theme */
+    --background: 218 15% 8%;
+    --foreground: 210 40% 95%;
 
-    --card: 220 15% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 16% 12%;
+    --card-foreground: 210 40% 95%;
 
-    --popover: 220 15% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 16% 12%;
+    --popover-foreground: 210 40% 95%;
 
-    --primary: 280 100% 70%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 264 84% 65%;
+    --primary-foreground: 220 15% 8%;
 
-    --secondary: 220 15% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 40% 95%;
 
-    --muted: 220 15% 10%;
-    --muted-foreground: 215 20% 80%;
+    --muted: 220 15% 14%;
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 160 100% 60%;
-    --accent-foreground: 220 15% 6%;
+    --accent: 195 85% 65%;
+    --accent-foreground: 220 15% 8%;
 
-    --destructive: 0 100% 65%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 95%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 10%;
-    --ring: 280 100% 70%;
+    --border: 220 16% 20%;
+    --input: 220 16% 14%;
+    --ring: 264 84% 65%;
 
     --radius: 1rem;
 
-    /* Vibrant portfolio colors */
-    --purple-glow: 280 100% 70%;
-    --cyan-glow: 180 100% 65%;
-    --pink-glow: 340 100% 75%;
-    --blue-glow: 220 100% 70%;
-    --green-glow: 120 100% 65%;
-    --orange-glow: 30 100% 70%;
+    /* Material Design 3.0 Color Palette */
+    --primary-container: 264 84% 25%;
+    --on-primary-container: 264 84% 90%;
+    --secondary-container: 220 16% 22%;
+    --on-secondary-container: 220 16% 85%;
+    --tertiary: 279 81% 68%;
+    --tertiary-container: 279 81% 28%;
+    --on-tertiary-container: 279 81% 92%;
 
-    /* Vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(340 100% 75%));
-    --gradient-secondary: linear-gradient(135deg, hsl(180 100% 65%), hsl(220 100% 70%));
-    --gradient-accent: linear-gradient(135deg, hsl(120 100% 65%), hsl(160 100% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(280 100% 70% / 0.1), hsl(340 100% 75% / 0.1), hsl(180 100% 65% / 0.1));
+    /* Material Surface Colors */
+    --surface: 218 15% 8%;
+    --surface-variant: 220 16% 12%;
+    --surface-container-low: 220 16% 10%;
+    --surface-container: 220 16% 12%;
+    --surface-container-high: 220 16% 14%;
+    --surface-container-highest: 220 16% 16%;
+    --on-surface: 210 40% 95%;
+    --on-surface-variant: 215 20% 75%;
 
-    /* Liquid glass effects and vibrant glows */
-    --glow-purple: 0 0 40px hsl(280 100% 70% / 0.6);
-    --glow-cyan: 0 0 40px hsl(180 100% 65% / 0.6);
-    --glow-pink: 0 0 40px hsl(340 100% 75% / 0.6);
-    --glow-green: 0 0 40px hsl(120 100% 65% / 0.6);
-    --shadow-card: 0 15px 35px -10px hsl(280 100% 70% / 0.3);
-    --shadow-hover: 0 25px 60px -10px hsl(280 100% 70% / 0.5);
+    /* Material Elevation & Shadows */
+    --elevation-1: 0 1px 3px hsla(0, 0%, 0%, 0.12), 0 1px 2px hsla(0, 0%, 0%, 0.24);
+    --elevation-2: 0 3px 6px hsla(0, 0%, 0%, 0.15), 0 2px 4px hsla(0, 0%, 0%, 0.12);
+    --elevation-3: 0 10px 20px hsla(0, 0%, 0%, 0.15), 0 3px 6px hsla(0, 0%, 0%, 0.10);
+    --elevation-4: 0 15px 25px hsla(0, 0%, 0%, 0.15), 0 5px 10px hsla(0, 0%, 0%, 0.05);
+    --elevation-5: 0 20px 40px hsla(0, 0%, 0%, 0.15), 0 10px 20px hsla(0, 0%, 0%, 0.10);
 
-    /* Glass morphism */
-    --glass-bg: hsl(220 15% 8% / 0.8);
-    --glass-border: hsl(210 40% 98% / 0.2);
-    --glass-blur: blur(20px);
+    /* State Layer Overlays (Material Design 3.0) */
+    --hover-state-layer: hsla(264, 84%, 65%, 0.08);
+    --focus-state-layer: hsla(264, 84%, 65%, 0.12);
+    --press-state-layer: hsla(264, 84%, 65%, 0.16);
+    --selected-state-layer: hsla(264, 84%, 65%, 0.08);
+    --disabled-state-layer: hsla(210, 40%, 95%, 0.38);
 
-    /* Animation durations */
-    --transition-fast: 0.2s;
-    --transition-normal: 0.3s;
-    --transition-slow: 0.5s;
+    /* Gradients - More Material Design 3.0 Aligned */
+    --gradient-primary: linear-gradient(135deg, hsl(264 84% 65%), hsl(279 81% 68%));
+    --gradient-surface: linear-gradient(135deg, hsl(220 16% 12%), hsl(220 16% 14%));
+    --gradient-hero: linear-gradient(135deg, hsl(264 84% 65% / 0.1), hsl(279 81% 68% / 0.1), hsl(195 85% 65% / 0.1));
+
+    /* Material Motion (Animation durations) */
+    --motion-duration-short1: 50ms;
+    --motion-duration-short2: 100ms;
+    --motion-duration-short3: 150ms;
+    --motion-duration-short4: 200ms;
+    --motion-duration-medium1: 250ms;
+    --motion-duration-medium2: 300ms;
+    --motion-duration-medium3: 350ms;
+    --motion-duration-medium4: 400ms;
+    --motion-duration-long1: 450ms;
+    --motion-duration-long2: 500ms;
+
+    /* Material Easing */
+    --motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-easing-decelerated: cubic-bezier(0, 0, 0, 1);
+    --motion-easing-accelerated: cubic-bezier(0.3, 0, 1, 1);
+    --motion-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -188,21 +212,16 @@ All colors MUST be HSL.
 }
 
 @layer components {
-  /* Animation keyframes */
+  /* Material Design 3.0 Animation keyframes */
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: var(--glow-purple); }
-    50% { box-shadow: var(--glow-cyan); }
-  }
-
   @keyframes fade-in-up {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(24px);
     }
     to {
       opacity: 1;
@@ -213,7 +232,7 @@ All colors MUST be HSL.
   @keyframes scale-in {
     from {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.95);
     }
     to {
       opacity: 1;
@@ -230,21 +249,17 @@ All colors MUST be HSL.
     50% { border-color: transparent; }
   }
 
-  /* Utility classes */
+  /* Utility classes with Material Design timing */
   .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: float 3s var(--motion-easing-standard) infinite;
   }
 
   .animate-fade-in-up {
-    animation: fade-in-up 0.6s ease-out;
+    animation: fade-in-up var(--motion-duration-long1) var(--motion-easing-emphasized);
   }
 
   .animate-scale-in {
-    animation: scale-in 0.5s ease-out;
+    animation: scale-in var(--motion-duration-medium4) var(--motion-easing-standard);
   }
 
   .animate-typing {
@@ -254,40 +269,120 @@ All colors MUST be HSL.
     animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
   }
 
-  .hover-lift {
-    transition: all var(--transition-normal) ease;
+  /* Material Design 3.0 Component Classes */
+  .material-card {
+    @apply rounded-lg transition-all duration-300;
+    background: hsl(var(--surface-container));
+    color: hsl(var(--on-surface));
+    box-shadow: var(--elevation-1);
   }
 
-  .hover-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
+  .material-card:hover {
+    box-shadow: var(--elevation-3);
+    transform: translateY(-2px);
   }
 
-  .hover-glow {
-    transition: all var(--transition-normal) ease;
+  .material-button-primary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--elevation-1);
   }
 
-  .hover-glow:hover {
-    box-shadow: var(--glow-purple);
-    transform: scale(1.05);
+  .material-button-primary:hover {
+    background: hsl(var(--primary-container));
+    color: hsl(var(--on-primary-container));
+    box-shadow: var(--elevation-2);
+    transform: translateY(-1px);
   }
 
+  .material-button-secondary {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 border;
+    background: transparent;
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+
+  .material-button-secondary:hover {
+    background: var(--hover-state-layer);
+  }
+
+  .material-surface {
+    background: hsl(var(--surface));
+    color: hsl(var(--on-surface));
+  }
+
+  .material-surface-variant {
+    background: hsl(var(--surface-variant));
+    color: hsl(var(--on-surface-variant));
+  }
+
+  .material-elevation-1 {
+    box-shadow: var(--elevation-1);
+  }
+
+  .material-elevation-2 {
+    box-shadow: var(--elevation-2);
+  }
+
+  .material-elevation-3 {
+    box-shadow: var(--elevation-3);
+  }
+
+  .material-elevation-4 {
+    box-shadow: var(--elevation-4);
+  }
+
+  .material-elevation-5 {
+    box-shadow: var(--elevation-5);
+  }
+
+  .material-motion-standard {
+    transition-timing-function: var(--motion-easing-standard);
+  }
+
+  .material-motion-emphasized {
+    transition-timing-function: var(--motion-easing-emphasized);
+  }
+
+  /* Updated Component Styles for Material Design */
   .skill-card {
-    @apply bg-card/60 backdrop-blur-xl border border-white/20 rounded-2xl p-4 transition-all duration-300 hover:border-primary/50 hover:shadow-card hover:scale-105;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: var(--glass-blur);
+    @apply rounded-xl p-4 transition-all;
+    background: hsl(var(--surface-container));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--on-surface));
+    box-shadow: var(--elevation-1);
+    transition-duration: var(--motion-duration-medium2);
+    transition-timing-function: var(--motion-easing-standard);
+  }
+
+  .skill-card:hover {
+    box-shadow: var(--elevation-3);
+    transform: translateY(-2px);
+    border-color: hsl(var(--primary));
+    background: hsl(var(--surface-container-high));
   }
 
   .project-card {
-    @apply bg-card/60 backdrop-blur-xl border border-white/20 rounded-2xl p-6 transition-all duration-300 hover:border-primary/50 hover-lift;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: var(--glass-blur);
+    @apply rounded-xl p-6 transition-all;
+    background: hsl(var(--surface-container));
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--on-surface));
+    box-shadow: var(--elevation-2);
+    transition-duration: var(--motion-duration-medium3);
+    transition-timing-function: var(--motion-easing-standard);
+  }
+
+  .project-card:hover {
+    box-shadow: var(--elevation-4);
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.5);
   }
 
   .nav-link {
-    @apply relative px-4 py-2 text-muted-foreground hover:text-foreground transition-colors duration-300;
+    @apply relative px-4 py-2 text-muted-foreground hover:text-primary transition-colors;
+    transition-duration: var(--motion-duration-medium1);
+    transition-timing-function: var(--motion-easing-standard);
   }
 
   .nav-link::after {
@@ -298,7 +393,7 @@ All colors MUST be HSL.
     width: 0;
     height: 2px;
     background: var(--gradient-primary);
-    transition: all var(--transition-normal) ease;
+    transition: all var(--motion-duration-medium2) var(--motion-easing-emphasized);
     transform: translateX(-50%);
   }
 
@@ -307,11 +402,37 @@ All colors MUST be HSL.
     width: 100%;
   }
 
-  /* Scroll animations */
+  /* Material Design Ripple Effect */
+  .material-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .material-ripple::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--hover-state-layer);
+    transition: all var(--motion-duration-medium2) var(--motion-easing-standard);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  .material-ripple:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  /* Material Design Scroll Animations */
   .scroll-animation {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
+    transform: translateY(24px);
+    transition: all var(--motion-duration-long1) var(--motion-easing-emphasized);
   }
 
   .scroll-animation.animate-visible {
@@ -320,7 +441,7 @@ All colors MUST be HSL.
   }
 
   .scroll-animation.scale-in {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
 
   .scroll-animation.scale-in.animate-visible {
@@ -328,7 +449,7 @@ All colors MUST be HSL.
   }
 
   .scroll-animation.slide-in-left {
-    transform: translateX(-30px);
+    transform: translateX(-24px);
   }
 
   .scroll-animation.slide-in-left.animate-visible {
@@ -336,7 +457,7 @@ All colors MUST be HSL.
   }
 
   .scroll-animation.slide-in-right {
-    transform: translateX(30px);
+    transform: translateX(24px);
   }
 
   .scroll-animation.slide-in-right.animate-visible {

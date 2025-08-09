@@ -142,26 +142,23 @@ const Portfolio = () => {
   };
 
   const skills = {
+    "Programming & Data Handling": [
+      "Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"
+    ],
+    "Databases": [
+      "MySQL", "MongoDB"
+    ],
     "Machine Learning": [
       "Linear Regression", "Logistic Regression", "Decision Trees", "Random Forest", "XGBoost", "SVM", "K-Means", "PCA", "DBSCAN"
     ],
-    "Deep Learning": [
-      "Artificial Neural Networks (ANN)", "Convolutional Neural Networks (CNN)", "Transfer Learning"
-    ],
-    "Natural Language Processing (NLP)": [
-      "BERT", "GPT", "Transformers", "Tokenization", "Embeddings"
+    "Deep Learning & Natural Language Processing (NLP)": [
+      "Artificial Neural Networks (ANN)", "Convolutional Neural Networks (CNN)", "Transfer Learning", "BERT", "GPT", "Transformers", "Tokenization", "Embeddings"
     ],
     "Generative AI": [
       "LangChain", "Retrieval-Augmented Generation (RAG)", "Prompt Engineering", "AI Agents", "Vector Databases"
     ],
     "MLOps & Cloud": [
       "GitHub Actions", "Docker", "AWS SageMaker", "AWS Bedrock", "AWS S3", "AWS EC2", "AWS ECR", "MLflow"
-    ],
-    "Programming & Data Handling": [
-      "Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"
-    ],
-    "Databases": [
-      "MySQL", "MongoDB"
     ],
     "APIs & Deployment": [
       "Flask", "FastAPI", "Streamlit", "Postman", "AWS Elastic Beanstalk", "AWS Lambda"
@@ -336,8 +333,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Fixed Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-white/20"
-           style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
+      <nav className="fixed top-0 left-0 right-0 z-50 material-surface-variant backdrop-blur-xl border-b border-border material-elevation-2">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-primary">
@@ -354,7 +350,7 @@ const Portfolio = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+                  className={`nav-link material-ripple ${activeSection === item.id ? 'active' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -366,14 +362,14 @@ const Portfolio = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-purple-900/10 to-cyan-900/10">
-        <div className="absolute inset-0 gradient-hero opacity-50"></div>
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden material-surface">
+        <div className="absolute inset-0 gradient-hero opacity-30"></div>
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             {/* Desktop Profile Image - Right Side */}
             <div className="hidden lg:flex flex-1 justify-end animate-scale-in order-2">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
+                <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-primary/30 material-elevation-3 animate-float">
                   <img 
                     src={profilePhoto} 
                     alt="Tiyyagura Chandra Reddy" 
@@ -403,7 +399,7 @@ const Portfolio = () => {
               {/* Mobile/Tablet Profile Image - After Designation */}
               <div className="lg:hidden flex justify-center mb-8 animate-scale-in">
                 <div className="relative">
-                  <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-card hover-glow animate-float">
+                  <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-primary/30 material-elevation-3 animate-float">
                     <img 
                       src={profilePhoto} 
                       alt="Tiyyagura Chandra Reddy" 
@@ -422,7 +418,7 @@ const Portfolio = () => {
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  className="p-3 material-surface-variant rounded-full material-elevation-1 hover:material-elevation-2 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple"
                   style={{ animationDelay: '0s' }}
                 >
                   <Github className="w-6 h-6" />
@@ -431,7 +427,7 @@ const Portfolio = () => {
                   href="https://www.linkedin.com/in/tchandrareddy21/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  className="p-3 material-surface-variant rounded-full material-elevation-1 hover:material-elevation-2 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple"
                   style={{ animationDelay: '0.5s' }}
                 >
                   <Linkedin className="w-6 h-6" />
@@ -440,7 +436,7 @@ const Portfolio = () => {
                   href="mailto:tchandrareddy21@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow animate-float"
+                  className="p-3 material-surface-variant rounded-full material-elevation-1 hover:material-elevation-2 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple"
                   style={{ animationDelay: '1s' }}
                 >
                   <Mail className="w-6 h-6" />
@@ -450,7 +446,7 @@ const Portfolio = () => {
                 <Button 
                   onClick={handleDownloadResume}
                   size="lg" 
-                  className="gradient-primary hover:opacity-90 transition-opacity"
+                  className="material-button-primary material-ripple"
                 >
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
@@ -462,13 +458,13 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-secondary/30">
+      <section id="about" className="py-20 material-surface-variant">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             About Me
           </h2>
           <div className="max-w-4xl mx-auto">
-            <Card className="project-card">
+            <Card className="material-card">
               <CardContent className="p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <User className="h-8 w-8 text-primary" />
@@ -498,7 +494,7 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20">
+      <section id="skills" className="py-20 material-surface">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Skills & Expertise
@@ -507,13 +503,12 @@ const Portfolio = () => {
             {Object.entries(skills).map(([category, skillList]) => (
               <div key={category} className="mb-12 group">
                 <div className="flex items-center gap-3 mb-6">
-                  {category === 'Machine Learning' && <Database className="h-7 w-7 text-accent" />}
-                  {category === 'Deep Learning' && <Brain className="h-7 w-7 text-primary" />}
-                  {category === 'Natural Language Processing (NLP)' && <MessageSquare className="h-7 w-7 text-cyan-glow" />}
-                  {category === 'Generative AI' && <Sparkles className="h-7 w-7 text-accent" />}
-                  {category === 'MLOps & Cloud' && <Server className="h-7 w-7 text-primary" />}
                   {category === 'Programming & Data Handling' && <Code className="h-7 w-7 text-primary" />}
                   {category === 'Databases' && <Database className="h-7 w-7 text-accent" />}
+                  {category === 'Machine Learning' && <TrendingUp className="h-7 w-7 text-accent" />}
+                  {category === 'Deep Learning & Natural Language Processing (NLP)' && <Brain className="h-7 w-7 text-primary" />}
+                  {category === 'Generative AI' && <Sparkles className="h-7 w-7 text-accent" />}
+                  {category === 'MLOps & Cloud' && <Server className="h-7 w-7 text-primary" />}
                   {category === 'APIs & Deployment' && <Globe className="h-7 w-7 text-accent" />}
                   <h3 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {category}
@@ -523,14 +518,11 @@ const Portfolio = () => {
                   {skillList.map((skill) => (
                     <div
                       key={skill}
-                      className="group/skill relative px-4 py-2 rounded-full bg-card/60 backdrop-blur-xl border border-white/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
-                      style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}
+                      className="skill-card material-ripple"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-full opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
-                      <span className="relative z-10 font-medium text-foreground group-hover/skill:text-primary transition-colors duration-300 text-sm">
+                      <span className="relative z-10 font-medium text-foreground text-sm">
                         {skill}
                       </span>
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/5 to-accent/5 opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   ))}
                 </div>
@@ -541,8 +533,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20" 
-               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
+      <section id="projects" className="py-20 material-surface-variant">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold text-center mb-16 text-primary">
             Featured Projects
