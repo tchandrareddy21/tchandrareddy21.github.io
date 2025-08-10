@@ -460,37 +460,107 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 material-surface-variant">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
-            About Me
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <Card className="material-card">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <User className="h-8 w-8 text-primary" />
-                  <h3 className="text-2xl font-semibold">Professional Summary</h3>
-                </div>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  I am a passionate Data Scientist / ML Engineer with 2+ years of experience as a Software Engineer 
-                  and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
-                  I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
-                  measurable business impact.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  My expertise spans across the entire machine learning pipeline - from data preprocessing and 
-                  feature engineering to model development, deployment, and monitoring. I have hands-on experience 
-                  with supervised and unsupervised learning algorithms, natural language processing, and cutting-edge 
-                  generative AI technologies including transformers, RAG systems, and AI agents.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Currently leading a team of 4 and collaborating with cross-functional stakeholders to ensure 
-                  timely and high-quality project delivery. I'm passionate about leveraging AI and machine learning 
-                  to solve real-world problems and drive innovation in data-driven decision making.
-                </p>
-              </CardContent>
-            </Card>
+      <section id="about" className="py-20 bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50 dark:from-violet-950/20 dark:via-cyan-950/20 dark:to-emerald-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-violet-600/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-violet-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+              About Me
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-violet-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Main Content Card */}
+              <div className="lg:col-span-2">
+                <Card className="group relative overflow-hidden border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 transform hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-cyan-500/5 to-emerald-500/5"></div>
+                  <CardContent className="p-8 relative z-10">
+                    <div className="flex items-center gap-4 mb-8">
+                      <div className="relative">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-emerald-500 flex items-center justify-center shadow-lg">
+                          <User className="h-8 w-8 text-white" />
+                        </div>
+                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-violet-500 to-emerald-500 opacity-30 blur-md"></div>
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-emerald-600 bg-clip-text text-transparent">Professional Summary</h3>
+                        <div className="w-32 h-0.5 bg-gradient-to-r from-violet-500 to-emerald-500 mt-2"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-6 text-lg leading-relaxed">
+                      <p className="text-gray-700 dark:text-gray-300 relative">
+                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full"></span>
+                        I am a passionate <span className="font-semibold text-violet-600 dark:text-violet-400">Data Scientist / ML Engineer</span> with 2+ years of experience as a Software Engineer 
+                        and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
+                        I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
+                        <span className="font-semibold text-emerald-600 dark:text-emerald-400"> measurable business impact.</span>
+                      </p>
+                      
+                      <p className="text-gray-700 dark:text-gray-300 relative">
+                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></span>
+                        My expertise spans across the entire <span className="font-semibold text-cyan-600 dark:text-cyan-400">machine learning pipeline</span> - from data preprocessing and 
+                        feature engineering to model development, deployment, and monitoring. I have hands-on experience 
+                        with supervised and unsupervised learning algorithms, natural language processing, and cutting-edge 
+                        <span className="font-semibold text-violet-600 dark:text-violet-400">generative AI technologies</span> including transformers, RAG systems, and AI agents.
+                      </p>
+                      
+                      <p className="text-gray-700 dark:text-gray-300 relative">
+                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-emerald-500 to-violet-500 rounded-full"></span>
+                        Currently <span className="font-semibold text-emerald-600 dark:text-emerald-400">leading a team of 4</span> and collaborating with cross-functional stakeholders to ensure 
+                        timely and high-quality project delivery. I'm passionate about leveraging AI and machine learning 
+                        to solve real-world problems and drive innovation in data-driven decision making.
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              {/* Stats & Highlights */}
+              <div className="space-y-6">
+                {/* Experience Stats */}
+                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Briefcase className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold text-violet-600 dark:text-violet-400 mb-1">2+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Team Leadership */}
+                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Users className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">4</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                {/* Projects */}
+                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-emerald-500/10 to-violet-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="text-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Target className="h-6 w-6 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">15+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">POCs Delivered</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -535,80 +605,142 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 material-surface-variant">
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
-            Featured Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section id="projects" className="py-20 bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 dark:from-rose-950/20 dark:via-orange-950/20 dark:to-amber-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-rose-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+              Featured Projects
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+              Discover my portfolio of innovative AI/ML solutions that drive real business impact
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto rounded-full animate-scale-in"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="project-card group border-2 hover:border-primary/30 transition-all duration-300">
-                <div className="relative overflow-hidden rounded-t-xl">
+              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-rose-500/20 dark:hover:shadow-rose-500/40 transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-orange-500/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Project Image with Overlay */}
+                <div className="relative overflow-hidden h-56">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                </div>
-                 <CardContent className="p-6 space-y-4">
-                   <div className="flex items-start justify-between gap-4">
-                     <div className="flex-1">
-                       <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-                       <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
-                     </div>
-                     <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/github relative p-3 bg-gradient-to-br from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border-2 border-primary/30 hover:border-primary/60 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 shrink-0"
-                        title="View on GitHub"
-                      >
-                        <Github className="h-6 w-6 text-primary group-hover/github:text-white transition-colors duration-300" />
-                        <div className="absolute inset-0 rounded-xl bg-primary/0 group-hover/github:bg-primary/10 transition-colors duration-300"></div>
-                      </a>
-                   </div>
-
-                   {/* Key Features */}
-                   <div className="space-y-2">
-                     <h4 className="text-sm font-semibold text-primary">Key Features</h4>
-                     <div className="flex flex-wrap gap-1">
-                       {project.keyFeatures?.map((feature, idx) => (
-                         <Badge key={idx} variant="outline" className="text-xs border-accent/50 text-accent bg-accent/5">
-                           {feature}
-                         </Badge>
-                       ))}
-                     </div>
-                   </div>
-
-                    {/* Technologies */}
-                    <div className="space-y-2">
-                      <h4 className="text-sm font-semibold">Technologies</h4>
-                      <div className="flex flex-wrap gap-1">
-                        {project.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="text-xs bg-accent/20 text-accent border border-accent/30">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div className="absolute top-4 right-4">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/github relative p-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 hover:border-white/60 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-rose-500/30"
+                      title="View on GitHub"
+                    >
+                      <Github className="h-6 w-6 text-white drop-shadow-lg" />
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/20 to-amber-500/20 opacity-0 group-hover/github:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                  </div>
+                  
+                  {/* Floating Project Index */}
+                  <div className="absolute top-4 left-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                      <span className="text-white font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
                     </div>
+                  </div>
+                </div>
+                
+                <CardContent className="p-8 relative z-10 space-y-6">
+                  {/* Project Title & Description */}
+                  <div>
+                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-rose-600 to-orange-600 bg-clip-text text-transparent group-hover:from-orange-600 group-hover:to-amber-600 transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
+                  </div>
 
-                   {/* Metrics */}
-                   <div className="grid grid-cols-3 gap-2 p-3 bg-secondary/30 rounded-lg">
-                     <div className="text-center">
-                       <Calendar className="w-4 h-4 mx-auto mb-1 text-primary" />
-                       <p className="text-xs text-muted-foreground">{project.metrics?.duration}</p>
-                     </div>
-                     <div className="text-center">
-                       <Users className="w-4 h-4 mx-auto mb-1 text-accent" />
-                       <p className="text-xs text-muted-foreground">{project.metrics?.team}</p>
-                     </div>
-                     <div className="text-center">
-                       <TrendingUp className="w-4 h-4 mx-auto mb-1 text-cyan-500" />
-                       <p className="text-xs text-muted-foreground">{project.metrics?.impact}</p>
-                     </div>
-                   </div>
+                  {/* Key Features with Icons */}
+                  <div className="space-y-3">
+                    <h4 className="text-sm font-bold text-rose-600 dark:text-rose-400 flex items-center gap-2">
+                      <Star className="h-4 w-4" />
+                      Key Features
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.keyFeatures?.map((feature, idx) => (
+                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-rose-100 to-orange-100 dark:from-rose-900/30 dark:to-orange-900/30 rounded-full border border-rose-200 dark:border-rose-700">
+                          <span className="text-xs font-medium text-rose-700 dark:text-rose-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
+                  {/* Technologies with Enhanced Styling */}
+                  <div className="space-y-3">
+                    <h4 className="text-sm font-bold text-orange-600 dark:text-orange-400 flex items-center gap-2">
+                      <Code className="h-4 w-4" />
+                      Tech Stack
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, idx) => (
+                        <div key={tech} className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-300 hover:scale-105 ${
+                          idx % 3 === 0 ? 'bg-gradient-to-r from-rose-500/10 to-rose-500/20 border-rose-300 dark:border-rose-600 text-rose-700 dark:text-rose-300' :
+                          idx % 3 === 1 ? 'bg-gradient-to-r from-orange-500/10 to-orange-500/20 border-orange-300 dark:border-orange-600 text-orange-700 dark:text-orange-300' :
+                          'bg-gradient-to-r from-amber-500/10 to-amber-500/20 border-amber-300 dark:border-amber-600 text-amber-700 dark:text-amber-300'
+                        }`}>
+                          {tech}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Enhanced Metrics Section */}
+                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-rose-50/50 via-orange-50/50 to-amber-50/50 dark:from-rose-950/30 dark:via-orange-950/30 dark:to-amber-950/30 rounded-xl border border-rose-200/50 dark:border-rose-700/50">
+                    <div className="text-center group/metric">
+                      <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                        <Calendar className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-xs font-medium text-rose-700 dark:text-rose-300">{project.metrics?.duration}</p>
+                    </div>
+                    <div className="text-center group/metric">
+                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                        <Users className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-xs font-medium text-orange-700 dark:text-orange-300">{project.metrics?.team}</p>
+                    </div>
+                    <div className="text-center group/metric">
+                      <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                        <TrendingUp className="w-4 h-4 text-white" />
+                      </div>
+                      <p className="text-xs font-medium text-amber-700 dark:text-amber-300">{project.metrics?.impact}</p>
+                    </div>
+                  </div>
+
+                  {/* Project Links */}
+                  <div className="flex gap-3 pt-4">
+                    {project.liveUrl && (
+                      <Button 
+                        onClick={() => window.open(project.liveUrl, '_blank')}
+                        className="flex-1 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                      >
+                        <Eye className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                        Live Demo
+                      </Button>
+                    )}
+                    {project.hasLearnMore && (
+                      <Button 
+                        variant="outline"
+                        onClick={() => openModal(project, 'learnMore')}
+                        className="flex-1 border-2 border-orange-300 dark:border-orange-600 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-orange-950/30 group/btn"
+                      >
+                        <MessageSquare className="h-4 w-4 mr-2 group-hover/btn:scale-110 transition-transform" />
+                        Learn More
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -617,114 +749,152 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20"
-               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
-            Work Experience
-          </h2>
-          <div className="max-w-6xl mx-auto">
-            <div className="space-y-8">
+      <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/20 dark:via-purple-950/20 dark:to-pink-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+              Work Experience
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+              My professional journey in software engineering and leadership
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto">
+            <div className="space-y-12">
               {experiences.map((exp, index) => (
-                <Card key={index} className="project-card border-2 hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="p-8">
-                    <div className="space-y-6">
+                <div key={index} className="relative">
+                  {/* Timeline Connector */}
+                  <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 transform md:-translate-x-1/2"></div>
+                  
+                  <Card className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/40 transition-all duration-500 transform hover:-translate-y-2 ml-12 md:ml-0 md:w-[calc(50%-2rem)] md:odd:mr-auto md:even:ml-auto">
+                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    {/* Timeline Circle */}
+                    <div className="absolute -left-16 md:-left-8 md:group-odd:-right-8 md:group-odd:left-auto top-8 w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900">
+                      <Briefcase className="h-8 w-8 text-white" />
+                    </div>
+                    
+                    <CardContent className="p-8 relative z-10 space-y-8">
                       {/* Header Section */}
-                      <div className="flex items-start gap-4">
-                         <div className="flex-shrink-0">
-                           <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-cyan-500/10 flex items-center justify-center border-2 border-cyan-500/30">
-                             <Briefcase className="h-6 w-6 text-cyan-500" />
-                           </div>
-                         </div>
-                         <div className="flex-1">
-                            <h3 className="text-2xl font-bold mb-2 text-cyan-500">{exp.title}</h3>
-                            <div className="flex flex-wrap items-center gap-4 mb-4 text-muted-foreground">
+                      <div className="space-y-4">
+                        <div className="flex flex-wrap items-start gap-4">
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                              {exp.title}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-6 text-gray-600 dark:text-gray-300">
                               <div className="flex items-center gap-2">
-                                <span className="font-semibold text-cyan-500 text-lg">{exp.company}</span>
+                                <span className="text-xl font-bold text-indigo-600 dark:text-indigo-400">{exp.company}</span>
                                 {exp.client && (
-                                  <div className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold rounded-full shadow-lg animate-pulse">
-                                    Client: {exp.client}
+                                  <div className="px-4 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-sm font-bold rounded-2xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300">
+                                    <span className="flex items-center gap-2">
+                                      <Star className="h-4 w-4" />
+                                      Client: {exp.client}
+                                    </span>
                                   </div>
                                 )}
                               </div>
-                            <span className="flex items-center gap-1">
-                              <Calendar className="h-4 w-4" />
-                              {exp.period}
-                            </span>
-                            {exp.location && (
-                              <span className="flex items-center gap-1">
-                                <MapPin className="h-4 w-4" />
-                                {exp.location}
+                            </div>
+                            <div className="flex flex-wrap gap-4 mt-3 text-sm">
+                              <span className="flex items-center gap-2 px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
+                                <Calendar className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                                <span className="font-medium text-indigo-700 dark:text-indigo-300">{exp.period}</span>
                               </span>
-                            )}
+                              {exp.location && (
+                                <span className="flex items-center gap-2 px-3 py-1 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+                                  <MapPin className="h-4 w-4 text-purple-600 dark:text-purple-400" />
+                                  <span className="font-medium text-purple-700 dark:text-purple-300">{exp.location}</span>
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
 
-                       {/* Key Metrics */}
-                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-accent/20 rounded-lg">
-                         <div className="text-center">
-                           <Users className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
-                           <p className="text-sm font-medium">{exp.keyMetrics.teamSize}</p>
-                         </div>
-                         <div className="text-center">
-                           <Target className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
-                           <p className="text-sm font-medium">{exp.keyMetrics.projects}</p>
-                         </div>
-                         <div className="text-center">
-                           <TrendingUp className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
-                           <p className="text-sm font-medium">{exp.keyMetrics.impact}</p>
-                         </div>
-                       </div>
+                      {/* Key Metrics */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="text-center p-6 bg-gradient-to-br from-indigo-100 to-indigo-50 dark:from-indigo-900/30 dark:to-indigo-800/20 rounded-2xl border border-indigo-200 dark:border-indigo-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                            <Users className="w-6 h-6 text-white" />
+                          </div>
+                          <p className="text-lg font-bold text-indigo-700 dark:text-indigo-300">{exp.keyMetrics.teamSize}</p>
+                        </div>
+                        <div className="text-center p-6 bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-800/20 rounded-2xl border border-purple-200 dark:border-purple-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                            <Target className="w-6 h-6 text-white" />
+                          </div>
+                          <p className="text-lg font-bold text-purple-700 dark:text-purple-300">{exp.keyMetrics.projects}</p>
+                        </div>
+                        <div className="text-center p-6 bg-gradient-to-br from-pink-100 to-pink-50 dark:from-pink-900/30 dark:to-pink-800/20 rounded-2xl border border-pink-200 dark:border-pink-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                            <TrendingUp className="w-6 h-6 text-white" />
+                          </div>
+                          <p className="text-lg font-bold text-pink-700 dark:text-pink-300">{exp.keyMetrics.impact}</p>
+                        </div>
+                      </div>
 
-                       {/* Key Achievements */}
-                       <div className="space-y-4">
-                         <h4 className="text-lg font-semibold flex items-center gap-2">
-                           <Star className="w-5 h-5 text-cyan-500" />
-                           Key Achievements
-                         </h4>
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                           {exp.achievements.map((achievement, idx) => (
-                             <Card key={idx} className="bg-gradient-to-br from-card/80 to-card/60 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300">
-                               <CardContent className="p-4">
-                                 <h5 className="font-semibold text-cyan-500 mb-2">{achievement.title}</h5>
-                                 <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{achievement.description}</p>
-                                 <div className="space-y-2">
-                                   <div className="flex items-center gap-2">
-                                     <TrendingUp className="w-3 h-3 text-accent" />
-                                     <span className="text-xs font-medium text-accent">{achievement.impact}</span>
-                                   </div>
-                                   <div className="flex flex-wrap gap-1">
-                                     {achievement.skills.map((skill, skillIdx) => (
-                                       <Badge key={skillIdx} variant="outline" className="text-xs border-cyan-500/30 text-cyan-500">
-                                         {skill}
-                                       </Badge>
-                                     ))}
-                                   </div>
-                                 </div>
-                               </CardContent>
-                             </Card>
-                           ))}
-                         </div>
-                       </div>
+                      {/* Key Achievements */}
+                      <div className="space-y-6">
+                        <h4 className="text-2xl font-bold flex items-center gap-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                            <Star className="w-5 h-5 text-white" />
+                          </div>
+                          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Key Achievements</span>
+                        </h4>
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                          {exp.achievements.map((achievement, idx) => (
+                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
+                              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
+                              <CardContent className="p-6 relative z-10">
+                                <h5 className="font-bold text-lg text-indigo-600 dark:text-indigo-400 mb-3">{achievement.title}</h5>
+                                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{achievement.description}</p>
+                                <div className="space-y-3">
+                                  <div className="flex items-center gap-2 p-2 bg-gradient-to-r from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-lg">
+                                    <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                                    <span className="text-sm font-bold text-emerald-700 dark:text-emerald-300">{achievement.impact}</span>
+                                  </div>
+                                  <div className="flex flex-wrap gap-2">
+                                    {achievement.skills.map((skill, skillIdx) => (
+                                      <div key={skillIdx} className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                                        skillIdx % 3 === 0 ? 'bg-indigo-100 dark:bg-indigo-900/30 border-indigo-300 dark:border-indigo-600 text-indigo-700 dark:text-indigo-300' :
+                                        skillIdx % 3 === 1 ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300' :
+                                        'bg-pink-100 dark:bg-pink-900/30 border-pink-300 dark:border-pink-600 text-pink-700 dark:text-pink-300'
+                                      }`}>
+                                        {skill}
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+                      </div>
 
-                       {/* Technical Skills */}
-                       <div className="space-y-3">
-                         <h4 className="text-lg font-semibold flex items-center gap-2">
-                           <Code className="w-5 h-5 text-cyan-500" />
-                           Technical Skills
-                         </h4>
-                         <div className="flex flex-wrap gap-2">
-                           {exp.skills.map((skill, skillIdx) => (
-                             <Badge key={skillIdx} className="bg-cyan-500 text-white border-0 hover:bg-cyan-500/80 transition-colors font-medium">
-                               {skill}
-                             </Badge>
-                           ))}
-                         </div>
-                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                      {/* Technical Skills */}
+                      <div className="space-y-4">
+                        <h4 className="text-2xl font-bold flex items-center gap-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                            <Code className="w-5 h-5 text-white" />
+                          </div>
+                          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Technical Skills</span>
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                          {exp.skills.map((skill, skillIdx) => (
+                            <div key={skillIdx} className="group/skill px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 cursor-default">
+                              <span className="font-medium group-hover/skill:font-bold transition-all duration-300">{skill}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
@@ -732,59 +902,122 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20"
-               style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)' }}>
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold text-center mb-16 text-primary">
-            Education
-          </h2>
-          <div className="max-w-5xl mx-auto">
+      <section id="education" className="py-20 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 dark:from-teal-950/20 dark:via-cyan-950/20 dark:to-blue-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-teal-600 via-cyan-500 to-blue-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+              Education
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+              My academic journey and foundation in Computer Science & Engineering
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto rounded-full animate-scale-in"></div>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
             {education.map((edu, index) => (
-              <Card key={index} className="project-card border-2 hover:border-accent/30 transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center border-2 border-accent/30">
-                        <GraduationCap className="h-8 w-8 text-accent" />
+              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/40 transition-all duration-500 transform hover:-translate-y-3">
+                <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <CardContent className="p-10 relative z-10">
+                  <div className="flex flex-col lg:flex-row items-start gap-8">
+                    {/* Icon & Visual Elements */}
+                    <div className="flex-shrink-0 relative">
+                      <div className="w-24 h-24 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
+                        <GraduationCap className="h-12 w-12 text-white" />
                       </div>
+                      <div className="absolute -inset-2 bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-70"></div>
+                      
+                      {/* Floating Elements */}
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full animate-bounce"></div>
+                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
                     </div>
-                    <div className="flex-1 space-y-4">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2 text-accent">{edu.degree}</h3>
-                        <div className="flex flex-wrap items-center gap-6 mb-4">
-                          <span className="text-lg font-semibold text-accent">{edu.institution}</span>
-                          <span className="flex items-center gap-2 text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            {edu.period}
-                          </span>
+                    
+                    {/* Content */}
+                    <div className="flex-1 space-y-6">
+                      {/* Header */}
+                      <div className="space-y-4">
+                        <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent leading-tight">
+                          {edu.degree}
+                        </h3>
+                        <div className="flex flex-wrap items-center gap-6">
+                          <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full"></div>
+                            <span className="text-2xl font-bold text-teal-600 dark:text-teal-400">{edu.institution}</span>
+                          </div>
+                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border border-cyan-200 dark:border-cyan-700">
+                            <Calendar className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+                            <span className="font-bold text-cyan-700 dark:text-cyan-300">{edu.period}</span>
+                          </div>
                           {edu.gpa && (
-                            <div className="flex items-center gap-2 px-3 py-1 bg-accent/10 rounded-full border border-accent/30">
-                              <Star className="h-4 w-4 text-accent" />
-                              <span className="font-semibold text-accent">CGPA: {edu.gpa}</span>
+                            <div className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-amber-100 to-yellow-50 dark:from-amber-900/30 dark:to-yellow-800/20 rounded-2xl border-2 border-amber-300 dark:border-amber-600 shadow-lg">
+                              <Star className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                              <span className="font-bold text-lg text-amber-700 dark:text-amber-300">CGPA: {edu.gpa}</span>
                             </div>
                           )}
                         </div>
                       </div>
 
-                      <div className="p-4 bg-secondary/30 rounded-lg border border-accent/20">
-                        <p className="text-muted-foreground leading-relaxed">{edu.description}</p>
+                      {/* Description */}
+                      <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
+                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{edu.description}</p>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="text-center p-3 bg-gradient-to-br from-accent/5 to-accent/10 rounded-lg border border-accent/20">
-                          <Code className="w-5 h-5 mx-auto mb-2 text-accent" />
-                          <p className="text-sm font-medium">Strong Foundation</p>
-                          <p className="text-xs text-muted-foreground">Algorithms & Data Structures</p>
+                      {/* Achievement Highlights */}
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 rounded-2xl border-2 border-teal-200 dark:border-teal-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                            <Code className="w-6 h-6 text-white" />
+                          </div>
+                          <h4 className="font-bold text-teal-700 dark:text-teal-300 text-lg mb-2">Strong Foundation</h4>
+                          <p className="text-sm text-teal-600 dark:text-teal-400">Algorithms & Data Structures</p>
                         </div>
-                        <div className="text-center p-3 bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20">
-                          <Database className="w-5 h-5 mx-auto mb-2 text-primary" />
-                          <p className="text-sm font-medium">Core Concepts</p>
-                          <p className="text-xs text-muted-foreground">Software Development</p>
+                        
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border-2 border-cyan-200 dark:border-cyan-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                            <Database className="w-6 h-6 text-white" />
+                          </div>
+                          <h4 className="font-bold text-cyan-700 dark:text-cyan-300 text-lg mb-2">Technical Skills</h4>
+                          <p className="text-sm text-cyan-600 dark:text-cyan-400">Software Development</p>
                         </div>
-                        <div className="text-center p-3 bg-gradient-to-br from-cyan-500/5 to-cyan-500/10 rounded-lg border border-cyan-500/20">
-                          <Globe className="w-5 h-5 mx-auto mb-2 text-cyan-500" />
-                          <p className="text-sm font-medium">Academic Excellence</p>
-                          <p className="text-xs text-muted-foreground">Top 10% Graduate</p>
+                        
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/20 rounded-2xl border-2 border-blue-200 dark:border-blue-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                            <Award className="w-6 h-6 text-white" />
+                          </div>
+                          <h4 className="font-bold text-blue-700 dark:text-blue-300 text-lg mb-2">Academic Excellence</h4>
+                          <p className="text-sm text-blue-600 dark:text-blue-400">Top Performance</p>
+                        </div>
+                      </div>
+
+                      {/* Key Subjects/Achievements */}
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-bold flex items-center gap-3">
+                          <div className="w-6 h-6 bg-gradient-to-br from-teal-500 to-blue-500 rounded-lg flex items-center justify-center">
+                            <Star className="w-4 h-4 text-white" />
+                          </div>
+                          <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">Key Focus Areas</span>
+                        </h4>
+                        <div className="flex flex-wrap gap-3">
+                          {[
+                            'Computer Science Fundamentals',
+                            'Software Engineering',
+                            'Data Structures & Algorithms',
+                            'Database Systems',
+                            'Web Development',
+                            'Project Management'
+                          ].map((subject, idx) => (
+                            <div key={idx} className={`px-4 py-2 rounded-xl text-sm font-medium border transition-all duration-300 hover:scale-105 cursor-default ${
+                              idx % 3 === 0 ? 'bg-gradient-to-r from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 border-teal-300 dark:border-teal-600 text-teal-700 dark:text-teal-300' :
+                              idx % 3 === 1 ? 'bg-gradient-to-r from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 border-cyan-300 dark:border-cyan-600 text-cyan-700 dark:text-cyan-300' :
+                              'bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/20 border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300'
+                            }`}>
+                              {subject}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -795,9 +1028,6 @@ const Portfolio = () => {
           </div>
         </div>
       </section>
-
-      
-
 
       {/* Footer */}
       <footer className="py-8 border-t border-border">
