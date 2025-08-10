@@ -39,13 +39,11 @@ import { toast } from '@/hooks/use-toast';
 import MobileNav from './MobileNav';
 import ProjectModal from './ProjectModal';
 import profilePhoto from '@/assets/profile-photo.jpg';
-import project1 from '@/assets/project-1.jpg';
-import project2 from '@/assets/project-2.jpg';
-import project3 from '@/assets/project-3.jpg';
-import APSFailureClassification from '@/assets/APSFailureClassification.jpeg';
-import FinancialProductComplaintAnalysis from '@/assets/FinancialProductComplaintAnalysis.jpeg';
+import APSFailureClassification from '@/assets/APS Failure Classification.jpeg';
+import FinancialProductComplaintAnalysis from '@/assets/Financial Product Complaint Analysis.jpeg';
 import RAG from '@/assets/RAG.jpeg';
-import LogsClassification from '@/assets/LogsClassification.jpeg';
+import LogsClassification from '@/assets/Logs Classification.jpeg';
+import Text2QueryChat from '@/assets/Text2Query Chat.jpeg'
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -238,7 +236,7 @@ const Portfolio = () => {
     {
       title: "Text2Query Chat",
       description: "Developed a Text-to-SQL chatbot using LangChain, GROQ API, and Streamlit, enabling seamless natural language database queries with 95% accuracy.",
-      image: project1,
+      image: Text2QueryChat,
       technologies: ["Langchain", "GROQ", "Streamlit", "MySQL", "SQLite"],
       liveUrl: "https://text2query-chat.streamlit.app",
       githubUrl: "https://github.com/tchandrareddy21/text2query-chat",
