@@ -558,13 +558,15 @@ const Portfolio = () => {
                        <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
                      </div>
                      <a
-                       href={project.githubUrl}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="p-2 border border-primary/50 hover:bg-primary/10 rounded-md transition-colors shrink-0"
-                     >
-                       <Github className="h-3 w-3 text-primary" />
-                     </a>
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/github relative p-3 bg-gradient-to-br from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border-2 border-primary/30 hover:border-primary/60 rounded-xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20 shrink-0"
+                        title="View on GitHub"
+                      >
+                        <Github className="h-6 w-6 text-primary group-hover/github:text-white transition-colors duration-300" />
+                        <div className="absolute inset-0 rounded-xl bg-primary/0 group-hover/github:bg-primary/10 transition-colors duration-300"></div>
+                      </a>
                    </div>
 
                    {/* Key Features */}
