@@ -59,7 +59,7 @@ const Portfolio = () => {
     type: 'demo'
   });
 
-  const fullText = "Data Scientist & ML Engineer";
+  const fullText = "Data Scientist & AI/ML Engineer";
 
   useEffect(() => {
     let index = 0;
@@ -422,7 +422,7 @@ const Portfolio = () => {
               </div>
               
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-                Data Scientist / ML Engineer with 2+ years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
+                Data Scientist / AI/ML Engineer with 3+ years of experience as a Software Engineer and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. Currently leading a team of 4 and collaborating with cross-functional stakeholders.
               </p>
               <div className="flex justify-center lg:justify-start gap-4 mb-6">
                 <a
@@ -505,7 +505,7 @@ const Portfolio = () => {
                     <div className="space-y-6 text-lg leading-relaxed">
                       <p className="text-gray-700 dark:text-gray-300 relative">
                         <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full"></span>
-                        I am a passionate <span className="font-semibold text-violet-600 dark:text-violet-400">Data Scientist / ML Engineer</span> with 2+ years of experience as a Software Engineer 
+                        I am a passionate <span className="font-semibold text-violet-600 dark:text-violet-400">Data Scientist / AI/ML Engineer</span> with 3+ years of experience as a Software Engineer 
                         and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
                         I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
                         <span className="font-semibold text-emerald-600 dark:text-emerald-400"> measurable business impact.</span>
@@ -539,7 +539,7 @@ const Portfolio = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Briefcase className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-violet-600 dark:text-violet-400 mb-1">2+</div>
+                      <div className="text-3xl font-bold text-violet-600 dark:text-violet-400 mb-1">3+</div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
                     </div>
                   </CardContent>
@@ -638,25 +638,25 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 dark:from-rose-950/20 dark:via-orange-950/20 dark:to-amber-950/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-rose-500/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent"></div>
+      <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-pink-50 dark:from-purple-950/20 dark:via-fuchsia-950/20 dark:to-pink-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
               Discover my portfolio of innovative AI/ML solutions that drive real business impact
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto rounded-full animate-scale-in"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-rose-500/20 dark:hover:shadow-rose-500/40 transition-all duration-500 transform hover:-translate-y-3 hover:rotate-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-orange-500/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Project Image with Overlay */}
                 <div className="relative overflow-hidden h-56">
@@ -671,17 +671,17 @@ const Portfolio = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group/github relative p-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 hover:border-white/60 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-rose-500/30"
+                      className="group/github relative p-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 hover:border-white/60 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30"
                       title="View on GitHub"
                     >
                       <Github className="h-6 w-6 text-white drop-shadow-lg" />
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-rose-500/20 to-amber-500/20 opacity-0 group-hover/github:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover/github:opacity-100 transition-opacity duration-300"></div>
                     </a>
                   </div>
                   
                   {/* Floating Project Index */}
                   <div className="absolute top-4 left-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-rose-500 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-lg">
                       <span className="text-white font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
                     </div>
                   </div>
@@ -690,7 +690,7 @@ const Portfolio = () => {
                 <CardContent className="p-8 relative z-10 space-y-6">
                   {/* Project Title & Description */}
                   <div>
-                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-rose-600 to-orange-600 bg-clip-text text-transparent group-hover:from-orange-600 group-hover:to-amber-600 transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent group-hover:from-fuchsia-600 group-hover:to-pink-600 transition-all duration-300">
                       {project.title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
@@ -698,14 +698,14 @@ const Portfolio = () => {
 
                   {/* Key Features with Icons */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-rose-600 dark:text-rose-400 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-purple-600 dark:text-purple-400 flex items-center gap-2">
                       <Star className="h-4 w-4" />
                       Key Features
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.keyFeatures?.map((feature, idx) => (
-                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-rose-100 to-orange-100 dark:from-rose-900/30 dark:to-orange-900/30 rounded-full border border-rose-200 dark:border-rose-700">
-                          <span className="text-xs font-medium text-rose-700 dark:text-rose-300">{feature}</span>
+                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-fuchsia-100 dark:from-purple-900/30 dark:to-fuchsia-900/30 rounded-full border border-purple-200 dark:border-purple-700">
+                          <span className="text-xs font-medium text-purple-700 dark:text-purple-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -713,16 +713,16 @@ const Portfolio = () => {
 
                   {/* Technologies with Enhanced Styling */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-orange-600 dark:text-orange-400 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-fuchsia-600 dark:text-fuchsia-400 flex items-center gap-2">
                       <Code className="h-4 w-4" />
                       Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, idx) => (
                         <div key={tech} className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-300 hover:scale-105 ${
-                          idx % 3 === 0 ? 'bg-gradient-to-r from-rose-500/10 to-rose-500/20 border-rose-300 dark:border-rose-600 text-rose-700 dark:text-rose-300' :
-                          idx % 3 === 1 ? 'bg-gradient-to-r from-orange-500/10 to-orange-500/20 border-orange-300 dark:border-orange-600 text-orange-700 dark:text-orange-300' :
-                          'bg-gradient-to-r from-amber-500/10 to-amber-500/20 border-amber-300 dark:border-amber-600 text-amber-700 dark:text-amber-300'
+                          idx % 3 === 0 ? 'bg-gradient-to-r from-purple-500/10 to-purple-500/20 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300' :
+                          idx % 3 === 1 ? 'bg-gradient-to-r from-fuchsia-500/10 to-fuchsia-500/20 border-fuchsia-300 dark:border-fuchsia-600 text-fuchsia-700 dark:text-fuchsia-300' :
+                          'bg-gradient-to-r from-pink-500/10 to-pink-500/20 border-pink-300 dark:border-pink-600 text-pink-700 dark:text-pink-300'
                         }`}>
                           {tech}
                         </div>
@@ -731,24 +731,24 @@ const Portfolio = () => {
                   </div>
 
                   {/* Enhanced Metrics Section */}
-                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-rose-50/50 via-orange-50/50 to-amber-50/50 dark:from-rose-950/30 dark:via-orange-950/30 dark:to-amber-950/30 rounded-xl border border-rose-200/50 dark:border-rose-700/50">
+                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-purple-50/50 via-fuchsia-50/50 to-pink-50/50 dark:from-purple-950/30 dark:via-fuchsia-950/30 dark:to-pink-950/30 rounded-xl border border-purple-200/50 dark:border-purple-700/50">
                     <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-rose-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <Calendar className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-rose-700 dark:text-rose-300">{project.metrics?.duration}</p>
+                      <p className="text-xs font-medium text-purple-700 dark:text-purple-300">{project.metrics?.duration}</p>
                     </div>
                     <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                      <div className="w-8 h-8 bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <Users className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-orange-700 dark:text-orange-300">{project.metrics?.team}</p>
+                      <p className="text-xs font-medium text-fuchsia-700 dark:text-fuchsia-300">{project.metrics?.team}</p>
                     </div>
                     <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
+                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <TrendingUp className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-amber-700 dark:text-amber-300">{project.metrics?.impact}</p>
+                      <p className="text-xs font-medium text-pink-700 dark:text-pink-300">{project.metrics?.impact}</p>
                     </div>
                   </div>
 
@@ -773,44 +773,44 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/20 dark:via-purple-950/20 dark:to-pink-950/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
+      <section id="experience" className="py-20 bg-gradient-to-br from-cyan-50 via-emerald-50 to-teal-50 dark:from-cyan-950/20 dark:via-emerald-950/20 dark:to-teal-950/20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               Work Experience
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
               My professional journey in software engineering and leadership
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
           <div className="max-w-5xl mx-auto">
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <div key={index} className="relative">
-                  <Card className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-indigo-500/20 dark:hover:shadow-indigo-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <Card className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/20 dark:hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Timeline Circle */}
-                    <div className="absolute -left-8 top-8 w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900 z-20">
-                      <Briefcase className="h-8 w-8 text-white" />
+                    <div className="absolute -left-6 md:-left-8 top-8 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900 z-20">
+                      <Briefcase className="h-6 w-6 md:h-8 md:w-8 text-white" />
                     </div>
                     
-                    <CardContent className="p-8 pl-16 relative z-10 space-y-8">
+                    <CardContent className="p-4 md:p-8 pl-8 md:pl-16 relative z-10 space-y-6 md:space-y-8">
                       {/* Header Section */}
                       <div className="space-y-4">
                         <div className="flex flex-col lg:flex-row lg:items-start gap-4">
                           <div className="flex-1 min-w-0">
-                            <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                            <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent mb-2">
                               {exp.title}
                             </h3>
                             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-gray-600 dark:text-gray-300">
                               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                                <span className="text-lg lg:text-xl font-bold text-indigo-600 dark:text-indigo-400">{exp.company}</span>
+                                <span className="text-lg lg:text-xl font-bold text-cyan-600 dark:text-cyan-400">{exp.company}</span>
                                 {exp.client && (
                                   <div className="inline-flex px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs sm:text-sm font-bold rounded-2xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 w-fit">
                                     <span className="flex items-center gap-2">
@@ -822,14 +822,14 @@ const Portfolio = () => {
                               </div>
                             </div>
                             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 mt-3 text-sm">
-                              <span className="flex items-center gap-2 px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 rounded-full w-fit">
-                                <Calendar className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
-                                <span className="font-medium text-indigo-700 dark:text-indigo-300">{exp.period}</span>
+                              <span className="flex items-center gap-2 px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 rounded-full w-fit">
+                                <Calendar className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
+                                <span className="font-medium text-cyan-700 dark:text-cyan-300">{exp.period}</span>
                               </span>
                               {exp.location && (
-                                <span className="flex items-center gap-2 px-3 py-1 bg-purple-100 dark:bg-purple-900/30 rounded-full w-fit">
-                                  <MapPin className="h-4 w-4 text-purple-600 dark:text-purple-400" />
-                                  <span className="font-medium text-purple-700 dark:text-purple-300">{exp.location}</span>
+                                <span className="flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 rounded-full w-fit">
+                                  <MapPin className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                                  <span className="font-medium text-emerald-700 dark:text-emerald-300">{exp.location}</span>
                                 </span>
                               )}
                             </div>
@@ -839,40 +839,40 @@ const Portfolio = () => {
 
                       {/* Key Metrics */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="text-center p-6 bg-gradient-to-br from-indigo-100 to-indigo-50 dark:from-indigo-900/30 dark:to-indigo-800/20 rounded-2xl border border-indigo-200 dark:border-indigo-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border border-cyan-200 dark:border-cyan-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <Users className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-indigo-700 dark:text-indigo-300">{exp.keyMetrics.teamSize}</p>
+                          <p className="text-lg font-bold text-cyan-700 dark:text-cyan-300">{exp.keyMetrics.teamSize}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-purple-100 to-purple-50 dark:from-purple-900/30 dark:to-purple-800/20 rounded-2xl border border-purple-200 dark:border-purple-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-2xl border border-emerald-200 dark:border-emerald-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <Target className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-purple-700 dark:text-purple-300">{exp.keyMetrics.projects}</p>
+                          <p className="text-lg font-bold text-emerald-700 dark:text-emerald-300">{exp.keyMetrics.projects}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-pink-100 to-pink-50 dark:from-pink-900/30 dark:to-pink-800/20 rounded-2xl border border-pink-200 dark:border-pink-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 rounded-2xl border border-teal-200 dark:border-teal-700 group/metric hover:scale-105 transition-transform duration-300">
+                          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <TrendingUp className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-pink-700 dark:text-pink-300">{exp.keyMetrics.impact}</p>
+                          <p className="text-lg font-bold text-teal-700 dark:text-teal-300">{exp.keyMetrics.impact}</p>
                         </div>
                       </div>
 
                       {/* Key Achievements */}
                       <div className="space-y-6">
                         <h4 className="text-2xl font-bold flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                          <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
                             <Star className="w-5 h-5 text-white" />
                           </div>
-                          <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Key Achievements</span>
+                          <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Key Achievements</span>
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
                           {exp.achievements.map((achievement, idx) => (
                             <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
-                              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
+                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
                               <CardContent className="p-4 sm:p-6 relative z-10">
-                                <h5 className="font-bold text-base sm:text-lg text-indigo-600 dark:text-indigo-400 mb-3">{achievement.title}</h5>
+                                <h5 className="font-bold text-base sm:text-lg text-cyan-600 dark:text-cyan-400 mb-3">{achievement.title}</h5>
                                 <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{achievement.description}</p>
                                 <div className="space-y-3">
                                   <div className="flex items-center gap-2 p-2 bg-gradient-to-r from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-lg">
@@ -882,9 +882,9 @@ const Portfolio = () => {
                                   <div className="flex flex-wrap gap-2">
                                     {achievement.skills.map((skill, skillIdx) => (
                                       <div key={skillIdx} className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${
-                                        skillIdx % 3 === 0 ? 'bg-indigo-100 dark:bg-indigo-900/30 border-indigo-300 dark:border-indigo-600 text-indigo-700 dark:text-indigo-300' :
-                                        skillIdx % 3 === 1 ? 'bg-purple-100 dark:bg-purple-900/30 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300' :
-                                        'bg-pink-100 dark:bg-pink-900/30 border-pink-300 dark:border-pink-600 text-pink-700 dark:text-pink-300'
+                                        skillIdx % 3 === 0 ? 'bg-cyan-100 dark:bg-cyan-900/30 border-cyan-300 dark:border-cyan-600 text-cyan-700 dark:text-cyan-300' :
+                                        skillIdx % 3 === 1 ? 'bg-emerald-100 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300' :
+                                        'bg-teal-100 dark:bg-teal-900/30 border-teal-300 dark:border-teal-600 text-teal-700 dark:text-teal-300'
                                       }`}>
                                         {skill}
                                       </div>
