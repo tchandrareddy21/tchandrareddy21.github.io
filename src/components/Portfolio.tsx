@@ -794,12 +794,19 @@ const Portfolio = () => {
                   <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
-                    {/* Timeline Circle */}
-                    <div className="absolute -left-6 md:-left-8 top-8 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900 z-20">
-                      <Briefcase className="h-6 w-6 md:h-8 md:w-8 text-white" />
-                    </div>
-                    
-                    <CardContent className="p-4 md:p-8 pl-8 md:pl-16 relative z-10 space-y-6 md:space-y-8">
+                    <CardContent className="p-4 md:p-8 relative z-10 space-y-6 md:space-y-8">
+                      {/* Timeline Circle */}
+                      <div className="flex items-start gap-6 mb-6">
+                        <div className="flex-shrink-0 relative">
+                          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
+                            <Briefcase className="h-8 w-8 md:h-10 md:w-10 text-white" />
+                          </div>
+                          <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-full blur-xl opacity-70"></div>
+                        </div>
+                        <div className="flex-1 pt-2">
+                          <div className="w-full h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 mt-8"></div>
+                        </div>
+                      </div>
                       {/* Header Section */}
                       <div className="space-y-4">
                         <div className="flex flex-col lg:flex-row lg:items-start gap-4">
