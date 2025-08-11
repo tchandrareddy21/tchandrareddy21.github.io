@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -428,40 +427,41 @@ const Portfolio = () => {
                   href="https://github.com/tchandrareddy21"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-4 bg-gradient-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-full border border-purple-500/20 hover:border-purple-500/40 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple relative overflow-hidden"
-                  style={{ animationDelay: '0s' }}
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <Github className="w-6 h-6 relative z-10" />
+                  <Github className="w-6 h-6" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/tchandrareddy21/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-4 bg-gradient-to-br from-blue-500/10 to-teal-500/10 backdrop-blur-sm rounded-full border border-blue-500/20 hover:border-blue-500/40 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple relative overflow-hidden"
-                  style={{ animationDelay: '0.5s' }}
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <Linkedin className="w-6 h-6 relative z-10" />
+                  <Linkedin className="w-6 h-6" />
                 </a>
                 <a
                   href="mailto:tchandrareddy21@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 material-surface-variant rounded-full material-elevation-1 hover:material-elevation-2 transition-all hover:scale-110 material-motion-emphasized animate-float material-ripple"
-                  style={{ animationDelay: '1s' }}
+                  className="p-3 bg-background/80 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 hover-glow"
                 >
                   <Mail className="w-6 h-6" />
                 </a>
               </div>
-              <div className="flex justify-center lg:justify-start">
+              <div className="flex justify-center lg:justify-start gap-4 flex-wrap">
                 <Button 
-                  onClick={handleDownloadResume}
                   size="lg" 
-                  className="material-button-primary material-ripple"
+                  className="gradient-primary hover:opacity-90 shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  onClick={handleDownloadResume}
                 >
-                  <Download className="mr-2 h-5 w-5" />
+                  <Download className="w-5 h-5 mr-2" />
                   Download Resume
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-border hover:bg-background/80 transition-all hover:scale-105"
+                  onClick={() => scrollToSection('about')}
+                >
+                  Learn More
                 </Button>
               </div>
             </div>
@@ -471,104 +471,103 @@ const Portfolio = () => {
 
       {/* About Section */}
       <section id="about" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-violet-600/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-violet-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               About Me
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-violet-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+              Passionate about transforming data into actionable insights and building intelligent solutions
+            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Main Content Card */}
-              <div className="lg:col-span-2">
-                <Card className="group relative overflow-hidden border-0 bg-gray-900/80 backdrop-blur-xl shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 transform hover:-translate-y-2">
-                  <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-cyan-500/5 to-emerald-500/5"></div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Main Content */}
+              <div className="space-y-8 animate-fade-in-up">
+                <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-2">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <CardContent className="p-8 relative z-10">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="relative">
-                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-emerald-500 flex items-center justify-center shadow-lg">
-                          <User className="h-8 w-8 text-white" />
-                        </div>
-                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-violet-500 to-emerald-500 opacity-30 blur-md"></div>
-                      </div>
-                      <div>
-                        <h3 className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-emerald-600 bg-clip-text text-transparent">Professional Summary</h3>
-                        <div className="w-32 h-0.5 bg-gradient-to-r from-violet-500 to-emerald-500 mt-2"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="space-y-6 text-lg leading-relaxed">
-                      <p className="text-gray-300 relative">
-                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full"></span>
-                        I am a passionate <span className="font-semibold text-violet-400">Data Scientist / AI/ML Engineer</span> with 3+ years of experience as a Software Engineer 
-                        and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
-                        I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
-                        <span className="font-semibold text-emerald-400"> measurable business impact.</span>
-                      </p>
-                      
-                      <p className="text-gray-300 relative">
-                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></span>
-                        My expertise spans across the entire <span className="font-semibold text-cyan-400">machine learning pipeline</span> - from data preprocessing and 
-                        feature engineering to model development, deployment, and monitoring. I have hands-on experience 
-                        with supervised and unsupervised learning algorithms, natural language processing, and cutting-edge 
-                        <span className="font-semibold text-violet-400">generative AI technologies</span> including transformers, RAG systems, and AI agents.
-                      </p>
-                      
-                      <p className="text-gray-300 relative">
-                        <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-emerald-500 to-violet-500 rounded-full"></span>
-                        Currently <span className="font-semibold text-emerald-400">leading a team of 4</span> and collaborating with cross-functional stakeholders to ensure 
-                        timely and high-quality project delivery. I'm passionate about leveraging AI and machine learning 
-                        to solve real-world problems and drive innovation in data-driven decision making.
-                      </p>
-                    </div>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+                      My Journey
+                    </h3>
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      As a Data Scientist and AI/ML Engineer with over 3+ years of software engineering experience, I specialize in developing end-to-end machine learning solutions that drive business value. Currently leading a team of 4 at HCLTech, working with Adobe to create innovative solutions that enhance user engagement and drive conversion rates.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed">
+                      My expertise spans the entire ML pipeline - from data preprocessing and feature engineering to model deployment and monitoring. I'm passionate about leveraging cutting-edge technologies like LangChain, RAG systems, and Generative AI to solve complex business problems.
+                    </p>
                   </CardContent>
                 </Card>
+
+                {/* Key Stats */}
+                <div className="grid grid-cols-2 gap-6">
+                  <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-6 text-center relative z-10">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">3+</div>
+                      <p className="text-sm text-gray-400 font-medium">Years Experience</p>
+                    </CardContent>
+                  </Card>
+                  <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:-rotate-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-6 text-center relative z-10">
+                      <div className="text-4xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-2">15+</div>
+                      <p className="text-sm text-gray-400 font-medium">Projects Completed</p>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-              
-              {/* Stats & Highlights */}
-              <div className="space-y-6">
-                {/* Experience Stats */}
-                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-violet-500/10 to-cyan-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Briefcase className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold text-violet-400 mb-1">3+</div>
-                      <div className="text-sm text-gray-400">Years Experience</div>
-                    </div>
-                  </CardContent>
-                </Card>
+
+              {/* Right Column - Focus Areas */}
+              <div className="space-y-6 animate-fade-in-up delay-300">
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-8">
+                  Focus Areas
+                </h3>
                 
-                {/* Team Leadership */}
-                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Users className="h-6 w-6 text-white" />
+                {[
+                  {
+                    icon: Brain,
+                    title: "Machine Learning & AI",
+                    description: "Building predictive models, implementing deep learning solutions, and deploying ML pipelines",
+                    color: "from-purple-500 to-purple-600"
+                  },
+                  {
+                    icon: MessageSquare,
+                    title: "Natural Language Processing",
+                    description: "Working with transformers, BERT, GPT models, and developing conversational AI systems",
+                    color: "from-pink-500 to-pink-600"
+                  },
+                  {
+                    icon: Database,
+                    title: "Data Engineering",
+                    description: "ETL processes, data warehousing, and building scalable data infrastructure",
+                    color: "from-orange-500 to-orange-600"
+                  },
+                  {
+                    icon: Globe,
+                    title: "MLOps & Cloud",
+                    description: "AWS deployment, containerization with Docker, and CI/CD for ML models",
+                    color: "from-red-500 to-red-600"
+                  }
+                ].map((area, index) => (
+                  <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <CardContent className="p-6 relative z-10">
+                      <div className="flex items-start gap-4">
+                        <div className={`w-12 h-12 bg-gradient-to-br ${area.color} rounded-2xl flex items-center justify-center group-hover:rotate-6 transition-transform duration-300`}>
+                          <area.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-bold text-lg text-gray-200 mb-2">{area.title}</h4>
+                          <p className="text-sm text-gray-400 leading-relaxed">{area.description}</p>
+                        </div>
                       </div>
-                      <div className="text-3xl font-bold text-cyan-400 mb-1">4</div>
-                      <div className="text-sm text-gray-400">Team Members</div>
-                    </div>
-                  </CardContent>
-                </Card>
-                
-                {/* Projects */}
-                <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-emerald-500/10 to-violet-500/10 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Target className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="text-3xl font-bold text-emerald-400 mb-1">15+</div>
-                      <div className="text-sm text-gray-400">POCs Delivered</div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
@@ -577,69 +576,69 @@ const Portfolio = () => {
 
       {/* Skills Section */}
       <section id="skills" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-600/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-red-500/10 via-transparent to-transparent"></div>
+        
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
-              Skills & Expertise
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-orange-600 via-red-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+              Technical Skills
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
-            <p className="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
-              A comprehensive toolkit spanning the entire data science and machine learning ecosystem
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+              A comprehensive toolkit for building intelligent data-driven solutions
             </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
-          <div className="max-w-6xl mx-auto">
-            {Object.entries(skills).map(([category, skillList], index) => (
-              <div key={category} className="mb-8 group animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <Card className="relative overflow-hidden border-0 bg-gray-900/80 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-                  <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5"></div>
-                  <CardContent className="p-8 relative z-10">
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="relative">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center shadow-lg">
-                          {category === 'Programming & Data Handling' && <Code className="h-7 w-7 text-white" />}
-                          {category === 'Databases' && <Database className="h-7 w-7 text-white" />}
-                          {category === 'Machine Learning' && <TrendingUp className="h-7 w-7 text-white" />}
-                          {category === 'Deep Learning & Natural Language Processing (NLP)' && <Brain className="h-7 w-7 text-white" />}
-                          {category === 'Generative AI' && <Sparkles className="h-7 w-7 text-white" />}
-                          {category === 'MLOps & Cloud' && <Server className="h-7 w-7 text-white" />}
-                          {category === 'APIs & Deployment' && <Globe className="h-7 w-7 text-white" />}
-                        </div>
-                        <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-indigo-500 to-pink-500 opacity-30 blur-md"></div>
+          
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {Object.entries(skills).map(([category, skillList], categoryIndex) => (
+                <Card key={category} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:-translate-y-3 animate-fade-in-up">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <CardHeader className="relative z-10">
+                    <CardTitle className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-2xl flex items-center justify-center ${
+                        categoryIndex % 4 === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
+                        categoryIndex % 4 === 1 ? 'bg-gradient-to-br from-red-500 to-red-600' :
+                        categoryIndex % 4 === 2 ? 'bg-gradient-to-br from-pink-500 to-pink-600' :
+                        'bg-gradient-to-br from-purple-500 to-purple-600'
+                      } group-hover:rotate-6 transition-transform duration-300`}>
+                        {categoryIndex % 4 === 0 ? <Code className="w-5 h-5 text-white" /> :
+                         categoryIndex % 4 === 1 ? <Database className="w-5 h-5 text-white" /> :
+                         categoryIndex % 4 === 2 ? <Server className="w-5 h-5 text-white" /> :
+                         <Globe className="w-5 h-5 text-white" />}
                       </div>
-                      <div>
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                          {category}
-                        </h3>
-                        <div className="w-32 h-0.5 bg-gradient-to-r from-indigo-500 to-pink-500 mt-2"></div>
-                      </div>
-                    </div>
+                      {category}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
                     <div className="flex flex-wrap gap-3">
-                      {skillList.map((skill) => (
+                      {skillList.map((skill, skillIndex) => (
                         <div
                           key={skill}
-                          className="group relative px-4 py-3 bg-gradient-to-r from-indigo-500/10 to-pink-500/10 border border-indigo-500/20 rounded-xl hover:border-indigo-500/40 transition-all duration-300 hover:scale-105 hover:shadow-lg backdrop-blur-sm"
+                          className={`group/skill px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 ${
+                            skillIndex % 4 === 0 ? 'bg-orange-100/10 border-orange-600 text-orange-300 hover:bg-orange-100/20' :
+                            skillIndex % 4 === 1 ? 'bg-red-100/10 border-red-600 text-red-300 hover:bg-red-100/20' :
+                            skillIndex % 4 === 2 ? 'bg-pink-100/10 border-pink-600 text-pink-300 hover:bg-pink-100/20' :
+                            'bg-purple-100/10 border-purple-600 text-purple-300 hover:bg-purple-100/20'
+                          }`}
                         >
-                          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                          <span className="relative z-10 font-medium text-gray-300 text-sm">
-                            {skill}
-                          </span>
+                          <span className="group-hover/skill:font-bold transition-all duration-300">{skill}</span>
                         </div>
                       ))}
                     </div>
                   </CardContent>
                 </Card>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-fuchsia-500/10 via-transparent to-transparent"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -647,126 +646,107 @@ const Portfolio = () => {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-              Discover my portfolio of innovative AI/ML solutions that drive real business impact
+              Innovative solutions leveraging machine learning, AI, and modern technologies
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Project Image with Overlay */}
-                <div className="relative overflow-hidden h-56">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/github relative p-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white/30 hover:border-white/60 rounded-2xl transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/30"
-                      title="View on GitHub"
-                    >
-                      <Github className="h-6 w-6 text-white drop-shadow-lg" />
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover/github:opacity-100 transition-opacity duration-300"></div>
-                    </a>
-                  </div>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <Card key={project.title} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up hover:scale-105">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
-                  {/* Floating Project Index */}
-                  <div className="absolute top-4 left-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-fuchsia-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
+                  {/* Project Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      {project.liveUrl && (
+                        <Button
+                          size="sm"
+                          onClick={() => openModal(project, 'demo')}
+                          className="bg-gradient-to-r from-purple-500 to-fuchsia-500 hover:from-purple-600 hover:to-fuchsia-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group/demo"
+                        >
+                          <Play className="h-4 w-4 group-hover/demo:scale-110 transition-transform duration-300" />
+                        </Button>
+                      )}
+                      {project.hasLearnMore && (
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => openModal(project, 'learnMore')}
+                          className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm group/learn"
+                        >
+                          <Eye className="h-4 w-4 group-hover/learn:scale-110 transition-transform duration-300" />
+                        </Button>
+                      )}
                     </div>
                   </div>
-                </div>
-                
-                <CardContent className="p-8 relative z-10 space-y-6">
-                  {/* Project Title & Description */}
-                  <div>
-                    <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent group-hover:from-fuchsia-600 group-hover:to-pink-600 transition-all duration-300">
+
+                  <CardContent className="p-6 relative z-10 space-y-4">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent group-hover:from-fuchsia-600 group-hover:to-pink-600 transition-all duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
-                  </div>
+                    <p className="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
 
-                  {/* Key Features with Icons */}
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-purple-400 flex items-center gap-2">
-                      <Star className="h-4 w-4" />
-                      Key Features
-                    </h4>
+                    {/* Technologies */}
                     <div className="flex flex-wrap gap-2">
-                      {project.keyFeatures?.map((feature, idx) => (
-                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-purple-900/30 to-fuchsia-900/30 rounded-full border border-purple-700">
-                          <span className="text-xs font-medium text-purple-300">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Technologies with Enhanced Styling */}
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-fuchsia-400 flex items-center gap-2">
-                      <Code className="h-4 w-4" />
-                      Tech Stack
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
-                        <div key={tech} className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-300 hover:scale-105 ${
-                          idx % 3 === 0 ? 'bg-gradient-to-r from-purple-500/10 to-purple-500/20 border-purple-600 text-purple-300' :
-                          idx % 3 === 1 ? 'bg-gradient-to-r from-fuchsia-500/10 to-fuchsia-500/20 border-fuchsia-600 text-fuchsia-300' :
-                          'bg-gradient-to-r from-pink-500/10 to-pink-500/20 border-pink-600 text-pink-300'
-                        }`}>
+                      {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                        <div
+                          key={tech}
+                          className={`px-3 py-1 rounded-full text-xs font-bold border ${
+                            techIndex % 3 === 0 ? 'bg-purple-900/30 border-purple-600 text-purple-300' :
+                            techIndex % 3 === 1 ? 'bg-fuchsia-900/30 border-fuchsia-600 text-fuchsia-300' :
+                            'bg-pink-900/30 border-pink-600 text-pink-300'
+                          }`}
+                        >
                           {tech}
                         </div>
                       ))}
+                      {project.technologies.length > 3 && (
+                        <div className="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/50 border border-gray-600 text-gray-300">
+                          +{project.technologies.length - 3}
+                        </div>
+                      )}
                     </div>
-                  </div>
 
-                  {/* Enhanced Metrics Section */}
-                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-purple-950/30 via-fuchsia-950/30 to-pink-950/30 rounded-xl border border-purple-700/50">
-                    <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
-                        <Calendar className="w-4 h-4 text-white" />
+                    {/* Metrics */}
+                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-700">
+                      <div className="text-center">
+                        <p className="text-xs font-medium text-purple-300">{project.metrics?.duration}</p>
                       </div>
-                      <p className="text-xs font-medium text-purple-300">{project.metrics?.duration}</p>
-                    </div>
-                    <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
-                        <Users className="w-4 h-4 text-white" />
+                      <div className="text-center">
+                        <p className="text-xs font-medium text-fuchsia-300">{project.metrics?.team}</p>
                       </div>
-                      <p className="text-xs font-medium text-fuchsia-300">{project.metrics?.team}</p>
-                    </div>
-                    <div className="text-center group/metric">
-                      <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
-                        <TrendingUp className="w-4 h-4 text-white" />
+                      <div className="text-center">
+                        <p className="text-xs font-medium text-pink-300">{project.metrics?.impact}</p>
                       </div>
-                      <p className="text-xs font-medium text-pink-300">{project.metrics?.impact}</p>
                     </div>
-                  </div>
 
-                  {/* GitHub CTA */}
-                  <div className="pt-4">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white rounded-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group/github transform hover:scale-105"
-                    >
-                      <Github className="h-6 w-6 group-hover/github:scale-110 transition-transform duration-300" />
-                      <span className="text-lg font-bold">GitHub</span>
-                      <ExternalLink className="h-4 w-4 opacity-70 group-hover/github:opacity-100 transition-opacity" />
-                    </a>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    {/* GitHub CTA */}
+                    <div className="pt-4">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white rounded-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group/github transform hover:scale-105"
+                      >
+                        <Github className="h-6 w-6 group-hover/github:scale-110 transition-transform duration-300" />
+                        <span className="text-lg font-bold">GitHub</span>
+                        <ExternalLink className="h-4 w-4 opacity-70 group-hover/github:opacity-100 transition-opacity" />
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -787,95 +767,94 @@ const Portfolio = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="relative">
-                  <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <CardContent className="p-4 md:p-8 relative z-10 space-y-6 md:space-y-8">
-                      {/* Timeline Circle */}
-                      <div className="flex items-start gap-6 mb-6">
-                        <div className="flex-shrink-0 relative">
-                          <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
-                            <Briefcase className="h-8 w-8 md:h-10 md:w-10 text-white" />
-                          </div>
-                          <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-full blur-xl opacity-70"></div>
-                        </div>
-                        <div className="flex-1 pt-2">
-                          <div className="w-full h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 mt-8"></div>
-                        </div>
+          <div className="max-w-6xl mx-auto">
+            {experiences.map((exp, index) => (
+              <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-3">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <CardContent className="p-10 relative z-10">
+                  <div className="flex flex-col lg:flex-row items-start gap-8">
+                    {/* Icon & Visual Elements */}
+                    <div className="flex-shrink-0 relative">
+                      <div className="w-24 h-24 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
+                        <Briefcase className="h-12 w-12 text-white" />
                       </div>
-                      {/* Header Section */}
+                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-70"></div>
+                      
+                      {/* Floating Elements */}
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full animate-bounce"></div>
+                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 space-y-6">
+                      {/* Header */}
                       <div className="space-y-4">
-                        <div className="flex flex-col lg:flex-row lg:items-start gap-4">
-                          <div className="flex-1 min-w-0">
-                            <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent mb-2">
-                              {exp.title}
-                            </h3>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-gray-300">
-                              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                                <span className="text-lg lg:text-xl font-bold text-cyan-400">{exp.company}</span>
-                                {exp.client && (
-                                  <div className="inline-flex px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs sm:text-sm font-bold rounded-2xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 w-fit">
-                                    <span className="flex items-center gap-2">
-                                      <Star className="h-3 w-3 sm:h-4 sm:w-4" />
-                                      Client: {exp.client}
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 mt-3 text-sm">
-                              <span className="flex items-center gap-2 px-3 py-1 bg-cyan-900/30 rounded-full w-fit">
-                                <Calendar className="h-4 w-4 text-cyan-400" />
-                                <span className="font-medium text-cyan-300">{exp.period}</span>
-                              </span>
-                              {exp.location && (
-                                <span className="flex items-center gap-2 px-3 py-1 bg-emerald-900/30 rounded-full w-fit">
-                                  <MapPin className="h-4 w-4 text-emerald-400" />
-                                  <span className="font-medium text-emerald-300">{exp.location}</span>
-                                </span>
-                              )}
-                            </div>
+                        <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent leading-tight">
+                          {exp.title}
+                        </h3>
+                        <div className="flex flex-wrap items-center gap-6">
+                          <div className="flex items-center gap-3">
+                            <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></div>
+                            <span className="text-2xl font-bold text-cyan-400">{exp.company}</span>
                           </div>
+                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-900/30 to-emerald-800/20 rounded-2xl border border-emerald-700">
+                            <Calendar className="h-5 w-5 text-emerald-400" />
+                            <span className="font-bold text-emerald-300">{exp.period}</span>
+                          </div>
+                          {exp.client && (
+                            <div className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-pink-100 to-rose-50 dark:from-pink-900/30 dark:to-rose-800/20 rounded-2xl border-2 border-pink-300 dark:border-pink-600 shadow-lg">
+                              <Star className="h-5 w-5 text-pink-600 dark:text-pink-400" />
+                              <span className="font-bold text-lg text-pink-700 dark:text-pink-300">Client: {exp.client}</span>
+                            </div>
+                          )}
+                          {exp.location && (
+                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-900/30 to-teal-800/20 rounded-2xl border border-teal-700">
+                              <MapPin className="h-5 w-5 text-teal-400" />
+                              <span className="font-bold text-teal-300">{exp.location}</span>
+                            </div>
+                          )}
                         </div>
                       </div>
 
                       {/* Key Metrics */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="text-center p-6 bg-gradient-to-br from-cyan-900/30 to-cyan-800/20 rounded-2xl border border-cyan-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border-2 border-cyan-200 dark:border-cyan-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
                             <Users className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-cyan-300">{exp.keyMetrics.teamSize}</p>
+                          <h4 className="font-bold text-cyan-700 dark:text-cyan-300 text-lg mb-2">Team Leadership</h4>
+                          <p className="text-sm text-cyan-600 dark:text-cyan-400">{exp.keyMetrics.teamSize}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-emerald-900/30 to-emerald-800/20 rounded-2xl border border-emerald-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-2xl border-2 border-emerald-200 dark:border-emerald-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
                             <Target className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-emerald-300">{exp.keyMetrics.projects}</p>
+                          <h4 className="font-bold text-emerald-700 dark:text-emerald-300 text-lg mb-2">Projects Delivered</h4>
+                          <p className="text-sm text-emerald-600 dark:text-emerald-400">{exp.keyMetrics.projects}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-teal-900/30 to-teal-800/20 rounded-2xl border border-teal-700 group/metric hover:scale-105 transition-transform duration-300">
-                          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
+                        
+                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 rounded-2xl border-2 border-teal-200 dark:border-teal-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
                             <TrendingUp className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-teal-300">{exp.keyMetrics.impact}</p>
+                          <h4 className="font-bold text-teal-700 dark:text-teal-300 text-lg mb-2">Business Impact</h4>
+                          <p className="text-sm text-teal-600 dark:text-teal-400">{exp.keyMetrics.impact}</p>
                         </div>
                       </div>
 
                       {/* Key Achievements */}
-                      <div className="space-y-6">
-                        <h4 className="text-2xl font-bold flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                            <Star className="w-5 h-5 text-white" />
+                      <div className="space-y-4">
+                        <h4 className="text-xl font-bold flex items-center gap-3">
+                          <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                            <Star className="w-4 h-4 text-white" />
                           </div>
                           <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Key Achievements</span>
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
                           {exp.achievements.map((achievement, idx) => (
-                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
+                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
                               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
                               <CardContent className="p-4 sm:p-6 relative z-10">
                                 <h5 className="font-bold text-base sm:text-lg text-cyan-400 mb-3">{achievement.title}</h5>
@@ -905,25 +884,29 @@ const Portfolio = () => {
 
                       {/* Technical Skills */}
                       <div className="space-y-4">
-                        <h4 className="text-2xl font-bold flex items-center gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                            <Code className="w-5 h-5 text-white" />
+                        <h4 className="text-xl font-bold flex items-center gap-3">
+                          <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                            <Code className="w-4 h-4 text-white" />
                           </div>
-                          <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Technical Skills</span>
+                          <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Technical Skills</span>
                         </h4>
                         <div className="flex flex-wrap gap-3">
                           {exp.skills.map((skill, skillIdx) => (
-                            <div key={skillIdx} className="group/skill px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 cursor-default">
-                              <span className="font-medium group-hover/skill:font-bold transition-all duration-300">{skill}</span>
+                            <div key={skillIdx} className={`px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 ${
+                              skillIdx % 3 === 0 ? 'bg-cyan-100/10 border-cyan-600 text-cyan-300 hover:bg-cyan-100/20' :
+                              skillIdx % 3 === 1 ? 'bg-emerald-100/10 border-emerald-600 text-emerald-300 hover:bg-emerald-100/20' :
+                              'bg-teal-100/10 border-teal-600 text-teal-300 hover:bg-teal-100/20'
+                            }`}>
+                              {skill}
                             </div>
                           ))}
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -1037,10 +1020,10 @@ const Portfolio = () => {
                             'Web Development',
                             'Project Management'
                           ].map((subject, idx) => (
-                            <div key={idx} className={`px-4 py-2 rounded-xl text-sm font-medium border transition-all duration-300 hover:scale-105 cursor-default ${
-                              idx % 3 === 0 ? 'bg-gradient-to-r from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 border-teal-300 dark:border-teal-600 text-teal-700 dark:text-teal-300' :
-                              idx % 3 === 1 ? 'bg-gradient-to-r from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 border-cyan-300 dark:border-cyan-600 text-cyan-700 dark:text-cyan-300' :
-                              'bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/30 dark:to-blue-800/20 border-blue-300 dark:border-blue-600 text-blue-700 dark:text-blue-300'
+                            <div key={idx} className={`px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 cursor-default ${
+                              idx % 3 === 0 ? 'bg-teal-100/10 border-teal-600 text-teal-300 hover:bg-teal-100/20' :
+                              idx % 3 === 1 ? 'bg-cyan-100/10 border-cyan-600 text-cyan-300 hover:bg-cyan-100/20' :
+                              'bg-blue-100/10 border-blue-600 text-blue-300 hover:bg-blue-100/20'
                             }`}>
                               {subject}
                             </div>
