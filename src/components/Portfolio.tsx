@@ -787,15 +787,15 @@ const Portfolio = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto pl-8 md:pl-12">
             <div className="space-y-8">
               {experiences.map((exp, index) => (
-                <div key={index} className="relative">
+                <div key={index} className="relative ml-4 md:ml-8">
                   <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Timeline Circle */}
-                    <div className="absolute -left-6 md:-left-8 top-8 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900 z-20">
+                    <div className="absolute -left-12 md:-left-16 top-8 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center shadow-xl border-4 border-white dark:border-gray-900 z-20">
                       <Briefcase className="h-6 w-6 md:h-8 md:w-8 text-white" />
                     </div>
                     
