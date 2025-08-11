@@ -333,7 +333,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-teal-500/10 text-foreground">
       {/* Fixed Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 material-surface-variant backdrop-blur-xl border-b border-border material-elevation-2">
         <div className="container mx-auto px-6 py-4">
@@ -365,7 +365,6 @@ const Portfolio = () => {
 
       {/* Hero Section */}
       <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-teal-500/10"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink-500/5 via-orange-500/5 to-yellow-500/5"></div>
         <div className="container mx-auto px-6 py-32 relative z-10">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -471,7 +470,7 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-br from-violet-50 via-cyan-50 to-emerald-50 dark:from-violet-950/20 dark:via-cyan-950/20 dark:to-emerald-950/20 relative overflow-hidden">
+      <section id="about" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-violet-600/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -486,7 +485,7 @@ const Portfolio = () => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main Content Card */}
               <div className="lg:col-span-2">
-                <Card className="group relative overflow-hidden border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 transform hover:-translate-y-2">
+                <Card className="group relative overflow-hidden border-0 bg-gray-900/80 backdrop-blur-xl shadow-2xl hover:shadow-violet-500/20 transition-all duration-500 transform hover:-translate-y-2">
                   <div className="absolute inset-0 bg-gradient-to-br from-violet-500/5 via-cyan-500/5 to-emerald-500/5"></div>
                   <CardContent className="p-8 relative z-10">
                     <div className="flex items-center gap-4 mb-8">
@@ -503,25 +502,25 @@ const Portfolio = () => {
                     </div>
                     
                     <div className="space-y-6 text-lg leading-relaxed">
-                      <p className="text-gray-700 dark:text-gray-300 relative">
+                      <p className="text-gray-300 relative">
                         <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-violet-500 to-cyan-500 rounded-full"></span>
-                        I am a passionate <span className="font-semibold text-violet-600 dark:text-violet-400">Data Scientist / AI/ML Engineer</span> with 3+ years of experience as a Software Engineer 
+                        I am a passionate <span className="font-semibold text-violet-400">Data Scientist / AI/ML Engineer</span> with 3+ years of experience as a Software Engineer 
                         and a strong foundation in Python, Machine Learning, NLP, Generative AI, and AWS-based deployments. 
                         I excel at building end-to-end ML solutions that extract insights from complex data and deliver 
-                        <span className="font-semibold text-emerald-600 dark:text-emerald-400"> measurable business impact.</span>
+                        <span className="font-semibold text-emerald-400"> measurable business impact.</span>
                       </p>
                       
-                      <p className="text-gray-700 dark:text-gray-300 relative">
+                      <p className="text-gray-300 relative">
                         <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></span>
-                        My expertise spans across the entire <span className="font-semibold text-cyan-600 dark:text-cyan-400">machine learning pipeline</span> - from data preprocessing and 
+                        My expertise spans across the entire <span className="font-semibold text-cyan-400">machine learning pipeline</span> - from data preprocessing and 
                         feature engineering to model development, deployment, and monitoring. I have hands-on experience 
                         with supervised and unsupervised learning algorithms, natural language processing, and cutting-edge 
-                        <span className="font-semibold text-violet-600 dark:text-violet-400">generative AI technologies</span> including transformers, RAG systems, and AI agents.
+                        <span className="font-semibold text-violet-400">generative AI technologies</span> including transformers, RAG systems, and AI agents.
                       </p>
                       
-                      <p className="text-gray-700 dark:text-gray-300 relative">
+                      <p className="text-gray-300 relative">
                         <span className="absolute -left-4 top-2 w-2 h-2 bg-gradient-to-r from-emerald-500 to-violet-500 rounded-full"></span>
-                        Currently <span className="font-semibold text-emerald-600 dark:text-emerald-400">leading a team of 4</span> and collaborating with cross-functional stakeholders to ensure 
+                        Currently <span className="font-semibold text-emerald-400">leading a team of 4</span> and collaborating with cross-functional stakeholders to ensure 
                         timely and high-quality project delivery. I'm passionate about leveraging AI and machine learning 
                         to solve real-world problems and drive innovation in data-driven decision making.
                       </p>
@@ -539,8 +538,8 @@ const Portfolio = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Briefcase className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-violet-600 dark:text-violet-400 mb-1">3+</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">Years Experience</div>
+                      <div className="text-3xl font-bold text-violet-400 mb-1">3+</div>
+                      <div className="text-sm text-gray-400">Years Experience</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -552,8 +551,8 @@ const Portfolio = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Users className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">4</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">Team Members</div>
+                      <div className="text-3xl font-bold text-cyan-400 mb-1">4</div>
+                      <div className="text-sm text-gray-400">Team Members</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -565,8 +564,8 @@ const Portfolio = () => {
                       <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-3">
                         <Target className="h-6 w-6 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">15+</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">POCs Delivered</div>
+                      <div className="text-3xl font-bold text-emerald-400 mb-1">15+</div>
+                      <div className="text-sm text-gray-400">POCs Delivered</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -577,7 +576,7 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-950/20 dark:via-purple-950/20 dark:to-pink-950/20 relative overflow-hidden">
+      <section id="skills" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-600/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -586,14 +585,14 @@ const Portfolio = () => {
               Skills & Expertise
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
-            <p className="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 mt-6 max-w-2xl mx-auto">
               A comprehensive toolkit spanning the entire data science and machine learning ecosystem
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
             {Object.entries(skills).map(([category, skillList], index) => (
               <div key={category} className="mb-8 group animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <Card className="relative overflow-hidden border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+                <Card className="relative overflow-hidden border-0 bg-gray-900/80 backdrop-blur-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
                   <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-purple-500/5 to-pink-500/5"></div>
                   <CardContent className="p-8 relative z-10">
                     <div className="flex items-center gap-4 mb-6">
@@ -623,7 +622,7 @@ const Portfolio = () => {
                           className="group relative px-4 py-3 bg-gradient-to-r from-indigo-500/10 to-pink-500/10 border border-indigo-500/20 rounded-xl hover:border-indigo-500/40 transition-all duration-300 hover:scale-105 hover:shadow-lg backdrop-blur-sm"
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-pink-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                          <span className="relative z-10 font-medium text-gray-700 dark:text-gray-300 text-sm">
+                          <span className="relative z-10 font-medium text-gray-300 text-sm">
                             {skill}
                           </span>
                         </div>
@@ -638,7 +637,7 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-purple-50 via-fuchsia-50 to-pink-50 dark:from-purple-950/20 dark:via-fuchsia-950/20 dark:to-pink-950/20 relative overflow-hidden">
+      <section id="projects" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-pink-500/10 via-transparent to-transparent"></div>
         
@@ -647,7 +646,7 @@ const Portfolio = () => {
             <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               Featured Projects
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
               Discover my portfolio of innovative AI/ML solutions that drive real business impact
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full animate-scale-in"></div>
@@ -655,7 +654,7 @@ const Portfolio = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projects.map((project, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/20 dark:hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105">
+              <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 {/* Project Image with Overlay */}
@@ -693,19 +692,19 @@ const Portfolio = () => {
                     <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent group-hover:from-fuchsia-600 group-hover:to-pink-600 transition-all duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{project.description}</p>
+                    <p className="text-gray-300 leading-relaxed">{project.description}</p>
                   </div>
 
                   {/* Key Features with Icons */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-purple-600 dark:text-purple-400 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-purple-400 flex items-center gap-2">
                       <Star className="h-4 w-4" />
                       Key Features
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.keyFeatures?.map((feature, idx) => (
-                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-fuchsia-100 dark:from-purple-900/30 dark:to-fuchsia-900/30 rounded-full border border-purple-200 dark:border-purple-700">
-                          <span className="text-xs font-medium text-purple-700 dark:text-purple-300">{feature}</span>
+                        <div key={idx} className="px-3 py-1 bg-gradient-to-r from-purple-900/30 to-fuchsia-900/30 rounded-full border border-purple-700">
+                          <span className="text-xs font-medium text-purple-300">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -713,16 +712,16 @@ const Portfolio = () => {
 
                   {/* Technologies with Enhanced Styling */}
                   <div className="space-y-3">
-                    <h4 className="text-sm font-bold text-fuchsia-600 dark:text-fuchsia-400 flex items-center gap-2">
+                    <h4 className="text-sm font-bold text-fuchsia-400 flex items-center gap-2">
                       <Code className="h-4 w-4" />
                       Tech Stack
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, idx) => (
                         <div key={tech} className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all duration-300 hover:scale-105 ${
-                          idx % 3 === 0 ? 'bg-gradient-to-r from-purple-500/10 to-purple-500/20 border-purple-300 dark:border-purple-600 text-purple-700 dark:text-purple-300' :
-                          idx % 3 === 1 ? 'bg-gradient-to-r from-fuchsia-500/10 to-fuchsia-500/20 border-fuchsia-300 dark:border-fuchsia-600 text-fuchsia-700 dark:text-fuchsia-300' :
-                          'bg-gradient-to-r from-pink-500/10 to-pink-500/20 border-pink-300 dark:border-pink-600 text-pink-700 dark:text-pink-300'
+                          idx % 3 === 0 ? 'bg-gradient-to-r from-purple-500/10 to-purple-500/20 border-purple-600 text-purple-300' :
+                          idx % 3 === 1 ? 'bg-gradient-to-r from-fuchsia-500/10 to-fuchsia-500/20 border-fuchsia-600 text-fuchsia-300' :
+                          'bg-gradient-to-r from-pink-500/10 to-pink-500/20 border-pink-600 text-pink-300'
                         }`}>
                           {tech}
                         </div>
@@ -731,24 +730,24 @@ const Portfolio = () => {
                   </div>
 
                   {/* Enhanced Metrics Section */}
-                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-purple-50/50 via-fuchsia-50/50 to-pink-50/50 dark:from-purple-950/30 dark:via-fuchsia-950/30 dark:to-pink-950/30 rounded-xl border border-purple-200/50 dark:border-purple-700/50">
+                  <div className="grid grid-cols-3 gap-4 p-4 bg-gradient-to-r from-purple-950/30 via-fuchsia-950/30 to-pink-950/30 rounded-xl border border-purple-700/50">
                     <div className="text-center group/metric">
                       <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <Calendar className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-purple-700 dark:text-purple-300">{project.metrics?.duration}</p>
+                      <p className="text-xs font-medium text-purple-300">{project.metrics?.duration}</p>
                     </div>
                     <div className="text-center group/metric">
                       <div className="w-8 h-8 bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <Users className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-fuchsia-700 dark:text-fuchsia-300">{project.metrics?.team}</p>
+                      <p className="text-xs font-medium text-fuchsia-300">{project.metrics?.team}</p>
                     </div>
                     <div className="text-center group/metric">
                       <div className="w-8 h-8 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-2 group-hover/metric:scale-110 transition-transform duration-300">
                         <TrendingUp className="w-4 h-4 text-white" />
                       </div>
-                      <p className="text-xs font-medium text-pink-700 dark:text-pink-300">{project.metrics?.impact}</p>
+                      <p className="text-xs font-medium text-pink-300">{project.metrics?.impact}</p>
                     </div>
                   </div>
 
@@ -773,7 +772,7 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gradient-to-br from-cyan-50 via-emerald-50 to-teal-50 dark:from-cyan-950/20 dark:via-emerald-950/20 dark:to-teal-950/20 relative overflow-hidden">
+      <section id="experience" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
         
@@ -782,7 +781,7 @@ const Portfolio = () => {
             <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               Work Experience
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
               My professional journey in software engineering and leadership
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
@@ -792,7 +791,7 @@ const Portfolio = () => {
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <div key={index} className="relative">
-                  <Card className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/20 dark:hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
+                  <Card className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-2 w-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Timeline Circle */}
@@ -808,9 +807,9 @@ const Portfolio = () => {
                             <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent mb-2">
                               {exp.title}
                             </h3>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-gray-600 dark:text-gray-300">
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 text-gray-300">
                               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                                <span className="text-lg lg:text-xl font-bold text-cyan-600 dark:text-cyan-400">{exp.company}</span>
+                                <span className="text-lg lg:text-xl font-bold text-cyan-400">{exp.company}</span>
                                 {exp.client && (
                                   <div className="inline-flex px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs sm:text-sm font-bold rounded-2xl shadow-lg hover:shadow-pink-500/30 transition-all duration-300 w-fit">
                                     <span className="flex items-center gap-2">
@@ -822,14 +821,14 @@ const Portfolio = () => {
                               </div>
                             </div>
                             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 sm:gap-4 mt-3 text-sm">
-                              <span className="flex items-center gap-2 px-3 py-1 bg-cyan-100 dark:bg-cyan-900/30 rounded-full w-fit">
-                                <Calendar className="h-4 w-4 text-cyan-600 dark:text-cyan-400" />
-                                <span className="font-medium text-cyan-700 dark:text-cyan-300">{exp.period}</span>
+                              <span className="flex items-center gap-2 px-3 py-1 bg-cyan-900/30 rounded-full w-fit">
+                                <Calendar className="h-4 w-4 text-cyan-400" />
+                                <span className="font-medium text-cyan-300">{exp.period}</span>
                               </span>
                               {exp.location && (
-                                <span className="flex items-center gap-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 rounded-full w-fit">
-                                  <MapPin className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-                                  <span className="font-medium text-emerald-700 dark:text-emerald-300">{exp.location}</span>
+                                <span className="flex items-center gap-2 px-3 py-1 bg-emerald-900/30 rounded-full w-fit">
+                                  <MapPin className="h-4 w-4 text-emerald-400" />
+                                  <span className="font-medium text-emerald-300">{exp.location}</span>
                                 </span>
                               )}
                             </div>
@@ -839,23 +838,23 @@ const Portfolio = () => {
 
                       {/* Key Metrics */}
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="text-center p-6 bg-gradient-to-br from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border border-cyan-200 dark:border-cyan-700 group/metric hover:scale-105 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-cyan-900/30 to-cyan-800/20 rounded-2xl border border-cyan-700 group/metric hover:scale-105 transition-transform duration-300">
                           <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <Users className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-cyan-700 dark:text-cyan-300">{exp.keyMetrics.teamSize}</p>
+                          <p className="text-lg font-bold text-cyan-300">{exp.keyMetrics.teamSize}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-2xl border border-emerald-200 dark:border-emerald-700 group/metric hover:scale-105 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-emerald-900/30 to-emerald-800/20 rounded-2xl border border-emerald-700 group/metric hover:scale-105 transition-transform duration-300">
                           <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <Target className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-emerald-700 dark:text-emerald-300">{exp.keyMetrics.projects}</p>
+                          <p className="text-lg font-bold text-emerald-300">{exp.keyMetrics.projects}</p>
                         </div>
-                        <div className="text-center p-6 bg-gradient-to-br from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 rounded-2xl border border-teal-200 dark:border-teal-700 group/metric hover:scale-105 transition-transform duration-300">
+                        <div className="text-center p-6 bg-gradient-to-br from-teal-900/30 to-teal-800/20 rounded-2xl border border-teal-700 group/metric hover:scale-105 transition-transform duration-300">
                           <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover/metric:rotate-12 transition-transform duration-300">
                             <TrendingUp className="w-6 h-6 text-white" />
                           </div>
-                          <p className="text-lg font-bold text-teal-700 dark:text-teal-300">{exp.keyMetrics.impact}</p>
+                          <p className="text-lg font-bold text-teal-300">{exp.keyMetrics.impact}</p>
                         </div>
                       </div>
 
@@ -869,22 +868,22 @@ const Portfolio = () => {
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
                           {exp.achievements.map((achievement, idx) => (
-                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-white/80 to-gray-50/80 dark:from-gray-800/80 dark:to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
+                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 hover:rotate-1">
                               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
                               <CardContent className="p-4 sm:p-6 relative z-10">
-                                <h5 className="font-bold text-base sm:text-lg text-cyan-600 dark:text-cyan-400 mb-3">{achievement.title}</h5>
-                                <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{achievement.description}</p>
+                                <h5 className="font-bold text-base sm:text-lg text-cyan-400 mb-3">{achievement.title}</h5>
+                                <p className="text-sm sm:text-base text-gray-300 mb-4 leading-relaxed">{achievement.description}</p>
                                 <div className="space-y-3">
-                                  <div className="flex items-center gap-2 p-2 bg-gradient-to-r from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-lg">
-                                    <TrendingUp className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
-                                    <span className="text-xs sm:text-sm font-bold text-emerald-700 dark:text-emerald-300">{achievement.impact}</span>
+                                  <div className="flex items-center gap-2 p-2 bg-gradient-to-r from-emerald-900/30 to-emerald-800/20 rounded-lg">
+                                    <TrendingUp className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                                    <span className="text-xs sm:text-sm font-bold text-emerald-300">{achievement.impact}</span>
                                   </div>
                                   <div className="flex flex-wrap gap-2">
                                     {achievement.skills.map((skill, skillIdx) => (
                                       <div key={skillIdx} className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${
-                                        skillIdx % 3 === 0 ? 'bg-cyan-100 dark:bg-cyan-900/30 border-cyan-300 dark:border-cyan-600 text-cyan-700 dark:text-cyan-300' :
-                                        skillIdx % 3 === 1 ? 'bg-emerald-100 dark:bg-emerald-900/30 border-emerald-300 dark:border-emerald-600 text-emerald-700 dark:text-emerald-300' :
-                                        'bg-teal-100 dark:bg-teal-900/30 border-teal-300 dark:border-teal-600 text-teal-700 dark:text-teal-300'
+                                        skillIdx % 3 === 0 ? 'bg-cyan-900/30 border-cyan-600 text-cyan-300' :
+                                        skillIdx % 3 === 1 ? 'bg-emerald-900/30 border-emerald-600 text-emerald-300' :
+                                        'bg-teal-900/30 border-teal-600 text-teal-300'
                                       }`}>
                                         {skill}
                                       </div>
@@ -923,7 +922,7 @@ const Portfolio = () => {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="py-20 bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 dark:from-teal-950/20 dark:via-cyan-950/20 dark:to-blue-950/20 relative overflow-hidden">
+      <section id="education" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-teal-500/10 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent"></div>
         
@@ -932,7 +931,7 @@ const Portfolio = () => {
             <h2 className="text-5xl font-bold bg-gradient-to-r from-teal-600 via-cyan-500 to-blue-500 bg-clip-text text-transparent mb-4 animate-fade-in">
               Education
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
               My academic journey and foundation in Computer Science & Engineering
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto rounded-full animate-scale-in"></div>
@@ -940,7 +939,7 @@ const Portfolio = () => {
           
           <div className="max-w-6xl mx-auto">
             {education.map((edu, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-teal-500/20 dark:hover:shadow-teal-500/40 transition-all duration-500 transform hover:-translate-y-3">
+              <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-teal-500/40 transition-all duration-500 transform hover:-translate-y-3">
                 <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
                 <CardContent className="p-10 relative z-10">
@@ -967,11 +966,11 @@ const Portfolio = () => {
                         <div className="flex flex-wrap items-center gap-6">
                           <div className="flex items-center gap-3">
                             <div className="w-3 h-3 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full"></div>
-                            <span className="text-2xl font-bold text-teal-600 dark:text-teal-400">{edu.institution}</span>
+                            <span className="text-2xl font-bold text-teal-400">{edu.institution}</span>
                           </div>
-                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border border-cyan-200 dark:border-cyan-700">
-                            <Calendar className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
-                            <span className="font-bold text-cyan-700 dark:text-cyan-300">{edu.period}</span>
+                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-900/30 to-cyan-800/20 rounded-2xl border border-cyan-700">
+                            <Calendar className="h-5 w-5 text-cyan-400" />
+                            <span className="font-bold text-cyan-300">{edu.period}</span>
                           </div>
                           {edu.gpa && (
                             <div className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-amber-100 to-yellow-50 dark:from-amber-900/30 dark:to-yellow-800/20 rounded-2xl border-2 border-amber-300 dark:border-amber-600 shadow-lg">
@@ -984,7 +983,7 @@ const Portfolio = () => {
 
                       {/* Description */}
                       <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
-                        <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">{edu.description}</p>
+                        <p className="text-gray-300 leading-relaxed text-lg">{edu.description}</p>
                       </div>
 
                       {/* Achievement Highlights */}
