@@ -76,13 +76,6 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(264 84% 65%), hsl(279 81% 68%));
     --gradient-surface: linear-gradient(135deg, hsl(220 16% 12%), hsl(220 16% 14%));
     --gradient-hero: linear-gradient(135deg, hsl(264 84% 65% / 0.1), hsl(279 81% 68% / 0.1), hsl(195 85% 65% / 0.1));
-    
-    /* Vibrant Work Experience Colors */
-    --work-primary: 35 90% 60%;
-    --work-container: 35 90% 20%;
-    --work-foreground: 35 90% 95%;
-    --work-border: 35 60% 40%;
-    --gradient-work: linear-gradient(135deg, hsl(35 90% 60%), hsl(25 85% 65%));
 
     /* Material Motion (Animation durations) */
     --motion-duration-short1: 50ms;
