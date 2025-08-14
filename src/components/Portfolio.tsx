@@ -635,117 +635,172 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-500/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-fuchsia-500/10 via-transparent to-transparent"></div>
+      {/* Projects Section - River Flow Layout */}
+      <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-indigo-900">
+        {/* Flowing Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute top-40 right-10 w-80 h-80 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute bottom-40 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '6s' }}></div>
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent mb-4 animate-fade-in">
-              Featured Projects
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-full border border-purple-500/30 shadow-lg mb-6">
+              <Code className="w-6 h-6 text-purple-400" />
+              <span className="text-purple-300 font-semibold">Featured Work</span>
+            </div>
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+              Projects
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-              Innovative solutions leveraging machine learning, AI, and modern technologies
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Innovative solutions showcasing the intersection of AI, machine learning, and modern software engineering
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
+          {/* River Flow Layout */}
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projects.map((project, index) => (
-                <Card key={project.title} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-up hover:scale-105">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-fuchsia-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Project Image */}
-                  <div className="relative h-48 overflow-hidden">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
-                    <div className="absolute top-4 right-4 flex gap-2">
-                      {project.liveUrl && (
-                        <Button
-                          size="sm"
-                          onClick={() => openModal(project, 'demo')}
-                          className="bg-gradient-to-r from-purple-500 to-fuchsia-500 hover:from-purple-600 hover:to-fuchsia-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group/demo"
-                        >
-                          <Play className="h-4 w-4 group-hover/demo:scale-110 transition-transform duration-300" />
-                        </Button>
-                      )}
-                      {project.hasLearnMore && (
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => openModal(project, 'learnMore')}
-                          className="bg-white/10 border-white/20 text-white hover:bg-white/20 backdrop-blur-sm group/learn"
-                        >
-                          <Eye className="h-4 w-4 group-hover/learn:scale-110 transition-transform duration-300" />
-                        </Button>
-                      )}
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
+              {projects.map((project, index) => {
+                // Define river flow positioning pattern
+                const flowPattern = [
+                  { colSpan: 'md:col-span-7', size: 'large' },
+                  { colSpan: 'md:col-span-5', size: 'medium' },
+                  { colSpan: 'md:col-span-4', size: 'small' },
+                  { colSpan: 'md:col-span-8', size: 'large' },
+                  { colSpan: 'md:col-span-6', size: 'medium' },
+                ];
+                const pattern = flowPattern[index % flowPattern.length];
+                
+                return (
+                  <div
+                    key={project.title}
+                    className={`group ${pattern.colSpan} transform transition-all duration-700 hover:-translate-y-3 hover:scale-105`}
+                    style={{
+                      animationDelay: `${index * 150}ms`,
+                      transform: `rotate(${(index % 2 === 0 ? 1 : -1) * 0.5}deg)`,
+                    }}
+                  >
+                    <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden h-full">
+                      {/* Animated Border Glow */}
+                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
+                      
+                      <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col">
+                        {/* Project Image with Overlay */}
+                        <div className={`relative overflow-hidden rounded-2xl mb-6 ${
+                          pattern.size === 'large' ? 'h-64' : 
+                          pattern.size === 'medium' ? 'h-48' : 'h-40'
+                        }`}>
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                          
+                          {/* Floating Action Buttons */}
+                          <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            {project.liveUrl && (
+                              <button
+                                onClick={() => window.open(project.liveUrl, '_blank')}
+                                className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                              </button>
+                            )}
+                            <button
+                              onClick={() => window.open(project.githubUrl, '_blank')}
+                              className="w-10 h-10 bg-slate-700/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-slate-600"
+                            >
+                              <Github className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 flex flex-col">
+                          <h3 className={`font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500 ${
+                            pattern.size === 'large' ? 'text-2xl lg:text-3xl' : 
+                            pattern.size === 'medium' ? 'text-xl lg:text-2xl' : 'text-lg lg:text-xl'
+                          }`}>
+                            {project.title}
+                          </h3>
+                          
+                          <p className={`text-gray-300 leading-relaxed mb-6 flex-1 ${
+                            pattern.size === 'large' ? 'text-base lg:text-lg' : 'text-sm lg:text-base'
+                          }`}>
+                            {project.description}
+                          </p>
+
+                          {/* Technologies */}
+                          <div className="mb-6">
+                            <h4 className="text-sm font-semibold text-purple-300 mb-3 uppercase tracking-wider">Tech Stack</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {project.technologies.map((tech, techIndex) => (
+                                <span
+                                  key={tech}
+                                  className={`px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300 hover:scale-105 ${
+                                    techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30' :
+                                    techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30' :
+                                    techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30' :
+                                    'bg-indigo-900/30 text-indigo-300 border-indigo-500/30'
+                                  }`}
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Key Features or Outcomes */}
+                          {project.keyFeatures && (
+                            <div className="mb-6">
+                              <h4 className="text-sm font-semibold text-cyan-300 mb-3 uppercase tracking-wider">Key Features</h4>
+                              <div className="space-y-2">
+                                {project.keyFeatures.slice(0, pattern.size === 'large' ? 3 : 2).map((feature, idx) => (
+                                  <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
+                                    {feature}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Learn More Button */}
+                          <div className="mt-auto">
+                            <button
+                              onClick={() => project.hasLearnMore ? openModal(project, 'learnMore') : window.open(project.githubUrl, '_blank')}
+                              className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-blue-600 text-white rounded-xl border border-slate-600 hover:border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                            >
+                              <span className="font-semibold">
+                                {project.hasLearnMore ? 'Learn More' : 'View Code'}
+                              </span>
+                              <ExternalLink className="w-4 h-4 opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all duration-300" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                );
+              })}
+            </div>
+          </div>
 
-                  <CardContent className="p-6 relative z-10 space-y-4">
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-600 bg-clip-text text-transparent group-hover:from-fuchsia-600 group-hover:to-pink-600 transition-all duration-300">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-300 leading-relaxed line-clamp-3">
-                      {project.description}
-                    </p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                        <div
-                          key={tech}
-                          className={`px-3 py-1 rounded-full text-xs font-bold border ${
-                            techIndex % 3 === 0 ? 'bg-purple-900/30 border-purple-600 text-purple-300' :
-                            techIndex % 3 === 1 ? 'bg-fuchsia-900/30 border-fuchsia-600 text-fuchsia-300' :
-                            'bg-pink-900/30 border-pink-600 text-pink-300'
-                          }`}
-                        >
-                          {tech}
-                        </div>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <div className="px-3 py-1 rounded-full text-xs font-bold bg-gray-700/50 border border-gray-600 text-gray-300">
-                          +{project.technologies.length - 3}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-700">
-                      <div className="text-center">
-                        <p className="text-xs font-medium text-purple-300">{project.metrics?.duration}</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-xs font-medium text-fuchsia-300">{project.metrics?.team}</p>
-                      </div>
-                      <div className="text-center">
-                        <p className="text-xs font-medium text-pink-300">{project.metrics?.impact}</p>
-                      </div>
-                    </div>
-
-                    {/* GitHub CTA */}
-                    <div className="pt-4">
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white rounded-xl border-0 shadow-xl hover:shadow-2xl transition-all duration-300 group/github transform hover:scale-105"
-                      >
-                        <Github className="h-6 w-6 group-hover/github:scale-110 transition-transform duration-300" />
-                        <span className="text-lg font-bold">GitHub</span>
-                        <ExternalLink className="h-4 w-4 opacity-70 group-hover/github:opacity-100 transition-opacity" />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+          {/* River Flow Divider */}
+          <div className="mt-20 flex items-center justify-center">
+            <div className="flex items-center gap-4">
+              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-500"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+              <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+              <div className="w-8 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"></div>
             </div>
           </div>
         </div>
