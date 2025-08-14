@@ -179,7 +179,8 @@ const Portfolio = () => {
         team: "Solo Project",
         impact: "25% faster diagnosis"
       },
-      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"]
+      keyFeatures: ["Real-time prediction", "AWS deployment", "90% accuracy"],
+      hasLearnMore: true
     },
     {
       title: "Financial Product Complaint Analysis",
@@ -216,7 +217,8 @@ const Portfolio = () => {
         team: "Solo Project", 
         impact: "95% query accuracy"
       },
-      keyFeatures: ["Multi-document support", "Real-time Q&A", "Vector search"]
+      keyFeatures: ["Multi-document support", "Real-time Q&A", "Vector search"],
+      hasLearnMore: true
     },
     {
       title: "Logs Classification",
@@ -230,7 +232,8 @@ const Portfolio = () => {
         team: "2 developers",
         impact: "70% processing speed"
       },
-      keyFeatures: ["Hybrid approach", "Multi-model pipeline", "High precision"]
+      keyFeatures: ["Hybrid approach", "Multi-model pipeline", "High precision"],
+      hasLearnMore: true
     },
     {
       title: "Text2Query Chat",
@@ -244,7 +247,8 @@ const Portfolio = () => {
         team: "Solo Project",
         impact: "95% query accuracy"
       },
-      keyFeatures: ["Natural language queries", "Multi-database support", "Chat interface"]
+      keyFeatures: ["Natural language queries", "Multi-database support", "Chat interface"],
+      hasLearnMore: true
     }
   ];
 
@@ -729,23 +733,13 @@ const Portfolio = () => {
                             </button>
 
                             {/* Learn More Button */}
-                            {project.hasLearnMore ? (
-                              <button
-                                onClick={() => openModal(project, 'learnMore')}
-                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
-                              >
-                                <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
-                                <span className="font-semibold">Learn More</span>
-                              </button>
-                            ) : project.liveUrl && (
-                              <button
-                                onClick={() => window.open(project.liveUrl, '_blank')}
-                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/live text-sm"
-                              >
-                                <ExternalLink className="w-4 h-4 group-hover/live:scale-110 transition-transform duration-300" />
-                                <span className="font-semibold">Live Demo</span>
-                              </button>
-                            )}
+                            <button
+                              onClick={() => openModal(project, 'learnMore')}
+                              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
+                            >
+                              <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
+                              <span className="font-semibold">Learn More</span>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -810,8 +804,20 @@ const Portfolio = () => {
                           {/* Impact Metrics */}
                           {project.metrics && (
                             <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-                              <h4 className="text-lg font-semibold text-teal-300 mb-4 uppercase tracking-wider">Impact</h4>
-                              <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                              <h4 className={`text-lg font-semibold mb-4 uppercase tracking-wider ${
+                                index % 5 === 0 ? 'text-emerald-300' :
+                                index % 5 === 1 ? 'text-orange-300' :
+                                index % 5 === 2 ? 'text-pink-300' :
+                                index % 5 === 3 ? 'text-violet-300' :
+                                'text-sky-300'
+                              }`}>Impact</h4>
+                              <div className={`text-2xl font-bold bg-clip-text text-transparent ${
+                                index % 5 === 0 ? 'bg-gradient-to-r from-emerald-400 to-teal-400' :
+                                index % 5 === 1 ? 'bg-gradient-to-r from-orange-400 to-red-400' :
+                                index % 5 === 2 ? 'bg-gradient-to-r from-pink-400 to-rose-400' :
+                                index % 5 === 3 ? 'bg-gradient-to-r from-violet-400 to-purple-400' :
+                                'bg-gradient-to-r from-sky-400 to-cyan-400'
+                              }`}>
                                 {project.metrics.impact}
                               </div>
                             </div>
