@@ -672,21 +672,22 @@ const Portfolio = () => {
                     animationDelay: `${index * 200}ms`,
                   }}
                 >
-                  {/* River Flow Container */}
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-                    !isEven ? 'lg:flex lg:flex-row-reverse' : ''
-                  }`}>
+                  {/* Project Border Box */}
+                  <div className="relative bg-slate-800/40 backdrop-blur-xl rounded-3xl border-2 border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 p-8 lg:p-12 mb-8">
+                    {/* Animated Border Glow */}
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
                     
-                    {/* Image Side */}
-                    <div className={`relative ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                      <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
-                        {/* Animated Border Glow */}
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
-                        
-                        <div className="relative z-10 p-6">
+                    {/* River Flow Container */}
+                    <div className={`relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
+                      !isEven ? 'lg:flex lg:flex-row-reverse' : ''
+                    }`}>
+                      
+                      {/* Image Side - 5 columns */}
+                      <div className={`lg:col-span-5 relative ${isEven ? 'lg:pr-4' : 'lg:pl-4'}`}>
+                        <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
                           {/* Project Image */}
-                          <div className="relative overflow-hidden rounded-2xl mb-6 h-64 lg:h-80">
+                          <div className="relative overflow-hidden rounded-2xl h-64 lg:h-80">
                             <img 
                               src={project.image} 
                               alt={project.title}
@@ -695,111 +696,113 @@ const Portfolio = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                           </div>
 
-                          {/* Project Title */}
-                          <h3 className="text-2xl lg:text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
-                            {project.title}
-                          </h3>
+                          {/* Project Title & Buttons Overlay */}
+                          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/95 via-slate-900/80 to-transparent">
+                            <h3 className="text-2xl lg:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
+                              {project.title}
+                            </h3>
 
-                          {/* Action Buttons */}
-                          <div className="flex gap-4">
-                            {/* GitHub Button */}
-                            <button
-                              onClick={() => window.open(project.githubUrl, '_blank')}
-                              className="flex items-center gap-3 px-6 py-3 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-xl border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github"
-                            >
-                              <Github className="w-5 h-5 group-hover/github:scale-110 transition-transform duration-300" />
-                              <span className="font-semibold">GitHub</span>
-                            </button>
+                            {/* Action Buttons */}
+                            <div className="flex gap-3">
+                              {/* GitHub Button */}
+                              <button
+                                onClick={() => window.open(project.githubUrl, '_blank')}
+                                className="flex items-center gap-2 px-4 py-2 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-lg border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github text-sm"
+                              >
+                                <Github className="w-4 h-4 group-hover/github:scale-110 transition-transform duration-300" />
+                                <span className="font-semibold">GitHub</span>
+                              </button>
 
-                            {/* Learn More Button */}
-                            {project.hasLearnMore ? (
-                              <button
-                                onClick={() => openModal(project, 'learnMore')}
-                                className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/learn"
-                              >
-                                <MessageSquare className="w-5 h-5 group-hover/learn:scale-110 transition-transform duration-300" />
-                                <span className="font-semibold">Learn More</span>
-                              </button>
-                            ) : project.liveUrl && (
-                              <button
-                                onClick={() => window.open(project.liveUrl, '_blank')}
-                                className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/live"
-                              >
-                                <ExternalLink className="w-5 h-5 group-hover/live:scale-110 transition-transform duration-300" />
-                                <span className="font-semibold">Live Demo</span>
-                              </button>
-                            )}
+                              {/* Learn More Button */}
+                              {project.hasLearnMore ? (
+                                <button
+                                  onClick={() => openModal(project, 'learnMore')}
+                                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
+                                >
+                                  <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
+                                  <span className="font-semibold">Learn More</span>
+                                </button>
+                              ) : project.liveUrl && (
+                                <button
+                                  onClick={() => window.open(project.liveUrl, '_blank')}
+                                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/live text-sm"
+                                >
+                                  <ExternalLink className="w-4 h-4 group-hover/live:scale-110 transition-transform duration-300" />
+                                  <span className="font-semibold">Live Demo</span>
+                                </button>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Content Side */}
-                    <div className={`relative ${isEven ? 'lg:pl-8' : 'lg:pr-8'}`}>
-                      <div className="space-y-8">
-                        {/* Description */}
-                        <div>
-                          <h4 className="text-xl font-semibold text-purple-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
-                            Overview
-                          </h4>
-                          <p className="text-lg text-gray-300 leading-relaxed">
-                            {project.description}
-                          </p>
-                        </div>
-
-                        {/* Tech Stack */}
-                        <div>
-                          <h4 className="text-xl font-semibold text-blue-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
-                            Tech Stack
-                          </h4>
-                          <div className="flex flex-wrap gap-3">
-                            {project.technologies.map((tech, techIndex) => (
-                              <span
-                                key={tech}
-                                className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all duration-300 hover:scale-105 ${
-                                  techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30 hover:border-purple-400' :
-                                  techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30 hover:border-blue-400' :
-                                  techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30 hover:border-cyan-400' :
-                                  'bg-indigo-900/30 text-indigo-300 border-indigo-500/30 hover:border-indigo-400'
-                                }`}
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Key Features */}
-                        {project.keyFeatures && (
+                      {/* Content Side - 7 columns */}
+                      <div className={`lg:col-span-7 relative ${isEven ? 'lg:pl-4' : 'lg:pr-4'}`}>
+                        <div className="space-y-8">
+                          {/* Description */}
                           <div>
-                            <h4 className="text-xl font-semibold text-cyan-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
-                              Key Features
+                            <h4 className="text-xl font-semibold text-purple-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
+                              Overview
                             </h4>
-                            <div className="space-y-3">
-                              {project.keyFeatures.map((feature, idx) => (
-                                <div key={idx} className="flex items-start gap-3 text-gray-300">
-                                  <div className="w-6 h-6 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-lg flex items-center justify-center mt-0.5 border border-cyan-500/30">
-                                    <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
-                                  </div>
-                                  <span className="leading-relaxed">{feature}</span>
-                                </div>
+                            <p className="text-lg text-gray-300 leading-relaxed">
+                              {project.description}
+                            </p>
+                          </div>
+
+                          {/* Tech Stack */}
+                          <div>
+                            <h4 className="text-xl font-semibold text-blue-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                              <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
+                              Tech Stack
+                            </h4>
+                            <div className="flex flex-wrap gap-3">
+                              {project.technologies.map((tech, techIndex) => (
+                                <span
+                                  key={tech}
+                                  className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all duration-300 hover:scale-105 ${
+                                    techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30 hover:border-purple-400' :
+                                    techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30 hover:border-blue-400' :
+                                    techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30 hover:border-cyan-400' :
+                                    'bg-indigo-900/30 text-indigo-300 border-indigo-500/30 hover:border-indigo-400'
+                                  }`}
+                                >
+                                  {tech}
+                                </span>
                               ))}
                             </div>
                           </div>
-                        )}
 
-                        {/* Impact Metrics */}
-                        {project.metrics && (
-                          <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-                            <h4 className="text-lg font-semibold text-teal-300 mb-4 uppercase tracking-wider">Impact</h4>
-                            <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                              {project.metrics.impact}
+                          {/* Key Features */}
+                          {project.keyFeatures && (
+                            <div>
+                              <h4 className="text-xl font-semibold text-cyan-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
+                                Key Features
+                              </h4>
+                              <div className="space-y-3">
+                                {project.keyFeatures.map((feature, idx) => (
+                                  <div key={idx} className="flex items-start gap-3 text-gray-300">
+                                    <div className="w-6 h-6 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-lg flex items-center justify-center mt-0.5 border border-cyan-500/30">
+                                      <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
+                                    </div>
+                                    <span className="leading-relaxed">{feature}</span>
+                                  </div>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        )}
+                          )}
+
+                          {/* Impact Metrics */}
+                          {project.metrics && (
+                            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
+                              <h4 className="text-lg font-semibold text-teal-300 mb-4 uppercase tracking-wider">Impact</h4>
+                              <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                                {project.metrics.impact}
+                              </div>
+                            </div>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1080,8 +1083,8 @@ const Portfolio = () => {
                       </div>
 
                       {/* Description */}
-                      <div className="p-6 bg-gradient-to-br from-gray-50 to-gray-100/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-700 backdrop-blur-sm">
-                        <p className="text-gray-300 leading-relaxed text-lg">{edu.description}</p>
+                      <div className="p-6 bg-slate-800/80 backdrop-blur-sm rounded-2xl border border-slate-600/50 shadow-lg">
+                        <p className="text-slate-200 leading-relaxed text-lg">{edu.description}</p>
                       </div>
 
                       {/* Achievement Highlights */}
@@ -1126,7 +1129,11 @@ const Portfolio = () => {
                             'Data Structures & Algorithms',
                             'Database Systems',
                             'Web Development',
-                            'Project Management'
+                            'Project Management',
+                            'Machine Learning',
+                            'Exploratory Data Analysis',
+                            'Deep Learning and NLP',
+                            'Big Data'
                           ].map((subject, idx) => (
                             <div key={idx} className={`px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 cursor-default ${
                               idx % 3 === 0 ? 'bg-teal-100/10 border-teal-600 text-teal-300 hover:bg-teal-100/20' :
