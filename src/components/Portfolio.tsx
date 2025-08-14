@@ -642,7 +642,6 @@ const Portfolio = () => {
           <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute top-40 right-10 w-80 h-80 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute bottom-40 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '6s' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
@@ -660,148 +659,168 @@ const Portfolio = () => {
             </p>
           </div>
           
-          {/* River Flow Layout */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
-              {projects.map((project, index) => {
-                // Define river flow positioning pattern
-                const flowPattern = [
-                  { colSpan: 'md:col-span-7', size: 'large' },
-                  { colSpan: 'md:col-span-5', size: 'medium' },
-                  { colSpan: 'md:col-span-4', size: 'small' },
-                  { colSpan: 'md:col-span-8', size: 'large' },
-                  { colSpan: 'md:col-span-6', size: 'medium' },
-                ];
-                const pattern = flowPattern[index % flowPattern.length];
-                
-                return (
-                  <div
-                    key={project.title}
-                    className={`group ${pattern.colSpan} transform transition-all duration-700 hover:-translate-y-3 hover:scale-105`}
-                    style={{
-                      animationDelay: `${index * 150}ms`,
-                      transform: `rotate(${(index % 2 === 0 ? 1 : -1) * 0.5}deg)`,
-                    }}
-                  >
-                    <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden h-full">
-                      {/* Animated Border Glow */}
-                      <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
-                      
-                      <div className="relative z-10 p-6 lg:p-8 h-full flex flex-col">
-                        {/* Project Image with Overlay */}
-                        <div className={`relative overflow-hidden rounded-2xl mb-6 ${
-                          pattern.size === 'large' ? 'h-64' : 
-                          pattern.size === 'medium' ? 'h-48' : 'h-40'
-                        }`}>
-                          <img 
-                            src={project.image} 
-                            alt={project.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
-                          
-                          {/* Floating Action Buttons */}
-                          <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                            {project.liveUrl && (
-                              <button
-                                onClick={() => window.open(project.liveUrl, '_blank')}
-                                className="w-10 h-10 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-                              >
-                                <ExternalLink className="w-4 h-4" />
-                              </button>
-                            )}
-                            <button
-                              onClick={() => window.open(project.githubUrl, '_blank')}
-                              className="w-10 h-10 bg-slate-700/80 backdrop-blur-sm rounded-full flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-slate-600"
-                            >
-                              <Github className="w-4 h-4" />
-                            </button>
+          {/* River Flow Projects */}
+          <div className="max-w-7xl mx-auto space-y-20">
+            {projects.map((project, index) => {
+              const isEven = index % 2 === 0;
+              
+              return (
+                <div
+                  key={project.title}
+                  className="group relative"
+                  style={{
+                    animationDelay: `${index * 200}ms`,
+                  }}
+                >
+                  {/* River Flow Container */}
+                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
+                    !isEven ? 'lg:flex lg:flex-row-reverse' : ''
+                  }`}>
+                    
+                    {/* Image Side */}
+                    <div className={`relative ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
+                      <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
+                        {/* Animated Border Glow */}
+                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
+                        
+                        <div className="relative z-10 p-6">
+                          {/* Project Image */}
+                          <div className="relative overflow-hidden rounded-2xl mb-6 h-64 lg:h-80">
+                            <img 
+                              src={project.image} 
+                              alt={project.title}
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
                           </div>
-                        </div>
 
-                        {/* Content */}
-                        <div className="flex-1 flex flex-col">
-                          <h3 className={`font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500 ${
-                            pattern.size === 'large' ? 'text-2xl lg:text-3xl' : 
-                            pattern.size === 'medium' ? 'text-xl lg:text-2xl' : 'text-lg lg:text-xl'
-                          }`}>
+                          {/* Project Title */}
+                          <h3 className="text-2xl lg:text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
                             {project.title}
                           </h3>
-                          
-                          <p className={`text-gray-300 leading-relaxed mb-6 flex-1 ${
-                            pattern.size === 'large' ? 'text-base lg:text-lg' : 'text-sm lg:text-base'
-                          }`}>
-                            {project.description}
-                          </p>
 
-                          {/* Technologies */}
-                          <div className="mb-6">
-                            <h4 className="text-sm font-semibold text-purple-300 mb-3 uppercase tracking-wider">Tech Stack</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {project.technologies.map((tech, techIndex) => (
-                                <span
-                                  key={tech}
-                                  className={`px-3 py-1 rounded-full text-xs font-medium border transition-all duration-300 hover:scale-105 ${
-                                    techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30' :
-                                    techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30' :
-                                    techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30' :
-                                    'bg-indigo-900/30 text-indigo-300 border-indigo-500/30'
-                                  }`}
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Key Features or Outcomes */}
-                          {project.keyFeatures && (
-                            <div className="mb-6">
-                              <h4 className="text-sm font-semibold text-cyan-300 mb-3 uppercase tracking-wider">Key Features</h4>
-                              <div className="space-y-2">
-                                {project.keyFeatures.slice(0, pattern.size === 'large' ? 3 : 2).map((feature, idx) => (
-                                  <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
-                                    {feature}
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
-
-                          {/* Learn More Button */}
-                          <div className="mt-auto">
+                          {/* Action Buttons */}
+                          <div className="flex gap-4">
+                            {/* GitHub Button */}
                             <button
-                              onClick={() => project.hasLearnMore ? openModal(project, 'learnMore') : window.open(project.githubUrl, '_blank')}
-                              className="w-full flex items-center justify-center gap-3 px-6 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-blue-600 text-white rounded-xl border border-slate-600 hover:border-purple-500 shadow-lg hover:shadow-xl transition-all duration-300 group/btn"
+                              onClick={() => window.open(project.githubUrl, '_blank')}
+                              className="flex items-center gap-3 px-6 py-3 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-xl border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github"
                             >
-                              <span className="font-semibold">
-                                {project.hasLearnMore ? 'Learn More' : 'View Code'}
-                              </span>
-                              <ExternalLink className="w-4 h-4 opacity-70 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all duration-300" />
+                              <Github className="w-5 h-5 group-hover/github:scale-110 transition-transform duration-300" />
+                              <span className="font-semibold">GitHub</span>
                             </button>
+
+                            {/* Learn More Button */}
+                            {project.hasLearnMore ? (
+                              <button
+                                onClick={() => openModal(project, 'learnMore')}
+                                className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/learn"
+                              >
+                                <MessageSquare className="w-5 h-5 group-hover/learn:scale-110 transition-transform duration-300" />
+                                <span className="font-semibold">Learn More</span>
+                              </button>
+                            ) : project.liveUrl && (
+                              <button
+                                onClick={() => window.open(project.liveUrl, '_blank')}
+                                className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group/live"
+                              >
+                                <ExternalLink className="w-5 h-5 group-hover/live:scale-110 transition-transform duration-300" />
+                                <span className="font-semibold">Live Demo</span>
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
 
-          {/* River Flow Divider */}
-          <div className="mt-20 flex items-center justify-center">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-purple-500"></div>
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-              <div className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-              <div className="w-8 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"></div>
-            </div>
+                    {/* Content Side */}
+                    <div className={`relative ${isEven ? 'lg:pl-8' : 'lg:pr-8'}`}>
+                      <div className="space-y-8">
+                        {/* Description */}
+                        <div>
+                          <h4 className="text-xl font-semibold text-purple-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                            <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
+                            Overview
+                          </h4>
+                          <p className="text-lg text-gray-300 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        {/* Tech Stack */}
+                        <div>
+                          <h4 className="text-xl font-semibold text-blue-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                            <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
+                            Tech Stack
+                          </h4>
+                          <div className="flex flex-wrap gap-3">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span
+                                key={tech}
+                                className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all duration-300 hover:scale-105 ${
+                                  techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30 hover:border-purple-400' :
+                                  techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30 hover:border-blue-400' :
+                                  techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30 hover:border-cyan-400' :
+                                  'bg-indigo-900/30 text-indigo-300 border-indigo-500/30 hover:border-indigo-400'
+                                }`}
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Key Features */}
+                        {project.keyFeatures && (
+                          <div>
+                            <h4 className="text-xl font-semibold text-cyan-300 mb-4 uppercase tracking-wider flex items-center gap-3">
+                              <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
+                              Key Features
+                            </h4>
+                            <div className="space-y-3">
+                              {project.keyFeatures.map((feature, idx) => (
+                                <div key={idx} className="flex items-start gap-3 text-gray-300">
+                                  <div className="w-6 h-6 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-lg flex items-center justify-center mt-0.5 border border-cyan-500/30">
+                                    <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
+                                  </div>
+                                  <span className="leading-relaxed">{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Impact Metrics */}
+                        {project.metrics && (
+                          <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
+                            <h4 className="text-lg font-semibold text-teal-300 mb-4 uppercase tracking-wider">Impact</h4>
+                            <div className="text-2xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                              {project.metrics.impact}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* River Flow Connector */}
+                  {index < projects.length - 1 && (
+                    <div className="flex items-center justify-center mt-16 mb-4">
+                      <div className={`flex items-center gap-4 ${!isEven ? 'flex-row-reverse' : ''}`}>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-purple-500"></div>
+                        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                        <div className="w-16 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                        <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+                        <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+                        <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"></div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
