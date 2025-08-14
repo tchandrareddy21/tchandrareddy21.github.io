@@ -701,53 +701,53 @@ const Portfolio = () => {
                       
                       {/* Image Side - 5 columns */}
                       <div className={`lg:col-span-5 relative ${isEven ? 'lg:pr-4' : 'lg:pl-4'}`}>
-                        <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
+                        <div className="space-y-4">
+                          {/* Project Title - Above Image */}
+                          <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
+                            {project.title}
+                          </h3>
+
                           {/* Project Image */}
-                          <div className="relative overflow-hidden rounded-2xl h-64 lg:h-80">
-                            <img 
-                              src={project.image} 
-                              alt={project.title}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+                          <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
+                            <div className="relative overflow-hidden rounded-2xl h-64 lg:h-80">
+                              <img 
+                                src={project.image} 
+                                alt={project.title}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
+                            </div>
                           </div>
 
-                          {/* Project Title & Buttons Overlay */}
-                          <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-slate-900/95 via-slate-900/80 to-transparent">
-                            <h3 className="text-2xl lg:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
-                              {project.title}
-                            </h3>
+                          {/* Action Buttons - Below Image */}
+                          <div className="flex gap-3">
+                            {/* GitHub Button */}
+                            <button
+                              onClick={() => window.open(project.githubUrl, '_blank')}
+                              className="flex items-center gap-2 px-4 py-2 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-lg border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github text-sm"
+                            >
+                              <Github className="w-4 h-4 group-hover/github:scale-110 transition-transform duration-300" />
+                              <span className="font-semibold">GitHub</span>
+                            </button>
 
-                            {/* Action Buttons */}
-                            <div className="flex gap-3">
-                              {/* GitHub Button */}
+                            {/* Learn More Button */}
+                            {project.hasLearnMore ? (
                               <button
-                                onClick={() => window.open(project.githubUrl, '_blank')}
-                                className="flex items-center gap-2 px-4 py-2 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-lg border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github text-sm"
+                                onClick={() => openModal(project, 'learnMore')}
+                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
                               >
-                                <Github className="w-4 h-4 group-hover/github:scale-110 transition-transform duration-300" />
-                                <span className="font-semibold">GitHub</span>
+                                <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
+                                <span className="font-semibold">Learn More</span>
                               </button>
-
-                              {/* Learn More Button */}
-                              {project.hasLearnMore ? (
-                                <button
-                                  onClick={() => openModal(project, 'learnMore')}
-                                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
-                                >
-                                  <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
-                                  <span className="font-semibold">Learn More</span>
-                                </button>
-                              ) : project.liveUrl && (
-                                <button
-                                  onClick={() => window.open(project.liveUrl, '_blank')}
-                                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/live text-sm"
-                                >
-                                  <ExternalLink className="w-4 h-4 group-hover/live:scale-110 transition-transform duration-300" />
-                                  <span className="font-semibold">Live Demo</span>
-                                </button>
-                              )}
-                            </div>
+                            ) : project.liveUrl && (
+                              <button
+                                onClick={() => window.open(project.liveUrl, '_blank')}
+                                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/live text-sm"
+                              >
+                                <ExternalLink className="w-4 h-4 group-hover/live:scale-110 transition-transform duration-300" />
+                                <span className="font-semibold">Live Demo</span>
+                              </button>
+                            )}
                           </div>
                         </div>
                       </div>
