@@ -541,9 +541,9 @@ const Portfolio = () => {
                     color: "from-pink-500 to-pink-600"
                   },
                   {
-                    icon: Database,
-                    title: "Data Engineering",
-                    description: "ETL processes, data warehousing, and building scalable data infrastructure",
+                    icon: Sparkles,
+                    title: "Generative AI",
+                    description: "LLMs, RAG systems, prompt engineering, and building AI-powered applications",
                     color: "from-orange-500 to-orange-600"
                   },
                   {
@@ -596,16 +596,30 @@ const Portfolio = () => {
                 <Card key={category} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 transform hover:-translate-y-3 animate-fade-in-up">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-red-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <CardHeader className="relative z-10">
-                    <CardTitle className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent flex items-center gap-3">
+                    <CardTitle className={`text-2xl font-bold flex items-center gap-3 ${
+                      categoryIndex % 7 === 0 ? 'text-violet-400' : 
+                      categoryIndex % 7 === 1 ? 'text-emerald-400' : 
+                      categoryIndex % 7 === 2 ? 'text-cyan-400' :
+                      categoryIndex % 7 === 3 ? 'text-rose-400' :
+                      categoryIndex % 7 === 4 ? 'text-amber-400' :
+                      categoryIndex % 7 === 5 ? 'text-indigo-400' :
+                      'text-teal-400'
+                    }`}>
                       <div className={`w-10 h-10 rounded-2xl flex items-center justify-center ${
-                        categoryIndex % 4 === 0 ? 'bg-gradient-to-br from-orange-500 to-orange-600' :
-                        categoryIndex % 4 === 1 ? 'bg-gradient-to-br from-red-500 to-red-600' :
-                        categoryIndex % 4 === 2 ? 'bg-gradient-to-br from-pink-500 to-pink-600' :
-                        'bg-gradient-to-br from-purple-500 to-purple-600'
+                        categoryIndex % 7 === 0 ? 'bg-gradient-to-br from-violet-500 to-violet-600' :
+                        categoryIndex % 7 === 1 ? 'bg-gradient-to-br from-emerald-500 to-emerald-600' :
+                        categoryIndex % 7 === 2 ? 'bg-gradient-to-br from-cyan-500 to-cyan-600' :
+                        categoryIndex % 7 === 3 ? 'bg-gradient-to-br from-rose-500 to-rose-600' :
+                        categoryIndex % 7 === 4 ? 'bg-gradient-to-br from-amber-500 to-amber-600' :
+                        categoryIndex % 7 === 5 ? 'bg-gradient-to-br from-indigo-500 to-indigo-600' :
+                        'bg-gradient-to-br from-teal-500 to-teal-600'
                       } group-hover:rotate-6 transition-transform duration-300`}>
-                        {categoryIndex % 4 === 0 ? <Code className="w-5 h-5 text-white" /> :
-                         categoryIndex % 4 === 1 ? <Database className="w-5 h-5 text-white" /> :
-                         categoryIndex % 4 === 2 ? <Server className="w-5 h-5 text-white" /> :
+                        {categoryIndex === 0 ? <Code className="w-5 h-5 text-white" /> :
+                         categoryIndex === 1 ? <Database className="w-5 h-5 text-white" /> :
+                         categoryIndex === 2 ? <Brain className="w-5 h-5 text-white" /> :
+                         categoryIndex === 3 ? <MessageSquare className="w-5 h-5 text-white" /> :
+                         categoryIndex === 4 ? <Sparkles className="w-5 h-5 text-white" /> :
+                         categoryIndex === 5 ? <Server className="w-5 h-5 text-white" /> :
                          <Globe className="w-5 h-5 text-white" />}
                       </div>
                       {category}
@@ -617,10 +631,12 @@ const Portfolio = () => {
                         <div
                           key={skill}
                           className={`group/skill px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 ${
-                            skillIndex % 4 === 0 ? 'bg-orange-100/10 border-orange-600 text-orange-300 hover:bg-orange-100/20' :
-                            skillIndex % 4 === 1 ? 'bg-red-100/10 border-red-600 text-red-300 hover:bg-red-100/20' :
-                            skillIndex % 4 === 2 ? 'bg-pink-100/10 border-pink-600 text-pink-300 hover:bg-pink-100/20' :
-                            'bg-purple-100/10 border-purple-600 text-purple-300 hover:bg-purple-100/20'
+                            skillIndex % 6 === 0 ? 'bg-blue-900/40 text-blue-300 border-blue-500/40 hover:bg-blue-800/60' :
+                            skillIndex % 6 === 1 ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-800/60' :
+                            skillIndex % 6 === 2 ? 'bg-green-900/40 text-green-300 border-green-500/40 hover:bg-green-800/60' :
+                            skillIndex % 6 === 3 ? 'bg-pink-900/40 text-pink-300 border-pink-500/40 hover:bg-pink-800/60' :
+                            skillIndex % 6 === 4 ? 'bg-yellow-900/40 text-yellow-300 border-yellow-500/40 hover:bg-yellow-800/60' :
+                            'bg-red-900/40 text-red-300 border-red-500/40 hover:bg-red-800/60'
                           }`}
                         >
                           <span className="group-hover/skill:font-bold transition-all duration-300">{skill}</span>
