@@ -695,12 +695,10 @@ const Portfolio = () => {
                     <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
                     
                     {/* River Flow Container */}
-                    <div className={`relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
-                      !isEven ? 'lg:flex lg:flex-row-reverse' : ''
-                    }`}>
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                       
                       {/* Image Side - 5 columns */}
-                      <div className={`lg:col-span-5 relative ${isEven ? 'lg:pr-4' : 'lg:pl-4'}`}>
+                      <div className={`lg:col-span-5 relative ${isEven ? 'lg:pr-4 lg:order-1' : 'lg:pl-4 lg:order-2'}`}>
                         <div className="space-y-4">
                           {/* Project Title - Above Image */}
                           <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
@@ -753,7 +751,7 @@ const Portfolio = () => {
                       </div>
 
                       {/* Content Side - 7 columns */}
-                      <div className={`lg:col-span-7 relative ${isEven ? 'lg:pl-4' : 'lg:pr-4'}`}>
+                      <div className={`lg:col-span-7 relative ${isEven ? 'lg:pl-4 lg:order-2' : 'lg:pr-4 lg:order-1'}`}>
                         <div className="space-y-8">
                           {/* Description */}
                           <div>
