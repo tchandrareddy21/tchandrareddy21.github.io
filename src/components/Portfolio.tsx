@@ -752,160 +752,194 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-500/10 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
+      <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+        </div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-cyan-600 via-emerald-500 to-teal-500 bg-clip-text text-transparent mb-4 animate-fade-in">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 rounded-full border border-indigo-500/30 backdrop-blur-sm mb-6">
+              <Briefcase className="w-6 h-6 text-indigo-400" />
+              <span className="text-indigo-300 font-semibold">Professional Journey</span>
+            </div>
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
               Work Experience
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
-              My professional journey in software engineering and leadership
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Driving innovation and delivering measurable results through technical leadership and strategic problem-solving
             </p>
-            <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full animate-scale-in"></div>
           </div>
           
-          <div className="max-w-6xl mx-auto">
+          {/* Experience Cards */}
+          <div className="max-w-7xl mx-auto">
             {experiences.map((exp, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 bg-gray-900/90 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/40 transition-all duration-500 transform hover:-translate-y-3">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-emerald-500/5 to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div key={index} className="group relative mb-16 last:mb-0">
+                {/* Timeline Connector */}
+                <div className="absolute left-8 top-16 w-1 h-full bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-1000 origin-top"></div>
                 
-                <CardContent className="p-10 relative z-10">
-                  <div className="flex flex-col lg:flex-row items-start gap-8">
-                    {/* Icon & Visual Elements */}
-                    <div className="flex-shrink-0 relative">
-                      <div className="w-24 h-24 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-3xl flex items-center justify-center shadow-2xl transform group-hover:rotate-6 transition-transform duration-500">
-                        <Briefcase className="h-12 w-12 text-white" />
+                {/* Main Card */}
+                <div className="relative bg-gradient-to-br from-slate-800/80 via-gray-800/80 to-slate-900/80 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-indigo-500/20 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                  {/* Animated Border */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-[2px] rounded-3xl bg-gradient-to-br from-slate-800/90 via-gray-800/90 to-slate-900/90 backdrop-blur-xl"></div>
+                  
+                  <div className="relative z-10 p-8 lg:p-12">
+                    {/* Header Section */}
+                    <div className="flex flex-col lg:flex-row items-start gap-8 mb-10">
+                      {/* Company Icon */}
+                      <div className="relative flex-shrink-0">
+                        <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-3 transition-transform duration-500">
+                          <Briefcase className="w-10 h-10 lg:w-12 lg:h-12 text-white" />
+                        </div>
+                        <div className="absolute -inset-1 bg-gradient-to-br from-indigo-500/30 to-purple-600/30 rounded-2xl blur-lg"></div>
+                        
+                        {/* Status Indicator */}
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+                          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                        </div>
                       </div>
-                      <div className="absolute -inset-2 bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 rounded-3xl blur-xl opacity-70"></div>
                       
-                      {/* Floating Elements */}
-                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full animate-bounce"></div>
-                      <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 space-y-6">
-                      {/* Header */}
-                      <div className="space-y-4">
-                        <h3 className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent leading-tight">
-                          {exp.title}
-                        </h3>
-                        <div className="flex flex-wrap items-center gap-6">
-                          <div className="flex items-center gap-3">
-                            <div className="w-3 h-3 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-full"></div>
-                            <span className="text-2xl font-bold text-cyan-400">{exp.company}</span>
+                      {/* Job Details */}
+                      <div className="flex-1 min-w-0">
+                        <div className="mb-4">
+                          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                            {exp.title}
+                          </h3>
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="w-2 h-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                            <span className="text-xl font-bold text-indigo-300">{exp.company}</span>
                           </div>
-                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-900/30 to-emerald-800/20 rounded-2xl border border-emerald-700">
-                            <Calendar className="h-5 w-5 text-emerald-400" />
-                            <span className="font-bold text-emerald-300">{exp.period}</span>
+                        </div>
+                        
+                        {/* Meta Information */}
+                        <div className="flex flex-wrap gap-4 mb-6">
+                          <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/30">
+                            <Calendar className="w-4 h-4 text-indigo-400" />
+                            <span className="text-indigo-200 font-medium">{exp.period}</span>
                           </div>
                           {exp.client && (
-                            <div className="flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-pink-100 to-rose-50 dark:from-pink-900/30 dark:to-rose-800/20 rounded-2xl border-2 border-pink-300 dark:border-pink-600 shadow-lg">
-                              <Star className="h-5 w-5 text-pink-600 dark:text-pink-400" />
-                              <span className="font-bold text-lg text-pink-700 dark:text-pink-300">Client: {exp.client}</span>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-900/40 to-pink-900/40 rounded-xl border border-purple-500/30">
+                              <Star className="w-4 h-4 text-purple-400" />
+                              <span className="text-purple-200 font-medium">Client: {exp.client}</span>
                             </div>
                           )}
                           {exp.location && (
-                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-900/30 to-teal-800/20 rounded-2xl border border-teal-700">
-                              <MapPin className="h-5 w-5 text-teal-400" />
-                              <span className="font-bold text-teal-300">{exp.location}</span>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-pink-900/40 to-rose-900/40 rounded-xl border border-pink-500/30">
+                              <MapPin className="w-4 h-4 text-pink-400" />
+                              <span className="text-pink-200 font-medium">{exp.location}</span>
                             </div>
                           )}
                         </div>
                       </div>
+                    </div>
 
-                      {/* Key Metrics */}
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-cyan-100 to-cyan-50 dark:from-cyan-900/30 dark:to-cyan-800/20 rounded-2xl border-2 border-cyan-200 dark:border-cyan-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                          <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                    {/* Impact Metrics */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                      <div className="group/metric bg-gradient-to-br from-indigo-900/30 to-indigo-800/30 rounded-2xl p-6 border border-indigo-500/20 hover:border-indigo-400/40 transition-all duration-300 hover:scale-105">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <Users className="w-6 h-6 text-white" />
                           </div>
-                          <h4 className="font-bold text-cyan-700 dark:text-cyan-300 text-lg mb-2">Team Leadership</h4>
-                          <p className="text-sm text-cyan-600 dark:text-cyan-400">{exp.keyMetrics.teamSize}</p>
+                          <div>
+                            <h4 className="text-lg font-bold text-indigo-300">Team Leadership</h4>
+                            <p className="text-indigo-400 font-semibold">{exp.keyMetrics.teamSize}</p>
+                          </div>
                         </div>
-                        
-                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/30 dark:to-emerald-800/20 rounded-2xl border-2 border-emerald-200 dark:border-emerald-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                      </div>
+                      
+                      <div className="group/metric bg-gradient-to-br from-purple-900/30 to-purple-800/30 rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 hover:scale-105">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <Target className="w-6 h-6 text-white" />
                           </div>
-                          <h4 className="font-bold text-emerald-700 dark:text-emerald-300 text-lg mb-2">Projects Delivered</h4>
-                          <p className="text-sm text-emerald-600 dark:text-emerald-400">{exp.keyMetrics.projects}</p>
+                          <div>
+                            <h4 className="text-lg font-bold text-purple-300">Projects Delivered</h4>
+                            <p className="text-purple-400 font-semibold">{exp.keyMetrics.projects}</p>
+                          </div>
                         </div>
-                        
-                        <div className="group/highlight text-center p-6 bg-gradient-to-br from-teal-100 to-teal-50 dark:from-teal-900/30 dark:to-teal-800/20 rounded-2xl border-2 border-teal-200 dark:border-teal-700 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                          <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover/highlight:rotate-12 transition-transform duration-300">
+                      </div>
+                      
+                      <div className="group/metric bg-gradient-to-br from-pink-900/30 to-pink-800/30 rounded-2xl p-6 border border-pink-500/20 hover:border-pink-400/40 transition-all duration-300 hover:scale-105">
+                        <div className="flex items-center gap-4 mb-3">
+                          <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <TrendingUp className="w-6 h-6 text-white" />
                           </div>
-                          <h4 className="font-bold text-teal-700 dark:text-teal-300 text-lg mb-2">Business Impact</h4>
-                          <p className="text-sm text-teal-600 dark:text-teal-400">{exp.keyMetrics.impact}</p>
-                        </div>
-                      </div>
-
-                      {/* Key Achievements */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-bold flex items-center gap-3">
-                          <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                            <Star className="w-4 h-4 text-white" />
+                          <div>
+                            <h4 className="text-lg font-bold text-pink-300">Business Impact</h4>
+                            <p className="text-pink-400 font-semibold">{exp.keyMetrics.impact}</p>
                           </div>
-                          <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Key Achievements</span>
-                        </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-                          {exp.achievements.map((achievement, idx) => (
-                            <Card key={idx} className="group/achievement relative overflow-hidden border-0 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
-                              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-emerald-500/10 to-teal-500/10 opacity-0 group-hover/achievement:opacity-100 transition-opacity duration-500"></div>
-                              <CardContent className="p-4 sm:p-6 relative z-10">
-                                <h5 className="font-bold text-base sm:text-lg text-cyan-400 mb-3">{achievement.title}</h5>
-                                <p className="text-sm sm:text-base text-gray-300 mb-4 leading-relaxed">{achievement.description}</p>
-                                <div className="space-y-3">
-                                  <div className="flex items-center gap-2 p-2 bg-gradient-to-r from-emerald-900/30 to-emerald-800/20 rounded-lg">
-                                    <TrendingUp className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                                    <span className="text-xs sm:text-sm font-bold text-emerald-300">{achievement.impact}</span>
-                                  </div>
-                                  <div className="flex flex-wrap gap-2">
-                                    {achievement.skills.map((skill, skillIdx) => (
-                                      <div key={skillIdx} className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${
-                                        skillIdx % 3 === 0 ? 'bg-cyan-900/30 border-cyan-600 text-cyan-300' :
-                                        skillIdx % 3 === 1 ? 'bg-emerald-900/30 border-emerald-600 text-emerald-300' :
-                                        'bg-teal-900/30 border-teal-600 text-teal-300'
-                                      }`}>
-                                        {skill}
-                                      </div>
-                                    ))}
-                                  </div>
-                                </div>
-                              </CardContent>
-                            </Card>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Technical Skills */}
-                      <div className="space-y-4">
-                        <h4 className="text-xl font-bold flex items-center gap-3">
-                          <div className="w-6 h-6 bg-gradient-to-br from-cyan-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                            <Code className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="bg-gradient-to-r from-cyan-600 to-emerald-600 bg-clip-text text-transparent">Technical Skills</span>
-                        </h4>
-                        <div className="flex flex-wrap gap-3">
-                          {exp.skills.map((skill, skillIdx) => (
-                            <div key={skillIdx} className={`px-4 py-2 rounded-2xl text-sm font-bold border transition-all duration-300 hover:scale-105 ${
-                              skillIdx % 3 === 0 ? 'bg-cyan-100/10 border-cyan-600 text-cyan-300 hover:bg-cyan-100/20' :
-                              skillIdx % 3 === 1 ? 'bg-emerald-100/10 border-emerald-600 text-emerald-300 hover:bg-emerald-100/20' :
-                              'bg-teal-100/10 border-teal-600 text-teal-300 hover:bg-teal-100/20'
-                            }`}>
-                              {skill}
-                            </div>
-                          ))}
                         </div>
                       </div>
                     </div>
+
+                    {/* Key Achievements */}
+                    <div className="mb-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+                          <Star className="w-4 h-4 text-white" />
+                        </div>
+                        <h4 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Key Achievements</h4>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        {exp.achievements.map((achievement, idx) => (
+                          <div key={idx} className="group/achievement bg-gradient-to-br from-slate-800/60 to-gray-900/60 rounded-2xl p-6 border border-slate-600/50 hover:border-indigo-400/50 transition-all duration-500 hover:scale-105 hover:shadow-lg">
+                            <div className="mb-4">
+                              <h5 className="text-xl font-bold text-white mb-2 group-hover/achievement:text-indigo-300 transition-colors duration-300">{achievement.title}</h5>
+                              <p className="text-gray-300 leading-relaxed mb-4">{achievement.description}</p>
+                              
+                              <div className="flex items-center gap-2 mb-4 p-3 bg-gradient-to-r from-green-900/30 to-emerald-900/30 rounded-lg border border-green-500/20">
+                                <TrendingUp className="w-4 h-4 text-green-400" />
+                                <span className="text-green-300 font-semibold text-sm">{achievement.impact}</span>
+                              </div>
+                              
+                              <div className="flex flex-wrap gap-2">
+                                {achievement.skills.map((skill, skillIdx) => (
+                                  <span key={skillIdx} className={`px-3 py-1 rounded-full text-xs font-medium ${
+                                    skillIdx % 3 === 0 ? 'bg-indigo-900/40 text-indigo-300 border border-indigo-500/30' :
+                                    skillIdx % 3 === 1 ? 'bg-purple-900/40 text-purple-300 border border-purple-500/30' :
+                                    'bg-pink-900/40 text-pink-300 border border-pink-500/30'
+                                  }`}>
+                                    {skill}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Technical Skills */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                          <Code className="w-4 h-4 text-white" />
+                        </div>
+                        <h4 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Technical Skills</h4>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-3">
+                        {exp.skills.map((skill, skillIdx) => (
+                          <div key={skillIdx} className={`px-4 py-2 rounded-xl font-semibold border transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+                            skillIdx % 4 === 0 ? 'bg-indigo-900/40 text-indigo-300 border-indigo-500/40 hover:bg-indigo-800/60' :
+                            skillIdx % 4 === 1 ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-800/60' :
+                            skillIdx % 4 === 2 ? 'bg-pink-900/40 text-pink-300 border-pink-500/40 hover:bg-pink-800/60' :
+                            'bg-rose-900/40 text-rose-300 border-rose-500/40 hover:bg-rose-800/60'
+                          }`}>
+                            {skill}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
