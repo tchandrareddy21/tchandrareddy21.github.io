@@ -752,25 +752,25 @@ const Portfolio = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-50 via-gray-50 to-blue-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800">
+      <section id="experience" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-200/30 to-indigo-200/30 dark:from-blue-600/20 dark:to-indigo-600/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-indigo-200/30 to-purple-200/30 dark:from-indigo-600/20 dark:to-purple-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-purple-200/20 to-pink-200/20 dark:from-purple-600/10 dark:to-pink-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-purple-600/10 to-pink-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-200 dark:border-blue-500/30 shadow-lg mb-6">
-              <Briefcase className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              <span className="text-blue-700 dark:text-blue-300 font-semibold">Professional Journey</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-full border border-blue-500/30 shadow-lg mb-6">
+              <Briefcase className="w-6 h-6 text-blue-400" />
+              <span className="text-blue-300 font-semibold">Professional Journey</span>
             </div>
-            <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
+            <h2 className="text-6xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-6">
               Work Experience
             </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Driving innovation and delivering measurable results through technical leadership and strategic problem-solving
             </p>
           </div>
@@ -783,10 +783,10 @@ const Portfolio = () => {
                 <div className="absolute left-8 top-16 w-1 h-full bg-gradient-to-b from-blue-500 via-indigo-500 to-purple-500 rounded-full transform scale-y-0 group-hover:scale-y-100 transition-transform duration-1000 origin-top"></div>
                 
                 {/* Main Card */}
-                <div className="relative bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-slate-700/50 shadow-2xl hover:shadow-blue-500/20 dark:hover:shadow-blue-500/20 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
+                <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-3xl border border-slate-700/50 shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 transform hover:-translate-y-2 overflow-hidden">
                   {/* Animated Border */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute inset-[2px] rounded-3xl bg-white/95 dark:bg-slate-800/95 backdrop-blur-xl"></div>
+                  <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
                   
                   <div className="relative z-10 p-8 lg:p-12">
                     {/* Header Section */}
@@ -807,31 +807,31 @@ const Portfolio = () => {
                       {/* Job Details */}
                       <div className="flex-1 min-w-0">
                         <div className="mb-4">
-                          <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
+                          <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2 group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-indigo-400 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-500">
                             {exp.title}
                           </h3>
                           <div className="flex items-center gap-3 mb-4">
                             <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
-                            <span className="text-xl font-bold text-blue-600 dark:text-blue-400">{exp.company}</span>
+                            <span className="text-xl font-bold text-blue-400">{exp.company}</span>
                           </div>
                         </div>
                         
                         {/* Meta Information */}
                         <div className="flex flex-wrap gap-4 mb-6">
-                          <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-500/30">
-                            <Calendar className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                            <span className="text-blue-700 dark:text-blue-300 font-medium">{exp.period}</span>
+                          <div className="flex items-center gap-2 px-4 py-2 bg-blue-900/30 rounded-xl border border-blue-500/30">
+                            <Calendar className="w-4 h-4 text-blue-400" />
+                            <span className="text-blue-300 font-medium">{exp.period}</span>
                           </div>
                           {exp.client && (
-                            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 dark:bg-indigo-900/30 rounded-xl border border-indigo-200 dark:border-indigo-500/30">
-                              <Star className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                              <span className="text-indigo-700 dark:text-indigo-300 font-medium">Client: {exp.client}</span>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-900/30 rounded-xl border border-indigo-500/30">
+                              <Star className="w-4 h-4 text-indigo-400" />
+                              <span className="text-indigo-300 font-medium">Client: {exp.client}</span>
                             </div>
                           )}
                           {exp.location && (
-                            <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/30 rounded-xl border border-purple-200 dark:border-purple-500/30">
-                              <MapPin className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-                              <span className="text-purple-700 dark:text-purple-300 font-medium">{exp.location}</span>
+                            <div className="flex items-center gap-2 px-4 py-2 bg-purple-900/30 rounded-xl border border-purple-500/30">
+                              <MapPin className="w-4 h-4 text-purple-400" />
+                              <span className="text-purple-300 font-medium">{exp.location}</span>
                             </div>
                           )}
                         </div>
@@ -840,38 +840,38 @@ const Portfolio = () => {
 
                     {/* Impact Metrics */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                      <div className="group/metric bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-500/20 hover:border-blue-400 dark:hover:border-blue-400/40 transition-all duration-300 hover:scale-105">
+                      <div className="group/metric bg-blue-900/20 rounded-2xl p-6 border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 hover:scale-105">
                         <div className="flex items-center gap-4 mb-3">
                           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <Users className="w-6 h-6 text-white" />
                           </div>
                           <div>
-                            <h4 className="text-lg font-bold text-blue-700 dark:text-blue-300">Team Leadership</h4>
-                            <p className="text-blue-600 dark:text-blue-400 font-semibold">{exp.keyMetrics.teamSize}</p>
+                            <h4 className="text-lg font-bold text-blue-300">Team Leadership</h4>
+                            <p className="text-blue-400 font-semibold">{exp.keyMetrics.teamSize}</p>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="group/metric bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl p-6 border border-indigo-200 dark:border-indigo-500/20 hover:border-indigo-400 dark:hover:border-indigo-400/40 transition-all duration-300 hover:scale-105">
+                      <div className="group/metric bg-indigo-900/20 rounded-2xl p-6 border border-indigo-500/20 hover:border-indigo-400/40 transition-all duration-300 hover:scale-105">
                         <div className="flex items-center gap-4 mb-3">
                           <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <Target className="w-6 h-6 text-white" />
                           </div>
                           <div>
-                            <h4 className="text-lg font-bold text-indigo-700 dark:text-indigo-300">Projects Delivered</h4>
-                            <p className="text-indigo-600 dark:text-indigo-400 font-semibold">{exp.keyMetrics.projects}</p>
+                            <h4 className="text-lg font-bold text-indigo-300">Projects Delivered</h4>
+                            <p className="text-indigo-400 font-semibold">{exp.keyMetrics.projects}</p>
                           </div>
                         </div>
                       </div>
                       
-                      <div className="group/metric bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 border border-purple-200 dark:border-purple-500/20 hover:border-purple-400 dark:hover:border-purple-400/40 transition-all duration-300 hover:scale-105">
+                      <div className="group/metric bg-purple-900/20 rounded-2xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 hover:scale-105">
                         <div className="flex items-center gap-4 mb-3">
                           <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center group-hover/metric:rotate-12 transition-transform duration-300">
                             <TrendingUp className="w-6 h-6 text-white" />
                           </div>
                           <div>
-                            <h4 className="text-lg font-bold text-purple-700 dark:text-purple-300">Business Impact</h4>
-                            <p className="text-purple-600 dark:text-purple-400 font-semibold">{exp.keyMetrics.impact}</p>
+                            <h4 className="text-lg font-bold text-purple-300">Business Impact</h4>
+                            <p className="text-purple-400 font-semibold">{exp.keyMetrics.impact}</p>
                           </div>
                         </div>
                       </div>
@@ -883,27 +883,27 @@ const Portfolio = () => {
                         <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
                           <Star className="w-4 h-4 text-white" />
                         </div>
-                        <h4 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Key Achievements</h4>
+                        <h4 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Key Achievements</h4>
                       </div>
                       
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         {exp.achievements.map((achievement, idx) => (
-                          <div key={idx} className="group/achievement bg-gray-50 dark:bg-slate-800/60 rounded-2xl p-6 border border-gray-200 dark:border-slate-600/50 hover:border-blue-400 dark:hover:border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-lg">
+                          <div key={idx} className="group/achievement bg-slate-800/60 rounded-2xl p-6 border border-slate-600/50 hover:border-blue-400/50 transition-all duration-500 hover:scale-105 hover:shadow-lg">
                             <div className="mb-4">
-                              <h5 className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover/achievement:text-blue-600 dark:group-hover/achievement:text-blue-400 transition-colors duration-300">{achievement.title}</h5>
-                              <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{achievement.description}</p>
+                              <h5 className="text-xl font-bold text-white mb-2 group-hover/achievement:text-blue-400 transition-colors duration-300">{achievement.title}</h5>
+                              <p className="text-gray-300 leading-relaxed mb-4">{achievement.description}</p>
                               
-                              <div className="flex items-center gap-2 mb-4 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-500/20">
-                                <TrendingUp className="w-4 h-4 text-green-600 dark:text-green-400" />
-                                <span className="text-green-700 dark:text-green-300 font-semibold text-sm">{achievement.impact}</span>
+                              <div className="flex items-center gap-2 mb-4 p-3 bg-green-900/20 rounded-lg border border-green-500/20">
+                                <TrendingUp className="w-4 h-4 text-green-400" />
+                                <span className="text-green-300 font-semibold text-sm">{achievement.impact}</span>
                               </div>
                               
                               <div className="flex flex-wrap gap-2">
                                 {achievement.skills.map((skill, skillIdx) => (
                                   <span key={skillIdx} className={`px-3 py-1 rounded-full text-xs font-medium ${
-                                    skillIdx % 3 === 0 ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border border-blue-300 dark:border-blue-500/30' :
-                                    skillIdx % 3 === 1 ? 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-500/30' :
-                                    'bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border border-purple-300 dark:border-purple-500/30'
+                                    skillIdx % 3 === 0 ? 'bg-blue-900/40 text-blue-300 border border-blue-500/30' :
+                                    skillIdx % 3 === 1 ? 'bg-indigo-900/40 text-indigo-300 border border-indigo-500/30' :
+                                    'bg-purple-900/40 text-purple-300 border border-purple-500/30'
                                   }`}>
                                     {skill}
                                   </span>
@@ -921,16 +921,16 @@ const Portfolio = () => {
                         <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
                           <Code className="w-4 h-4 text-white" />
                         </div>
-                        <h4 className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Technical Skills</h4>
+                        <h4 className="text-2xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Technical Skills</h4>
                       </div>
                       
                       <div className="flex flex-wrap gap-3">
                         {exp.skills.map((skill, skillIdx) => (
                           <div key={skillIdx} className={`px-4 py-2 rounded-xl font-semibold border transition-all duration-300 hover:scale-105 hover:shadow-lg ${
-                            skillIdx % 4 === 0 ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-500/40 hover:bg-blue-200 dark:hover:bg-blue-800/60' :
-                            skillIdx % 4 === 1 ? 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border-indigo-300 dark:border-indigo-500/40 hover:bg-indigo-200 dark:hover:bg-indigo-800/60' :
-                            skillIdx % 4 === 2 ? 'bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-500/40 hover:bg-purple-200 dark:hover:bg-purple-800/60' :
-                            'bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 border-pink-300 dark:border-pink-500/40 hover:bg-pink-200 dark:hover:bg-pink-800/60'
+                            skillIdx % 4 === 0 ? 'bg-blue-900/40 text-blue-300 border-blue-500/40 hover:bg-blue-800/60' :
+                            skillIdx % 4 === 1 ? 'bg-indigo-900/40 text-indigo-300 border-indigo-500/40 hover:bg-indigo-800/60' :
+                            skillIdx % 4 === 2 ? 'bg-purple-900/40 text-purple-300 border-purple-500/40 hover:bg-purple-800/60' :
+                            'bg-pink-900/40 text-pink-300 border-pink-500/40 hover:bg-pink-800/60'
                           }`}>
                             {skill}
                           </div>
