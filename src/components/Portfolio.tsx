@@ -655,195 +655,153 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects Section - River Flow Layout */}
-      <section id="projects" className="py-20 relative overflow-hidden bg-gradient-to-br from-slate-900 via-gray-900 to-indigo-900">
-        {/* Flowing Background Elements */}
+      {/* Projects Section */}
+      <section id="projects" className="py-20 relative overflow-hidden">
+        {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-20 w-96 h-96 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-10 w-80 h-80 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-accent/20 to-material-tertiary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-material-tertiary/10 to-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-slate-800/80 backdrop-blur-sm rounded-full border border-purple-500/30 shadow-lg mb-6">
-              <Code className="w-6 h-6 text-purple-400" />
-              <span className="text-purple-300 font-semibold">Featured Work</span>
+            <div className="inline-flex items-center gap-3 px-6 py-3 material-surface-variant backdrop-blur-sm rounded-full border border-primary/20 material-elevation-2 mb-6">
+              <Code className="w-6 h-6 text-primary" />
+              <span className="text-primary font-semibold">Featured Projects</span>
             </div>
-            <h2 className="text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-              Projects
+            <h2 className="text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-primary via-accent to-material-tertiary bg-clip-text text-transparent">
+                My Portfolio
+              </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Innovative solutions showcasing the intersection of AI, machine learning, and modern software engineering
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Innovative data science and AI/ML projects showcasing practical solutions to complex real-world problems
             </p>
           </div>
-          
-          {/* River Flow Projects */}
-          <div className="max-w-7xl mx-auto space-y-20">
-            {projects.map((project, index) => {
-              const isEven = index % 2 === 0;
-              
-              return (
-                <div
-                  key={project.title}
-                  className="group relative"
-                  style={{
-                    animationDelay: `${index * 200}ms`,
-                  }}
-                >
-                  {/* Project Border Box */}
-                  <div className="relative bg-slate-800/40 backdrop-blur-xl rounded-3xl border-2 border-slate-700/50 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 p-8 lg:p-12 mb-8">
-                    {/* Animated Border Glow */}
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute inset-[2px] rounded-3xl bg-slate-800/95 backdrop-blur-xl"></div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {projects.map((project, index) => (
+              <div key={index} className="group relative">
+                {/* Project Card */}
+                <div className="relative h-full bg-material-surface-container rounded-2xl overflow-hidden border border-border material-elevation-2 hover:material-elevation-4 transition-all duration-500 hover:-translate-y-2">
+                  {/* Project Image */}
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
-                    {/* River Flow Container */}
-                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                      
-                      {/* Image Side - 5 columns */}
-                      <div className={`lg:col-span-5 relative ${isEven ? 'lg:pr-4 lg:order-1' : 'lg:pl-4 lg:order-2'}`}>
-                        <div className="space-y-4">
-                          {/* Project Title - Above Image */}
-                          <h3 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-500">
-                            {project.title}
-                          </h3>
-
-                          {/* Project Image */}
-                          <div className="relative bg-slate-800/90 backdrop-blur-xl rounded-2xl border border-slate-700/50 shadow-xl hover:shadow-purple-500/20 transition-all duration-700 overflow-hidden transform group-hover:scale-105">
-                            <div className="relative overflow-hidden rounded-2xl h-64 lg:h-80">
-                              <img 
-                                src={project.image} 
-                                alt={project.title}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent"></div>
-                            </div>
-                          </div>
-
-                          {/* Action Buttons - Below Image */}
-                          <div className="flex gap-3">
-                            {/* GitHub Button */}
-                            <button
-                              onClick={() => window.open(project.githubUrl, '_blank')}
-                              className="flex items-center gap-2 px-4 py-2 bg-slate-700/80 hover:bg-slate-600 backdrop-blur-sm rounded-lg border border-slate-600 hover:border-purple-500 text-white shadow-lg hover:shadow-xl transition-all duration-300 group/github text-sm"
-                            >
-                              <Github className="w-4 h-4 group-hover/github:scale-110 transition-transform duration-300" />
-                              <span className="font-semibold">GitHub</span>
-                            </button>
-
-                            {/* Learn More Button */}
-                            <button
-                              onClick={() => openModal(project, 'learnMore')}
-                              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group/learn text-sm"
-                            >
-                              <MessageSquare className="w-4 h-4 group-hover/learn:scale-110 transition-transform duration-300" />
-                              <span className="font-semibold">Learn More</span>
-                            </button>
-                          </div>
-                        </div>
+                    {/* Hover Actions */}
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <div className="flex gap-3">
+                        <Button
+                          onClick={() => window.open(project.githubUrl, '_blank')}
+                          size="sm"
+                          className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </Button>
+                        {project.hasLearnMore && (
+                          <Button
+                            onClick={() => openModal(project, 'learnMore')}
+                            size="sm"
+                            className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Details
+                          </Button>
+                        )}
                       </div>
+                    </div>
+                  </div>
 
-                      {/* Content Side - 7 columns */}
-                      <div className={`lg:col-span-7 relative ${isEven ? 'lg:pl-4 lg:order-2' : 'lg:pr-4 lg:order-1'}`}>
-                        <div className="space-y-8">
-                          {/* Description */}
-                          <div>
-                            <h4 className="text-xl font-semibold text-purple-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full"></div>
-                              Overview
-                            </h4>
-                            <p className="text-lg text-gray-300 leading-relaxed">
-                              {project.description}
-                            </p>
-                          </div>
+                  {/* Project Content */}
+                  <div className="p-6 space-y-4">
+                    {/* Project Title */}
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </h3>
 
-                          {/* Tech Stack */}
-                          <div>
-                            <h4 className="text-xl font-semibold text-blue-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                              <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full"></div>
-                              Tech Stack
-                            </h4>
-                            <div className="flex flex-wrap gap-3">
-                              {project.technologies.map((tech, techIndex) => (
-                                <span
-                                  key={tech}
-                                  className={`px-4 py-2 rounded-xl text-sm font-semibold border transition-all duration-300 hover:scale-105 ${
-                                    techIndex % 4 === 0 ? 'bg-purple-900/30 text-purple-300 border-purple-500/30 hover:border-purple-400' :
-                                    techIndex % 4 === 1 ? 'bg-blue-900/30 text-blue-300 border-blue-500/30 hover:border-blue-400' :
-                                    techIndex % 4 === 2 ? 'bg-cyan-900/30 text-cyan-300 border-cyan-500/30 hover:border-cyan-400' :
-                                    'bg-indigo-900/30 text-indigo-300 border-indigo-500/30 hover:border-indigo-400'
-                                  }`}
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
+                    {/* Project Description */}
+                    <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
 
-                          {/* Key Features */}
-                          {project.keyFeatures && (
-                            <div>
-                              <h4 className="text-xl font-semibold text-cyan-300 mb-4 uppercase tracking-wider flex items-center gap-3">
-                                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
-                                Key Features
-                              </h4>
-                              <div className="space-y-3">
-                                {project.keyFeatures.map((feature, idx) => (
-                                  <div key={idx} className="flex items-start gap-3 text-gray-300">
-                                    <div className="w-6 h-6 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-lg flex items-center justify-center mt-0.5 border border-cyan-500/30">
-                                      <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-full"></div>
-                                    </div>
-                                    <span className="leading-relaxed">{feature}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                          )}
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                        <Badge 
+                          key={techIndex}
+                          variant="secondary" 
+                          className={`text-xs px-2 py-1 ${
+                            techIndex === 0 ? 'bg-primary/10 text-primary border-primary/20' :
+                            techIndex === 1 ? 'bg-accent/10 text-accent border-accent/20' :
+                            'bg-material-tertiary/10 text-material-tertiary border-material-tertiary/20'
+                          }`}
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                      {project.technologies.length > 3 && (
+                        <Badge variant="outline" className="text-xs px-2 py-1">
+                          +{project.technologies.length - 3}
+                        </Badge>
+                      )}
+                    </div>
 
-                          {/* Impact Metrics */}
-                          {project.metrics && (
-                            <div className="bg-slate-800/30 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
-                              <h4 className={`text-lg font-semibold mb-4 uppercase tracking-wider ${
-                                index % 5 === 0 ? 'text-emerald-300' :
-                                index % 5 === 1 ? 'text-orange-300' :
-                                index % 5 === 2 ? 'text-pink-300' :
-                                index % 5 === 3 ? 'text-violet-300' :
-                                'text-sky-300'
-                              }`}>Impact</h4>
-                              <div className={`text-2xl font-bold bg-clip-text text-transparent ${
-                                index % 5 === 0 ? 'bg-gradient-to-r from-emerald-400 to-teal-400' :
-                                index % 5 === 1 ? 'bg-gradient-to-r from-orange-400 to-red-400' :
-                                index % 5 === 2 ? 'bg-gradient-to-r from-pink-400 to-rose-400' :
-                                index % 5 === 3 ? 'bg-gradient-to-r from-violet-400 to-purple-400' :
-                                'bg-gradient-to-r from-sky-400 to-cyan-400'
-                              }`}>
-                                {project.metrics.impact}
-                              </div>
-                            </div>
-                          )}
+                    {/* Project Metrics */}
+                    <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
+                      <div className="text-center">
+                        <div className="text-xs text-muted-foreground mb-1">Duration</div>
+                        <div className="text-sm font-semibold text-foreground">{project.metrics.duration.split(' ')[0]}</div>
+                      </div>
+                      <div className={`text-center p-2 rounded-lg ${
+                        index === 0 ? 'bg-emerald-500/10' :
+                        index === 1 ? 'bg-orange-500/10' :
+                        index === 2 ? 'bg-pink-500/10' :
+                        index === 3 ? 'bg-violet-500/10' :
+                        'bg-sky-500/10'
+                      }`}>
+                        <div className="text-xs text-muted-foreground mb-1">Impact</div>
+                        <div className={`text-sm font-semibold ${
+                          index === 0 ? 'text-emerald-400' :
+                          index === 1 ? 'text-orange-400' :
+                          index === 2 ? 'text-pink-400' :
+                          index === 3 ? 'text-violet-400' :
+                          'text-sky-400'
+                        }`}>
+                          {project.metrics.impact.split(' ').slice(-2).join(' ')}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* River Flow Connector */}
-                  {index < projects.length - 1 && (
-                    <div className="flex items-center justify-center mt-16 mb-4">
-                      <div className={`flex items-center gap-4 ${!isEven ? 'flex-row-reverse' : ''}`}>
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-purple-500"></div>
-                        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                        <div className="w-16 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500"></div>
-                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
-                        <div className="w-3 h-3 bg-cyan-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-                        <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent"></div>
-                      </div>
-                    </div>
-                  )}
+                  {/* Animated Border on Hover */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-accent to-material-tertiary opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" style={{ padding: '2px' }}>
+                    <div className="w-full h-full bg-material-surface-container rounded-2xl"></div>
+                  </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <Button 
+              onClick={() => window.open('https://github.com/tchandrareddy21', '_blank')}
+              className="material-button-primary group"
+            >
+              <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+              View All Projects on GitHub
+              <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+            </Button>
           </div>
         </div>
       </section>
