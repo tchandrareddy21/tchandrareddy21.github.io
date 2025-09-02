@@ -684,121 +684,115 @@ const Portfolio = () => {
                 key={index}
                 className="group relative bg-card rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 overflow-hidden"
               >
-                {/* Card Header */}
-                <div className="p-6 pb-4">
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-2xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300">
-                      {project.title}
-                    </h3>
+                {/* Project Image First */}
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} project screenshot`}
+                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-4 right-4">
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg hover:bg-muted transition-colors duration-200"
+                      className="p-2 bg-black/50 backdrop-blur-sm rounded-lg hover:bg-black/70 transition-colors duration-200"
                       aria-label={`View ${project.title} on GitHub`}
                     >
-                      <Github className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                      <Github className="w-5 h-5 text-white" />
                     </a>
                   </div>
-                  <p className="text-muted-foreground text-base leading-relaxed mb-4">
-                    {project.description}
-                  </p>
                 </div>
 
-                {/* Technology Badges */}
-                <div className="px-6 pb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="secondary"
-                        className="px-3 py-1 text-xs font-medium bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors duration-200"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
+                {/* Project Details */}
+                <div className="p-6 space-y-6">
+                  {/* Title & Description */}
+                  <div>
+                    <h3 className="text-2xl font-bold text-card-foreground group-hover:text-primary transition-colors duration-300 mb-3">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-base leading-relaxed">
+                      {project.description}
+                      {project.learnMoreContent && (
+                        <span className="block mt-2 text-sm">
+                          <strong className="text-primary">Solution:</strong> {project.learnMoreContent.solutionProposed}
+                        </span>
+                      )}
+                    </p>
                   </div>
-                </div>
 
-                {/* Project Image */}
-                <div className="px-6 pb-4">
-                  <div className="aspect-video rounded-lg overflow-hidden border border-border bg-muted group-hover:border-primary/30 transition-colors duration-300">
-                    <img
-                      src={project.image}
-                      alt={`${project.title} project screenshot`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                </div>
-
-                {/* Key Features & Impact */}
-                <div className="px-6 pb-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <h4 className="font-semibold text-primary mb-2">Key Features</h4>
-                      <ul className="space-y-1">
-                        {project.keyFeatures.slice(0, 3).map((feature, idx) => (
-                          <li key={idx} className="text-muted-foreground flex items-start">
-                            <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 mr-2 flex-shrink-0"></span>
-                            <span className="text-xs leading-relaxed">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
+                  {/* Technologies Used - Highlighted */}
+                  <div>
+                    <h4 className="text-sm font-bold text-primary uppercase tracking-wide mb-3">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className={`px-3 py-1.5 text-sm font-semibold rounded-lg border-2 transition-all duration-200 ${
+                            techIndex % 5 === 0 ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
+                            techIndex % 5 === 1 ? 'bg-blue-500/10 text-blue-400 border-blue-500/30' :
+                            techIndex % 5 === 2 ? 'bg-purple-500/10 text-purple-400 border-purple-500/30' :
+                            techIndex % 5 === 3 ? 'bg-orange-500/10 text-orange-400 border-orange-500/30' :
+                            'bg-pink-500/10 text-pink-400 border-pink-500/30'
+                          }`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
-                    
-                    <div>
-                      <h4 className={`font-semibold mb-2 ${
-                        index === 0 ? 'text-emerald-500' : 
-                        index === 1 ? 'text-orange-500' : 
-                        index === 2 ? 'text-pink-500' : 
-                        index === 3 ? 'text-violet-500' : 
-                        'text-sky-500'
-                      }`}>Impact</h4>
-                      <div className="space-y-1">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground text-xs">Duration:</span>
-                          <span className="text-xs font-medium">{project.metrics.duration}</span>
+                  </div>
+
+                  {/* Key Features - Highlighted */}
+                  <div>
+                    <h4 className="text-sm font-bold text-accent uppercase tracking-wide mb-3">Key Features</h4>
+                    <div className="grid grid-cols-1 gap-2">
+                      {project.keyFeatures.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3 p-2 rounded-lg bg-accent/5 border border-accent/20">
+                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-foreground font-medium text-sm leading-relaxed">{feature}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground text-xs">Team:</span>
-                          <span className="text-xs font-medium">{project.metrics.team}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground text-xs">Result:</span>
-                          <span className={`text-xs font-bold ${
-                            index === 0 ? 'text-emerald-500' : 
-                            index === 1 ? 'text-orange-500' : 
-                            index === 2 ? 'text-pink-500' : 
-                            index === 3 ? 'text-violet-500' : 
-                            'text-sky-500'
-                          }`}>{project.metrics.impact}</span>
-                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Impact Metrics - Highlighted without Team */}
+                  <div>
+                    <h4 className={`text-sm font-bold uppercase tracking-wide mb-3 ${
+                      index === 0 ? 'text-emerald-500' : 
+                      index === 1 ? 'text-orange-500' : 
+                      index === 2 ? 'text-pink-500' : 
+                      index === 3 ? 'text-violet-500' : 
+                      'text-sky-500'
+                    }`}>Project Impact</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className={`p-3 rounded-lg border-2 ${
+                        index === 0 ? 'bg-emerald-500/10 border-emerald-500/30' : 
+                        index === 1 ? 'bg-orange-500/10 border-orange-500/30' : 
+                        index === 2 ? 'bg-pink-500/10 border-pink-500/30' : 
+                        index === 3 ? 'bg-violet-500/10 border-violet-500/30' : 
+                        'bg-sky-500/10 border-sky-500/30'
+                      }`}>
+                        <div className="text-xs text-muted-foreground font-medium mb-1">Duration</div>
+                        <div className="text-sm font-bold text-foreground">{project.metrics.duration}</div>
+                      </div>
+                      <div className={`p-3 rounded-lg border-2 ${
+                        index === 0 ? 'bg-emerald-500/10 border-emerald-500/30' : 
+                        index === 1 ? 'bg-orange-500/10 border-orange-500/30' : 
+                        index === 2 ? 'bg-pink-500/10 border-pink-500/30' : 
+                        index === 3 ? 'bg-violet-500/10 border-violet-500/30' : 
+                        'bg-sky-500/10 border-sky-500/30'
+                      }`}>
+                        <div className="text-xs text-muted-foreground font-medium mb-1">Result</div>
+                        <div className={`text-sm font-bold ${
+                          index === 0 ? 'text-emerald-400' : 
+                          index === 1 ? 'text-orange-400' : 
+                          index === 2 ? 'text-pink-400' : 
+                          index === 3 ? 'text-violet-400' : 
+                          'text-sky-400'
+                        }`}>{project.metrics.impact}</div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="p-6 pt-4 border-t border-border flex flex-wrap gap-3">
-                  {project.liveUrl && (
-                    <Button
-                      onClick={() => openModal(project, 'demo')}
-                      className="flex-1 min-w-[120px] bg-primary text-primary-foreground hover:bg-primary/90 font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Live Demo
-                    </Button>
-                  )}
-                  {project.hasLearnMore && (
-                    <Button
-                      onClick={() => openModal(project, 'learnMore')}
-                      variant="outline"
-                      className="flex-1 min-w-[120px] border-border text-foreground hover:bg-accent hover:text-accent-foreground font-medium transition-all duration-200 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                    >
-                      <Eye className="w-4 h-4 mr-2" />
-                      Read Case Study
-                    </Button>
-                  )}
                 </div>
               </article>
             ))}
